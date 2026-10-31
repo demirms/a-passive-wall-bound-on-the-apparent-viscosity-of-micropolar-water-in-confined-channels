@@ -1,0 +1,29 @@
+pair_id,source,figure,item,quantity,reread,published,deviation,relative_deviation,reference_resolution,excluded_from_main,note
+K22_sq190,Kazoe_2022,Fig. 5 (Table 1),sq1,viscosity ratio,3.6021,3.6000,+0.0021,+0.0006,0.0056,no,Table 1 viscosity 3.21e-3 Pa s; text: 3.6 times bulk (p. 285)
+K22_sq394,Kazoe_2022,Fig. 5 (Table 1),sq2,viscosity ratio,2.4624,2.8037,-0.3414,-0.1218,0.0056,yes,source inconsistency (Table 1 vs both figures) | Table 1 viscosity 2.50e-3 Pa s
+K22_sq760,Kazoe_2022,Fig. 5 (Table 1),sq3,viscosity ratio,1.2031,1.2112,-0.0081,-0.0067,0.0056,no,Table 1 viscosity 1.08e-3 Pa s
+K22_sq1691,Kazoe_2022,Fig. 5 (Table 1),sq4,viscosity ratio,1.1329,1.1327,+0.0002,+0.0002,0.0056,no,Table 1 viscosity 1.01e-3 Pa s
+K22_pl234,Kazoe_2022,Fig. 5 (Table 1),pl1,viscosity ratio,1.3150,1.3121,+0.0029,+0.0022,0.0056,no,Table 1 viscosity 1.17e-3 Pa s; text: 1.3 times bulk
+K22_pl417,Kazoe_2022,Fig. 5 (Table 1),pl2,viscosity ratio,0.8997,0.8972,+0.0025,+0.0028,0.0056,no,Table 1 viscosity 0.80e-3 Pa s
+K22_pl745,Kazoe_2022,Fig. 5 (Table 1),pl3,viscosity ratio,1.0931,1.0991,-0.0059,-0.0054,0.0056,no,Table 1 viscosity 0.98e-3 Pa s
+K23_circ190,Kazoe_2023,Fig. 4 open circles (Kazoe 2022 Table 1),circ1,viscosity ratio,3.6091,3.6000,+0.0091,+0.0025,0.0056,no,"same data as K22_sq190 (Kazoe 2023 re-plots them, ref [18])"
+K23_circ394,Kazoe_2023,Fig. 4 open circles (Kazoe 2022 Table 1),circ2,viscosity ratio,2.4952,2.8037,-0.3085,-0.1100,0.0056,yes,source inconsistency (Table 1 vs both figures) | same data as K22_sq394
+K23_circ760,Kazoe_2023,Fig. 4 open circles (Kazoe 2022 Table 1),circ3,viscosity ratio,1.2129,1.2112,+0.0017,+0.0014,0.0056,no,same data as K22_sq760
+K23_circ1691,Kazoe_2023,Fig. 4 open circles (Kazoe 2022 Table 1),circ4,viscosity ratio,1.1522,1.1327,+0.0195,+0.0172,0.0056,no,same data as K22_sq1691
+T04_53nm,Tas_2004,Fig. 4 (diamond mean of the 53 nm group),0,viscosity ratio,1.2241,1.2300,-0.0059,-0.0048,0.0050,no,text p. 3275: apparent viscosity 23 +- 16 % above bulk in the smallest channels (before the NaCl-based height correction)
+T04_152nm,Tas_2004,Fig. 4 (diamond mean of the 152 nm group),2,viscosity ratio,1.0626,1.0700,-0.0074,-0.0069,0.0050,no,text p. 3275: 7 +- 11 % for the tallest channels
+H08_5nm,Haneveld_2008,Fig. 5 (dots = chips),h5,viscosity ratio,2.5321,2.5000,+0.0321,+0.0128,0.0500,no,text p. 014309-4: C = 2.5 +- 0.4 for the 5 nm channels (mean of 2-3 chips; the text value is given with one decimal)
+H08_11nm,Haneveld_2008,Fig. 5 (dots = chips),h10,viscosity ratio,1.3190,1.3200,-0.0010,-0.0007,0.0050,no,text p. 014309-5: apparent increase 32 +- 11 % for the 11 nm channels
+H08_47nm,Haneveld_2008,Fig. 5 (dots = chips),h47,viscosity ratio,1.0436,1.0200,+0.0236,+0.0232,0.0050,yes,unresolved reading (dots merge with the C = 1.0 line) | text p. 014309-4: C = 1.02 +- 0.04 for the 47 nm channels
+L12_pl415,Li_2012,Fig. 4a (blue inverted triangle),pl5,viscosity ratio,0.9399,0.9516,-0.0117,-0.0123,0.0006,no,text p. 2450: 0.826 +- 0.036 x 1e-3 Pa s at 415 nm (plate channel)
+L12_sq1559,Li_2012,Fig. 4a (red triangle),sq6,viscosity ratio,0.9562,0.9689,-0.0127,-0.0131,0.0006,no,text p. 2450: 0.841 +- 0.032 x 1e-3 Pa s for the 1559 nm channel (Fig. 4a symbol at ~1530 nm)
+C84_exp2,Churaev_1984,Fig. 3 (Table I exp. 2),pt1,eta_app/eta0 (from Delta eta),0.8882,0.8881,+0.0001,+0.0001,0.0008,no,"read 12.58 %, table 12.60 % (plot sign), match distance 0.25"
+C84_exp3,Churaev_1984,Fig. 3 (Table I exp. 3),pt2,eta_app/eta0 (from Delta eta),0.9384,0.9390,-0.0006,-0.0006,0.0009,no,"read 6.56 %, table 6.50 % (plot sign), match distance 0.14"
+C84_exp4,Churaev_1984,Fig. 3 (Table I exp. 4),pt3,eta_app/eta0 (from Delta eta),0.9403,0.9407,-0.0004,-0.0004,0.0009,no,"read 6.34 %, table 6.30 % (plot sign), match distance 0.05"
+C84_exp5,Churaev_1984,Fig. 3 (Table I exp. 5),pt4,eta_app/eta0 (from Delta eta),0.8780,0.8780,-0.0000,-0.0000,0.0008,no,"read 13.90 %, table 13.90 % (plot sign), match distance 0.12"
+C84_exp6,Churaev_1984,Fig. 3 (Table I exp. 6),pt5,eta_app/eta0 (from Delta eta),0.9098,0.9099,-0.0002,-0.0002,0.0008,no,"read 9.92 %, table 9.90 % (plot sign), match distance 0.11"
+C84_exp8,Churaev_1984,Fig. 3 (Table I exp. 8),pt6,eta_app/eta0 (from Delta eta),0.9483,0.9488,-0.0004,-0.0004,0.0009,no,"read 5.45 %, table 5.40 % (plot sign), match distance 0.10"
+C84_exp9,Churaev_1984,Fig. 3 (Table I exp. 9),pt7,eta_app/eta0 (from Delta eta),0.9584,0.9588,-0.0004,-0.0004,0.0009,no,"read 4.35 %, table 4.30 % (plot sign), match distance 0.07"
+C84_exp10,Churaev_1984,Fig. 3 (Table I exp. 10),pt8,eta_app/eta0 (from Delta eta),0.9802,0.9804,-0.0002,-0.0002,0.0010,no,"read 2.02 %, table 2.00 % (plot sign), match distance 0.05"
+C84_exp11,Churaev_1984,Fig. 3 (Table I exp. 11),pt9,eta_app/eta0 (from Delta eta),0.9588,0.9588,+0.0000,+0.0000,0.0009,no,"read 4.30 %, table 4.30 % (plot sign), match distance 0.13"
+C84_exp12,Churaev_1984,Fig. 3 (Table I exp. 12),pt10,eta_app/eta0 (from Delta eta),1.0031,1.0030,+0.0001,+0.0001,0.0010,no,"read -0.31 %, table -0.30 % (plot sign), match distance 0.07"

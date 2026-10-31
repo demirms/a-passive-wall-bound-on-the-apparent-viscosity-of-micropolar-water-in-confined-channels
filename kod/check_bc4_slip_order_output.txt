@@ -1,0 +1,27 @@
+S1 residuals (lambda^2 = k(2mu+k)/[gamma(mu+k)])
+   BC1: angular momentum 0, z-momentum 0, wall condition 0
+   BC3: angular momentum 0, z-momentum 0, wall condition 0
+   BC4: angular momentum 0, z-momentum 0, wall condition 0
+
+S2-S4 large-gap expansion of mu_app/(mu+k/2), tanh(lam h) = T -> 1, eps = 1/(lam h), L = lam l_s
+   BC1: exact ratio in T = tanh(lam h): 2*T*(kappa + mu)/(3*T*epsilon**2*kappa + 2*T*(kappa + mu) - 3*epsilon*kappa);  contains sinh/cosh/Ch: False
+   BC3: exact ratio in T = tanh(lam h): 2*(L*kappa + L*mu + T*kappa + T*mu)/(3*L*T*epsilon**3*kappa + 2*L*kappa + 2*L*mu + 2*T*kappa + 2*T*mu + 3*epsilon**2*kappa*(-L + T) - 3*epsilon*kappa);  contains sinh/cosh/Ch: False
+   BC4: exact ratio in T = tanh(lam h): 2*(kappa + mu)/(3*T*epsilon**3*kappa - 3*epsilon**2*kappa + 2*kappa + 2*mu);  contains sinh/cosh/Ch: False
+S2 BC1: [mu_app/(mu+k/2)]^-1 (T = 1) - Eq. (17) bracket = 0
+   slip length from the first-order term, 1/(1+3b/h): b_BC1 = -kappa/(2*lambda*(kappa + mu))
+   residual b_BC1 - Eq. (18) [-k/(2(mu+k) lam)] = 0
+S3 BC4: series of [mu_app/(mu+k/2)]^-1 = (-3*epsilon**2*kappa/2 + kappa + mu)/(kappa + mu)
+   first-order coefficient (b_BC4 lam) = 0  -> no slip at first order
+   second-order coefficient = -3*kappa/(2*kappa + 2*mu)  -> correction of order (lambda h)^-2
+   exact BC4 inverse ratio (T = 1) = (3*epsilon**3*kappa/2 - 3*epsilon**2*kappa/2 + kappa + mu)/(kappa + mu)
+S4 BC3: b_BC3 = -kappa/(2*lambda*(L + 1)*(kappa + mu))
+   residual b_BC3 - b_BC1/(1 + lam l_s) = 0
+   limit L = lam l_s -> 0: 0 (difference to BC1);  L -> oo: 0 (BC4)
+   |b_BC3|/|b_BC1| = 1/(L + 1) < 1 for l_s > 0
+   BC3 second-order coefficient = -3*kappa*(L - 1)/(2*(L + 1)*(kappa + mu))
+
+S5 BC3 energy identity int Phi dy = G Q + 2P, P = gamma psi'(h) psi(h) = -(gamma/l_s) psi(h)^2 (mpmath, 30 digits)
+   (mu,k,g,h,l_s)=(1.0,1.0,1.0,1.0,0.5): int Phi - GQ - 2P = -4.62e-32, P - [-(g/l_s)psi^2] = -6.55e-33, P = -0.0038718698 (<= 0)
+   (mu,k,g,h,l_s)=(1.0,10.0,1.0,3.0,2.0): int Phi - GQ - 2P = -1.42e-31, P - [-(g/l_s)psi^2] = 0.0, P = -0.019054862 (<= 0)
+   (mu,k,g,h,l_s)=(-0.3,1.0,0.7,0.8,0.1): int Phi - GQ - 2P = -6.16e-32, P - [-(g/l_s)psi^2] = 2.0e-32, P = -0.0094429479 (<= 0)
+runtime 67.5 s

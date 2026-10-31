@@ -1,0 +1,175 @@
+S1 momentum residual (general C): 0
+S1 angular-momentum residual (general C, lam^2 = k(2mu+k)/(g(mu+k))): 0
+S1 w(R) = 0
+S2 Q - (pi/(mu+k))[G R^4/8 + k int r^2 nu dr] = 0
+S2 int_0^R r^2 I1(lam r) dr - R^2 I2(lam R)/lam = 0
+S3 mu_app = (mu+k)/[1 + k e + 4k (shat - e) J],  e = 1/(2mu+k): difference = 0
+S3' back-substitution Q(closed) - Q(def) = 0
+S3'' d mu_app / d shat = -J*kappa*(kappa + mu)*(kappa + 2*mu)**2/(2*J*kappa**2*shat + 4*J*kappa*mu*shat - 2*J*kappa + kappa + mu)**2  (negative for J > 0: mu_app decreases with wall spin)
+S4 (mu+k)/mu_app - 1 - 4k[e/4 + (shat-e) J] = 0
+S5 coeff[(a/4) I1 - I2] / coeff[I2] = k/2  (= k/2 >= 0, > 0 for k >= 1 => I2 < a I1/4, J < 1/4)
+S5 coeff[I0 - 2 I1/a] / coeff[2 I1/a] = k  (= k => a I0 > 2 I1, X > 1)
+S5 recurrence I2 - (I0 - 2 I1/a) = 0
+S5 I1'(a) - (I0 - I1/a) = 0
+S6 M3 wall spin nu_R = -G*R*n/(2*(kappa*n - kappa - mu));  shat(n) = -n/(kappa*n - kappa - mu)
+S6 d shat/dn = (kappa + mu)/(kappa*n - kappa - mu)**2  (> 0 on each branch; pole n_p = (mu+k)/k)
+S7 nu'(R) - [G e (1-X)/2 + nu_R X/R] = 0
+S7 P - nu_R(-A + B nu_R), A = g G e (X-1)/2, B = (g X - b)/R : 0
+S7 passive <=> 0 <= nu_R <= A/B  <=>  0 <= shat <= s* = gamma*(X - 1)/((kappa + 2*mu)*(X*gamma - beta))
+S8 n*(beta=0) - tube formula [(1+D)(1-T)/(2+2D-DT), T = I1/(lam I0 - I1) = 1/X] = 0
+S8 n*(beta = gamma) = 1/2
+S9 M5 wall spin / (G R/2) - s* = 0  (M5 is the upper end of the passive set)
+S10 shat(n = 1/(2+s)) - e(1 - sbar) = 0
+S10 mu_app(this work) - mu_a(Chaturani-Mahajan Eq. 10, mapped) = 0
+S10 reverse: mu_a_CM/mine - 1 = 0
+S10 J + T_CM = 0
+S11 general reduction, tube check: Q - [G Q_N(1) + k int nu (r/2) dA]/(mu+k) = 0
+
+N1 closed form vs independent FD (N = 1000, 2000, 4000; Richardson), mu = 1
+  k=  1.0 lamR=   1.0 n= 0.00: FD 1.97418939 1.97418792 1.97418755 Rich 1.97418743 | closed 1.97418743 | rel +9.1e-12
+  k=  1.0 lamR=   1.0 n= 0.20: FD 1.78599065 1.78598932 1.78598899 Rich 1.78598888 | closed 1.78598888 | rel -1.4e-11
+  k=  1.0 lamR=   3.0 n=-0.50: FD 2.15175152 2.15174950 2.15174899 Rich 2.15174882 | closed 2.15174882 | rel +3.5e-12
+  k= 10.0 lamR=  10.0 n= 0.30: FD 6.56038739 6.56038022 6.56037843 Rich 6.56037784 | closed 6.56037784 | rel -1.6e-10
+  k=  0.1 lamR=  30.0 n= 0.45: FD 1.05063211 1.05063127 1.05063107 Rich 1.05063100 | closed 1.05063100 | rel +9.2e-10
+  k=  1.0 lamR=   0.3 n=-1.00: FD 2.98885747 2.98885522 2.98885465 Rich 2.98885447 | closed 2.98885447 | rel +5.4e-12
+  k=  1.0 lamR=   2.0 n= 3.00: FD -1.28684344 -1.28684827 -1.28684947 Rich -1.28684988 | closed -1.28684988 | rel -1.8e-10
+  k=  0.5 lamR= 100.0 n= 0.40: FD 1.25190049 1.25189800 1.25189738 Rich 1.25189718 | closed 1.25189718 | rel -1.1e-09
+N1 worst relative difference (Richardson vs closed): 1.1e-09
+  M5 k=1.0 lamR=1.0 beta/gamma=0.0: FD 1.8602907 closed(shat = s*) 1.8602906 rel +6.7e-08
+  M5 k=1.0 lamR=5.0 beta/gamma=0.5: FD 1.5268094 closed(shat = s*) 1.5268093 rel +7.5e-08
+  M5 k=10.0 lamR=20.0 beta/gamma=-0.7: FD 6.0427693 closed(shat = s*) 6.0427683 rel +1.7e-07
+
+N1' energy identity int Phi dA = G Q + 2 pi R P (quadrature), relative error
+  mu=1.0 k=1.0 lamR=2.0 n=0.2 beta/gamma=0.0: int Phi = 0.2186749285, G Q = 0.2240018894, 2 pi R P = -0.0053269609, rel err 3.8e-16
+  mu=1.0 k=1.0 lamR=2.0 n=-0.4 beta/gamma=0.6: int Phi = 0.2258221868, G Q = 0.1767550164, 2 pi R P = +0.0490671704, rel err 4.9e-16
+  mu=1.0 k=4.0 lamR=8.0 n=0.3 beta/gamma=-0.8: int Phi = 0.1155858921, G Q = 0.1196113258, 2 pi R P = -0.0040254337, rel err 1.2e-16
+  mu=-0.3 k=1.0 lamR=3.0 n=0.1 beta/gamma=0.3: int Phi = 0.9081399880, G Q = 0.9722816505, 2 pi R P = -0.0641416625, rel err 3.7e-16
+
+N2 scan: mu = 1, kappa/mu in geomspace(0.1,10,21), lamR in geomspace(0.1,100,31), n in linspace(-6,16,881)\{pole}, beta/gamma in {-1,0,1}
+  passive cases 28225, of which mu_app > mu+k: 0
+  active cases 1692089: mu_app > mu+k in 566337 (n<0: 299664, n>pole: 266673); active but bound holds: 1125752
+  active cases with reversed flow (D <= 0, mu_app < 0): 498813
+  max passive mu_app/(mu+k) = 0.999980 at (k/mu, lamR, n, beta/gamma) = (np.float64(0.1), np.float64(0.1), np.float64(0.0), -1.0)
+  min passive mu_app/(mu+k/2) = 1.000000000000 at (np.float64(0.251188643150958), np.float64(0.1), np.float64(0.5), 1.0)  (Y4 lower bound: must be >= 1)
+
+N2' thresholds: D = 1 + k e + 4k(shat - e)J; mu_app > mu+k iff 0 < D < 1 (shat in (s0, sc)); D < 0: reversed flow (mu_app < 0)
+  k/mu   lamR    n*(b=0)  n*(b=-g)  n*(b=g)  M1/(mu+k)  M5(b=0)/(mu+k)  n-intervals with mu_app > mu+k
+    0.1    0.1   0.00131  0.00065  0.50000   0.999980   0.999862     n<0: (-inf, -0.0002); n>pole: (25216.2493, inf)
+    0.1    1.0   0.10052  0.05588  0.50000   0.998136   0.989385     n<0: (-inf, -0.0214); n>pole: (268.1857, inf)
+    0.1    3.0   0.32046  0.23579  0.50000   0.988572   0.966854     n<0: (-inf, -0.1705); n>pole: (43.7511, inf)
+    0.1   10.0   0.44974  0.40866  0.50000   0.969604   0.956102     n<0: (-inf, -1.1112); n>pole: (16.4495, inf)
+    0.1   30.0   0.48380  0.46862  0.50000   0.960076   0.954732     n<0: (-inf, -5.3727); n>pole: (12.5237, inf)
+    0.1  100.0   0.49520  0.49049  0.50000   0.956258   0.954563     n>pole: (11.4307, 79.3486)
+    1.0    0.1   0.00166  0.00083  0.50000   0.999861   0.999032     n<0: (-inf, -0.0003); n>pole: (3602.7499, inf)
+    1.0    1.0   0.12129  0.06901  0.50000   0.987094   0.930145     n<0: (-inf, -0.0276); n>pole: (38.7408, inf)
+    1.0    3.0   0.34717  0.26590  0.50000   0.925135   0.806466     n<0: (-inf, -0.2393); n>pole: (6.6787, inf)
+    1.0   10.0   0.45964  0.42531  0.50000   0.820047   0.756775     n<0: (-inf, -3.5906); n>pole: (2.7785, inf)
+    1.0   30.0   0.48719  0.47501  0.50000   0.774538   0.750806     n>pole: (2.2177, 3.5420)
+    1.0  100.0   0.49622  0.49250  0.50000   0.757461   0.750074     n>pole: (2.0615, 2.2806)
+   10.0    0.1   0.00228  0.00114  0.50000   0.999653   0.997582     n<0: (-inf, -0.0004); n>pole: (1441.4000, inf)
+   10.0    1.0   0.15286  0.09022  0.50000   0.968347   0.841926     n<0: (-inf, -0.0387); n>pole: (15.7963, inf)
+   10.0    3.0   0.37875  0.30482  0.50000   0.831734   0.625021     n<0: (-inf, -0.4010); n>pole: (2.9715, inf)
+   10.0   10.0   0.46999  0.44338  0.50000   0.645743   0.554479     n>pole: (1.4114, 2.9163)
+   10.0   30.0   0.49061  0.48157  0.50000   0.578794   0.546521     n>pole: (1.1871, 1.3319)
+   10.0  100.0   0.49725  0.49452  0.50000   0.555402   0.545553     n>pole: (1.1246, 1.1569)
+  brute-force first violation (n grid step 1e-4, from 0 downward / from pole upward), beta = 0:
+    k=1.0 lamR=0.1: n<0 violations -0.0003 .. -49.9999 (scan to -50); above pole None (scan to pole+50); analytic [('n<0', -inf, np.float64(-0.0003)), ('n>pole', np.float64(3602.7499), inf)]
+    k=1.0 lamR=1.0: n<0 violations -0.0276 .. -49.9999 (scan to -50); above pole (np.float64(38.7409), np.float64(51.9999)) (scan to pole+50); analytic [('n<0', -inf, np.float64(-0.0276)), ('n>pole', np.float64(38.7408), inf)]
+    k=1.0 lamR=3.0: n<0 violations -0.2394 .. -49.9999 (scan to -50); above pole (np.float64(6.6788), np.float64(51.9999)) (scan to pole+50); analytic [('n<0', -inf, np.float64(-0.2393)), ('n>pole', np.float64(6.6787), inf)]
+    k=10.0 lamR=1.0: n<0 violations -0.0388 .. -49.9999 (scan to -50); above pole (np.float64(15.7964), np.float64(51.0999)) (scan to pole+50); analytic [('n<0', -inf, np.float64(-0.0387)), ('n>pole', np.float64(15.7963), inf)]
+    k=0.1 lamR=1.0: n<0 violations -0.0215 .. -49.9999 (scan to -50); above pole None (scan to pole+50); analytic [('n<0', -inf, np.float64(-0.0214)), ('n>pole', np.float64(268.1857), inf)]
+
+N2'' mu < 0 test (mu = -0.3, kappa = 1, 2mu+k = 0.4 > 0)
+  3813 passive cases, max mu_app/(mu+k) = 0.998960
+
+N3 limits
+  n -> 0: k=0.1 lamR=0.5: closed n=1e-8 1.09946301, closed M1 1.09946301, FD M1 1.09946308
+  n -> 0: k=0.1 lamR=5.0: closed n=1e-8 1.07820347, closed M1 1.07820347, FD M1 1.07820354
+  n -> 0: k=1.0 lamR=0.5: closed n=1e-8 1.99318557, closed M1 1.99318558, FD M1 1.99318571
+  n -> 0: k=1.0 lamR=5.0: closed n=1e-8 1.75206650, closed M1 1.75206651, FD M1 1.75206664
+  n -> 0: k=10.0 lamR=0.5: closed n=1e-8 10.90677809, closed M1 10.90677819, FD M1 10.90677886
+  n -> 0: k=10.0 lamR=5.0: closed n=1e-8 8.12543934, closed M1 8.12543938, FD M1 8.12544022
+  lamR -> inf (n = 0.3): k=0.1: mu_app/(mu+k/2) = 1.000737, 1.000075, 1.000007, 1.000001
+  lamR -> 0 (M1): k=0.1: mu_app/(mu+k) = 0.99998017, 0.99999980, 1.00000000
+  lamR -> inf (n = 0.3): k=1.0: mu_app/(mu+k/2) = 1.004657, 1.000470, 1.000047, 1.000005
+  lamR -> 0 (M1): k=1.0: mu_app/(mu+k) = 0.99986122, 0.99999861, 0.99999999
+  lamR -> inf (n = 0.3): k=10.0: mu_app/(mu+k/2) = 1.009948, 1.000999, 1.000100, 1.000010
+  lamR -> 0 (M1): k=10.0: mu_app/(mu+k) = 0.99965312, 0.99999653, 0.99999997
+  narrow-tube passive range: n*(b=0) at lamR = 0.1, 0.01: 1.660e-03, 1.667e-05
+
+N4 water (Hansen et al. 2010 Table II, SPC/Fw): mu = eta0 - eta_r, kappa = 2 eta_r, gamma = zeta0 + zeta_r
+  T[K] eta_r/eta0 1/lam[nm]  r[nm]  lamR   M1=max passive  M5(b=0)  n*(b=0)  abs bound   n needed for 1.31 / 1.48  (wall power / pressure work)
+  284   0.185      2.286     40   17.50   1.03375        1.00192  0.4750   1.1848    n=+23.9387 (+2.041) / n=+8.1310 (+4.529)
+  284   0.185      2.286     50   21.87   1.02732        1.00124  0.4801   1.1848    n=+10.1821 (+2.555) / n=+6.2053 (+5.616)
+  284   0.185      2.286     60   26.24   1.02294        1.00087  0.4835   1.1848    n=+7.3964 (+3.069) / n=+5.3611 (+6.705)
+  289   0.205      2.187     40   18.29   1.03539        1.00192  0.4765   1.2048    n=+16.7266 (+1.930) / n=+6.9220 (+4.292)
+  289   0.205      2.187     50   22.86   1.02861        1.00124  0.4813   1.2048    n=+8.4118 (+2.423) / n=+5.4268 (+5.335)
+  289   0.205      2.187     60   27.43   1.02401        1.00087  0.4845   1.2048    n=+6.3514 (+2.917) / n=+4.7473 (+6.380)
+  293   0.224      2.163     40   18.49   1.03775        1.00202  0.4771   1.2237    n=+14.5568 (+1.791) / n=+6.2852 (+3.998)
+  293   0.224      2.163     50   23.12   1.03051        1.00131  0.4818   1.2237    n=+7.5812 (+2.256) / n=+4.9645 (+4.980)
+  293   0.224      2.163     60   27.74   1.02559        1.00092  0.4849   1.2237    n=+5.7810 (+2.720) / n=+4.3593 (+5.963)
+  299   0.243      1.959     40   20.42   1.03681        1.00178  0.4796   1.2429    n=+9.3687 (+1.835) / n=+5.1819 (+4.088)
+  299   0.243      1.959     50   25.52   1.02970        1.00115  0.4838   1.2429    n=+5.9725 (+2.315) / n=+4.2786 (+5.104)
+  299   0.243      1.959     60   30.63   1.02489        1.00081  0.4866   1.2429    n=+4.8355 (+2.795) / n=+3.8377 (+6.119)
+  Churaev 1970 (tube, r = 40..60 nm): 1.31..1.48 (data table)
+  water: n-intervals with mu_app > mu+k (eta-units), r = 40/50/60 nm at 284 K and 299 K:
+    T=284 r=40: pole n_p = 3.2059; n<0: (-inf, -7.4091); n>pole: (3.9222, inf)
+    T=284 r=50: pole n_p = 3.2059; n<0: (-inf, -28.5185); n>pole: (3.7621, inf)
+    T=284 r=60: pole n_p = 3.2059; n>pole: (3.6603, 35.1732)
+    T=299 r=40: pole n_p = 2.5588; n>pole: (3.0160, 29.8733)
+    T=299 r=50: pole n_p = 2.5588; n>pole: (2.9154, 8.9183)
+    T=299 r=60: pole n_p = 2.5588; n>pole: (2.8510, 6.1554)
+
+B1 Bessonov & Frolova (2022) Eqs (3.29)-(3.46): notation mapping and GBC as an M3 member (symbolic)
+  symmetric coeff: mu_B - (mu + kappa/2) = 0; antisym: 2 mu_r - kappa = 0
+  (3.42) coefficients: (mu_B + mu_r) - (mu + kappa) = 0; 2 mu_r - kappa = 0
+  (3.43): -2 mu_r (2 w + v') vs Eringen -2 kappa nu + kappa (curl v)_theta = -2 kappa nu - kappa v': difference = 0
+  L^2 lambda^2 = 4  (L = 2/lambda, hbar_e = h_e/L = 2R/L = lambda R)
+  GBC (3.44): omega_phi = -[(mu_B + mu_r - mu_b)/(2 mu_r)] v_z' = n (curl v)_theta  =>  n = (kappa + mu - mu_b)/kappa
+  => mu_b = -kappa*n + kappa + mu  (= mu + (1-n) kappa: the M3 denominator; shat = n/mu_b)
+  check shat(n) - n/mu_b = 0
+  (3.46) vs this work (mu_app/(mu + kappa/2)) with mu_b = mu + (1-n)kappa: difference = 0
+  reverse (n expressed by mu_b): difference = 0
+  limits of (3.46): J -> 1/4: mu_b/mu_B (= mu_b/mu_B), J -> 0: 1
+  mu_b/mu_B in terms of n and eps = eta_r/eta0: -2*epsilon*n + epsilon + 1;  passive n in [0, n*]  <=>  mu_b/mu_B in [1 + eps(1 - 2 n*), 1 + eps]
+
+B2 Bessonov & Frolova Table 3.1 row 10 (Derjaguin water/quartz) vs water MD eps = eta_r/eta0 (beta = 0)
+  case (a): mu_b/mu = 1.6, L = 32.0 nm, h_s = 0.0 nm
+    T=284 eps=0.185: n = -1.1235 (pole 3.2059); passive mu_b/mu range at r=50: [1.0586, 1.1848]; bound 1+eps = 1.1848
+      r=40: hbar=2.500 n*=0.3002 ACTIVE mu_e=1.4374 Pwall/(GQ)=+0.897
+      r=50: hbar=3.125 n*=0.3414 ACTIVE mu_e=1.3870 Pwall/(GQ)=+0.718
+      r=60: hbar=3.750 n*=0.3697 ACTIVE mu_e=1.3432 Pwall/(GQ)=+0.600
+    T=289 eps=0.205: n = -0.9647 (pole 2.9412); passive mu_b/mu range at r=50: [1.0642, 1.2048]; bound 1+eps = 1.2048
+      r=40: hbar=2.500 n*=0.3022 ACTIVE mu_e=1.4374 Pwall/(GQ)=+0.755
+      r=50: hbar=3.125 n*=0.3432 ACTIVE mu_e=1.3870 Pwall/(GQ)=+0.607
+      r=60: hbar=3.750 n*=0.3713 ACTIVE mu_e=1.3432 Pwall/(GQ)=+0.508
+    T=293 eps=0.224: n = -0.8412 (pole 2.7353); passive mu_b/mu range at r=50: [1.0694, 1.2237]; bound 1+eps = 1.2237
+      r=40: hbar=2.500 n*=0.3040 ACTIVE mu_e=1.4374 Pwall/(GQ)=+0.646
+      r=50: hbar=3.125 n*=0.3449 ACTIVE mu_e=1.3870 Pwall/(GQ)=+0.522
+      r=60: hbar=3.750 n*=0.3728 ACTIVE mu_e=1.3432 Pwall/(GQ)=+0.438
+    T=299 eps=0.243: n = -0.7353 (pole 2.5588); passive mu_b/mu range at r=50: [1.0746, 1.2429]; bound 1+eps = 1.2429
+      r=40: hbar=2.500 n*=0.3059 ACTIVE mu_e=1.4374 Pwall/(GQ)=+0.554
+      r=50: hbar=3.125 n*=0.3465 ACTIVE mu_e=1.3870 Pwall/(GQ)=+0.449
+      r=60: hbar=3.750 n*=0.3743 ACTIVE mu_e=1.3432 Pwall/(GQ)=+0.379
+  case (b): mu_b/mu = 0.09, L = 3.0 nm, h_s = 20.0 nm
+    T=284 eps=0.185: n = +2.9624 (pole 3.2059); passive mu_b/mu range at r=50: [1.0081, 1.1848]; bound 1+eps = 1.1848
+      r=40: hbar=13.333 n*=0.4668 ACTIVE mu_e=0.2703 (nominal-diameter 4.325) Pwall/(GQ)=+52.145
+      r=50: hbar=20.000 n*=0.4782 ACTIVE mu_e=0.3481 (nominal-diameter 2.686) Pwall/(GQ)=+45.266
+      r=60: hbar=26.667 n*=0.4838 ACTIVE mu_e=0.4112 (nominal-diameter 2.081) Pwall/(GQ)=+40.327
+    T=289 eps=0.205: n = +2.7215 (pole 2.9412); passive mu_b/mu range at r=50: [1.0088, 1.2048]; bound 1+eps = 1.2048
+      r=40: hbar=13.333 n*=0.4673 ACTIVE mu_e=0.2703 (nominal-diameter 4.325) Pwall/(GQ)=+47.910
+      r=50: hbar=20.000 n*=0.4786 ACTIVE mu_e=0.3481 (nominal-diameter 2.686) Pwall/(GQ)=+41.588
+      r=60: hbar=26.667 n*=0.4840 ACTIVE mu_e=0.4112 (nominal-diameter 2.081) Pwall/(GQ)=+37.050
+    T=293 eps=0.224: n = +2.5341 (pole 2.7353); passive mu_b/mu range at r=50: [1.0095, 1.2237]; bound 1+eps = 1.2237
+      r=40: hbar=13.333 n*=0.4678 ACTIVE mu_e=0.2703 (nominal-diameter 4.325) Pwall/(GQ)=+44.616
+      r=50: hbar=20.000 n*=0.4789 ACTIVE mu_e=0.3481 (nominal-diameter 2.686) Pwall/(GQ)=+38.728
+      r=60: hbar=26.667 n*=0.4843 ACTIVE mu_e=0.4112 (nominal-diameter 2.081) Pwall/(GQ)=+34.501
+    T=299 eps=0.243: n = +2.3735 (pole 2.5588); passive mu_b/mu range at r=50: [1.0101, 1.2429]; bound 1+eps = 1.2429
+      r=40: hbar=13.333 n*=0.4682 ACTIVE mu_e=0.2703 (nominal-diameter 4.325) Pwall/(GQ)=+41.793
+      r=50: hbar=20.000 n*=0.4792 ACTIVE mu_e=0.3481 (nominal-diameter 2.686) Pwall/(GQ)=+36.276
+      r=60: hbar=26.667 n*=0.4845 ACTIVE mu_e=0.4112 (nominal-diameter 2.081) Pwall/(GQ)=+32.316
+  smallest eta_r/eta0 making mu_b/mu = 1.6 passive (beta = 0), L = 32 nm:
+    r=40 nm (hbar=2.500): eps_min = 0.6
+    r=50 nm (hbar=3.125): eps_min = 0.6
+    r=60 nm (hbar=3.750): eps_min = 0.6
+  same mu_b/mu = 1.6 but with the MD length L = 2/lambda (water 299 K, 1.959 nm -> L = 3.918 nm): mu_e at r=40/50/60 = 1.0731, 1.0586, 1.0489

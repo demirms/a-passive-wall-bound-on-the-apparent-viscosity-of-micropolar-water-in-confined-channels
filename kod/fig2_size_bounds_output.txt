@@ -1,0 +1,13 @@
+lambda*a   square mu_app (N=80)   Psi
+     0.1   1.999922   0.999843
+     0.3   1.999295   0.998590
+     1.0   1.992325   0.984650
+     3.0   1.941149   0.882299
+    10.0   1.745103   0.490206
+    30.0   1.595013   0.190027
+   100.0   1.529860   0.059720
+monotone non-increasing (square): True
+monotone non-increasing (slit, tube): True, True
+lambda D_h = 30.0: tube Psi 0.19194 vs law 0.20005; slit Psi 0.28474 vs law 0.30007
+lambda D_h = 100.1: tube Psi 0.05932 vs law 0.05996; slit Psi 0.08890 vs law 0.08993
+lambda D_h = 300.0: tube Psi 0.01993 vs law 0.02000; slit Psi 0.02989 vs law 0.03000

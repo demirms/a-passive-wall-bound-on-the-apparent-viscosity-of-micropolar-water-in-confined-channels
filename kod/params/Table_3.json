@@ -1,0 +1,19 @@
+{
+ "label": "Table 3",
+ "script": "water_slip_length.py; micropolar_duct_2d.py",
+ "parameters": {
+  "coefficients": "Hansen 2010 Table II at 299 K (eta0 0.70, eta_r 0.17 mPa s, zeta 2.1 mPa s nm^2)",
+  "wall": "M1",
+  "data": "01_arastirma/veri_tablosu.csv"
+ },
+ "domain": "tube, slit: closed forms; square: 2D cross-section of side D_h",
+ "mesh": "square: stretched grid, 160 x 160 (120 x 120 check)",
+ "tolerances": "N = 120/160 difference <= 2e-5",
+ "initial_guess": "not applicable",
+ "software": {
+  "python": "3.12.10",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1"
+ },
+ "date": "2026-10-31"
+}

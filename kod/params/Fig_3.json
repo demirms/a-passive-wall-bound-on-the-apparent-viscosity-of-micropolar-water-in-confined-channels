@@ -1,0 +1,33 @@
+{
+ "label": "Fig. 3",
+ "script": "fig_tube_wall_family.py",
+ "parameters": {
+  "mu": 1.0,
+  "kappa/mu": [
+   1,
+   1,
+   10
+  ],
+  "lambda R": [
+   1,
+   10,
+   10
+  ],
+  "beta/gamma": 0,
+  "sigma range": [
+   -2.6,
+   1.4
+  ]
+ },
+ "domain": "tube 0 <= r <= R (closed form, modified Bessel functions)",
+ "mesh": "closed form; 1601 sigma points",
+ "tolerances": "closed form (agrees with finite differences to 1.1e-9, check_tube_m3_bound.py N1)",
+ "initial_guess": "not applicable",
+ "software": {
+  "python": "3.12.10",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "matplotlib": "3.11.2"
+ },
+ "date": "2026-10-31"
+}

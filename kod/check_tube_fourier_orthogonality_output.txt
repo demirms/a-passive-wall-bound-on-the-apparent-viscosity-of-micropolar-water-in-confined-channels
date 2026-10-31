@@ -1,0 +1,28 @@
+==============================================================================
+Tube: theta-orthogonality of dissipation and wall power (general radial profiles)
+==============================================================================
+m = 1: O1 int dtheta [dissipation cross term] = 0;  O3 int dtheta [wall-power cross term at r=R] = 0;  O4 int dtheta w = 0;  (Phi_bil symmetric: 0)
+m = 2: O1 int dtheta [dissipation cross term] = 0;  O3 int dtheta [wall-power cross term at r=R] = 0;  O4 int dtheta w = 0;  (Phi_bil symmetric: 0)
+m = 3: O1 int dtheta [dissipation cross term] = 0;  O3 int dtheta [wall-power cross term at r=R] = 0;  O4 int dtheta w = 0;  (Phi_bil symmetric: 0)
+m = 0 radial/axial spin Y0: O2 pointwise dissipation cross term = 0;  O3 pointwise wall cross term = 0
+
+O5 operator and theta-average (projection on m = 0)
+   m = 1: theta-integral of [z-momentum, spin_r, spin_theta, spin_z] of the mode = [0, 0, 0, 0]
+   m = 2: theta-integral of [z-momentum, spin_r, spin_theta, spin_z] of the mode = [0, 0, 0, 0]
+   m = 3: theta-integral of [z-momentum, spin_r, spin_theta, spin_z] of the mode = [0, 0, 0, 0]
+   L(X0): spin_r = 0, spin_z = 0   (forced part has only z-momentum and spin_theta)
+   L(Y0): z-momentum = 0, spin_theta = 0   (radial/axial spin decoupled and unforced)
+   d/dtheta of all components of L(X0), L(Y0) = [0, 0, 0, 0, 0, 0, 0, 0]
+   L(X0) against the tube equations, step 1 (residuals): 0, 0
+
+O6 pointwise form of the dissipation in the section (Cartesian, general fields)
+   residual Phi - [sum of the squares above] = 0
+   -> Phi >= 0 pointwise for 2mu+k >= 0, k >= 0, g >= |b|, 2a+b+g >= 0 (2a+b+g = (2/3)(3a+b+g) + (1/3)(b+g)).
+
+ALL ZERO: True
+Consequence (with the pointwise energy identity A1 of check_wall_power_sign_conventions.py):
+  the theta-average of a solution solves the forced problem (O5), so solution = X0 + rest with the rest unforced;
+  int Phi = int Phi(X0) + int Phi(rest) and oint P = P(X0) + P(rest) (O1-O3); G Q comes from X0 only (O4);
+  rest: int Phi(rest) = oint P(rest) >= 0 (O6); hence oint P <= 0  =>  P(X0) = oint P - int Phi(rest) <= 0,
+  i.e. the wall spin of the axisymmetric part lies in the passive range (15), and (16) applies.
+runtime 7.2 s

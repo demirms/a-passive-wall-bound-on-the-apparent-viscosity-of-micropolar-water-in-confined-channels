@@ -1,0 +1,26 @@
+| Data set | Method | Geometry | Size (nm) | $T$ (C) | Measured | Uncertainty | Predicted | Measured / predicted | Above bound | Largest excess ($\sigma$) |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Churaev *et al.* [1] | PD | tube, $r$ | 41-60 | ~20 | 1.34-1.41 | 0.02 (R) | 1.025-1.036 | 1.29-1.37 | 3 of 3 | +10.9 |
+| Churaev *et al.* [1] | PD | tube, $r$ | 181-255 | ~20 | 1.10-1.19 | 0.02 (R) | 1.006-1.008 | 1.09-1.18 | 0 of 5 | -3.4 |
+| Churaev *et al.* [1] | PD | tube, $r$ | 547-998 | ~20 | 1.01-1.03 | 0.02 (R) | 1.002-1.003 | 1.00-1.03 | 0 of 3 | -14.2 |
+| Haneveld *et al.* [3] | CF | slit, $H$ | 10.5 | 22 | 1.32 | 0.11 (A) | 1.162 | 1.14 | 1 of 1 | +0.7 |
+| Haneveld *et al.* [3] | CF | slit, $H$ | 22.4 | 22 | 1.11 | 0.05 (B) | 1.092 | 1.02 | 0 of 1 | -2.6 |
+| Haneveld *et al.* [3] | CF | slit, $H$ | 46 | 21 | 1.02 | 0.04 (A) | 1.048 | 0.97 | 0 of 1 | -5.6 |
+| Tas *et al.* [2] | CF | slit, $H$ | 53 | 21.5-22 | 1.19-1.27 | 0.11 (A) | 1.041-1.042 | 1.14-1.21 | 1 of 5 | +0.2 |
+| Tas *et al.* [2] | CF | slit, $H$ | 102-161 | 21.5-22 | 1.03-1.14 | 0.06-0.11 (A) | 1.014-1.022 | 1.02-1.11 | 0 of 9 | -1.0 |
+| Tas *et al.* [2], 0.1 M NaCl | CF | slit, $H$ | 53-161 | 21.5-22 | 0.99-1.05 | 0.11 (A) | 1.014-1.042 | 0.96-1.00 | 0 of 9 | -1.8 |
+| Li *et al.* [6] | FP | plate, $H$ | 25-415 | 26.1 | 0.94-1.12 | 0.03-0.10 (B) | 1.006-1.084 | 0.93-1.03 | 0 of 5 | -1.2 |
+| Kazoe *et al.* [4] | PD | plate, $H$ | 234 | n.s. | 1.31 | 0.07 (A) | 1.010 | 1.30 | 1 of 1 | +1.0 |
+| Kazoe *et al.* [4] | PD | plate, $H$ | 417-745 | n.s. | 0.90-1.10 | 0.09-0.10 (A) | 1.003-1.005 | 0.89-1.10 | 0 of 2 | -1.6 |
+| Kazoe *et al.* [5] | PD | square, $D_h$ | 73 | n.s. | 4.74 | 0.52 (B) | 1.040 | 4.55 | 1 of 1 | +6.7 |
+| Kazoe *et al.* [5] | PD | square, $D_h$ | 119 | n.s. | 5.55 | 0.49 (B) | 1.025 | 5.41 | 1 of 1 | +8.8 |
+| Kazoe *et al.* [4] | PD | square, $D_h$ | 190 | n.s. | 3.60 | 0.61 (A) | 1.016 | 3.54 | 1 of 1 | +3.9 |
+| Li *et al.* [6] | FP | square, $D_h$ | 200 | 26.1 | 2.47 | 0.20 (B) | 1.015 | 2.43 | 1 of 1 | +6.0 |
+| Li *et al.* [6] | FP | square, $D_h$ | 393 | 26.1 | 1.76 | 0.17 (B) | 1.008 | 1.75 | 1 of 1 | +3.0 |
+| Kazoe *et al.* [4] | PD | square, $D_h$ | 394 | n.s. | 2.80 | 0.21 (A) | 1.008 | 2.78 | 1 of 1 | +7.3 |
+| Li *et al.* [6] | FP | square, $D_h$ | 491 | 26.1 | 1.89 | 0.14 (B) | 1.006 | 1.88 | 1 of 1 | +4.5 |
+| Kazoe *et al.* [4] | PD | square, $D_h$ | 760-1691 | n.s. | 1.13-1.21 | 0.02-0.10 (A) | 1.002-1.004 | 1.13-1.21 | 0 of 2 | -0.3 |
+| Li *et al.* [6] | FP | square, $D_h$ | 838-1530 | 26.1 | 0.85-1.12 | 0.03-0.07 (B) | 1.002-1.004 | 0.85-1.12 | 0 of 3 | -1.7 |
+
+Method: PD pressure-driven flow; CF capillary filling; FP filling under applied pressure. Uncertainty type: A stated by the authors (text or table), B error bar read off the figure, R reading uncertainty only. n.s.: not stated in the source.
+Excess: (measured - 1.243)/uncertainty of the same row, largest over the group; negative when the whole group lies below the bound.

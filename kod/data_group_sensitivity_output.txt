@@ -1,0 +1,140 @@
+(0) Checks of the closed forms used here against paper_common (f = 1, g = 1, 299 K):
+    tube  size   48.00 nm: here 1.030895  paper_common 1.030895  diff +2.2e-16
+    tube  size   41.25 nm: here 1.035744  paper_common 1.035744  diff +0.0e+00
+    slit  size   10.50 nm: here 1.161696  paper_common 1.161696  diff -2.2e-16
+    slit  size  234.00 nm: here 1.009746  paper_common 1.009746  diff +0.0e+00
+    sq    size   73.00 nm: here 1.041953  paper_common 1.041953  diff +0.0e+00
+    large-f tube (f = 1e4): here 1.075511  paper_common 1.075511
+    tube  48 nm: increasing in f: True; increasing in g (zeta): True; f=1e7 -> 1.07553; bound 1.2429
+    slit  53 nm: increasing in f: True; increasing in g (zeta): True; f=1e7 -> 1.10477; bound 1.2429
+    sq    73 nm: increasing in f: True; increasing in g (zeta): True; f=1e7 -> 1.09491; bound 1.2429
+
+(a)-(d) Per group. eps = eta_r/eta0 = 0.2429 (299 K), 0.1848 (284 K); bound = 1 + eps.
+    f_bound = (meas - 1)/eps; 'f_pred' = factor on eta_r at which the BC1 prediction reaches the measured value (zeta fixed); 
+    'none' = measured value above the finite ceiling of the prediction (ceiling given); '<=1' = measured value at or below the BC1 prediction.
+    group                                    meas | f_bound 299 f_bound 284 (meas-unc) 299 |  f_pred 299  ceiling 299 |     g (zeta) 299
+    Churaev [1] tube r 41-60            1.34-1.41 |   1.40-1.68   1.83-2.20      1.33-1.61 | - (+3 none)  1.060-1.089 |             none
+    Churaev [1] tube r 181-255          1.10-1.19 |   0.42-0.79   0.55-1.04      0.35-0.73 | - (+5 none)  1.014-1.019 |   339.11-1502.21
+    Churaev [1] tube r 547-998          1.01-1.03 |   0.02-0.12   0.03-0.16     -0.04-0.06 | - (+3 none)  1.003-1.006 |     15.45-122.24
+    Haneveld [3] slit H 10.5                 1.32 |        1.32        1.73           0.86 |        3.08        1.704 |             none
+    Haneveld [3] slit H 22.4                 1.11 |        0.47        0.62           0.26 |        1.51        1.272 |             1.66
+    Haneveld [3] slit H 46                   1.02 |        0.08        0.11          -0.08 |   - (1 <=1)        1.122 |             0.17
+    Tas [2] slit H 53                   1.19-1.26 |   0.78-1.09   1.03-1.43      0.33-0.64 | - (+5 none)  1.102-1.106 | 48.76-1330.68 (+1 none)
+    Tas [2] slit H 102-161              1.03-1.14 |   0.14-0.56   0.18-0.74     -0.31-0.11 | 89.04 (+8 none)  1.033-1.053 |       5.40-58.94
+    Tas [2] 0.1 M NaCl slit H 53-161    0.99-1.04 |  -0.06-0.19  -0.08-0.24    -0.51--0.27 | 1.17-1.64 (7 <=1)  1.033-1.105 |        0.00-1.51
+    Li [6] plate H 25-415               0.94-1.12 |  -0.26-0.48  -0.34-0.63     -0.41-0.05 | 2.02 (4 <=1)  1.013-1.240 |        0.00-2.21
+    Kazoe [4] plate H 234                    1.31 |        1.28        1.69           1.01 | - (+1 none)        1.023 |             none
+    Kazoe [4] plate H 417-745           0.90-1.10 |  -0.42-0.41  -0.56-0.54     -0.84-0.04 | - (+1 none) (1 <=1)  1.007-1.013 |     0.00-1299.73
+    Kazoe [5] square Dh 73                   4.74 |       15.38       20.22          13.23 | - (+1 none)        1.095 |             none
+    Kazoe [5] square Dh 119                  5.55 |       18.73       24.62          16.71 | - (+1 none)        1.058 |             none
+    Kazoe [4] square Dh 190                  3.60 |       10.71       14.07           8.21 | - (+1 none)        1.036 |             none
+    Li [6] square Dh 200                     2.47 |        6.06        7.96           5.21 | - (+1 none)        1.035 |             none
+    Li [6] square Dh 393                     1.76 |        3.14        4.13           2.44 | - (+1 none)        1.018 |             none
+    Kazoe [4] square Dh 394                  2.80 |        7.43        9.76           6.55 | - (+1 none)        1.018 |             none
+    Li [6] square Dh 491                     1.89 |        3.66        4.81           3.06 | - (+1 none)        1.014 |             none
+    Kazoe [4] square Dh 760-1691        1.13-1.21 |   0.55-0.87   0.72-1.14      0.45-0.46 | - (+2 none)  1.004-1.009 | 2741.71-5392.87 *2
+    Li [6] square Dh 838-1530           0.85-1.12 |  -0.60-0.49  -0.79-0.65     -0.76-0.20 | - (+1 none) (2 <=1)  1.005-1.008 | 142.56-2791.03 *2
+
+    Notes: g (zeta) for squares uses the large-size law and is only indicative where marked *n (the law requires lambda D_h >= 30); 'none' = measured value at or above the bound, which no zeta can exceed; g > 1 = longer spin length.
+
+(a') Per member (299 K / 284 K): measured, f_bound, status of f_pred
+    R001 Churaev [1] tube r 41-60       tube    53.0 nm meas  1.407 +- 0.015 | f_bound   1.68 /   2.20 | no finite f; ceiling 1.068; 284 K: none (ceiling 1.071)
+    R002 Churaev [1] tube r 41-60       tube    59.8 nm meas  1.361 +- 0.015 | f_bound   1.49 /   1.95 | no finite f; ceiling 1.060; 284 K: none (ceiling 1.063)
+    R003 Churaev [1] tube r 41-60       tube    41.2 nm meas  1.339 +- 0.015 | f_bound   1.40 /   1.83 | no finite f; ceiling 1.089; 284 K: none (ceiling 1.093)
+    R004 Churaev [1] tube r 181-255     tube   181.0 nm meas  1.192 +- 0.015 | f_bound   0.79 /   1.04 | no finite f; ceiling 1.019; 284 K: none (ceiling 1.020)
+    R005 Churaev [1] tube r 181-255     tube   199.5 nm meas  1.130 +- 0.015 | f_bound   0.54 /   0.70 | no finite f; ceiling 1.018; 284 K: none (ceiling 1.018)
+    R006 Churaev [1] tube r 181-255     tube   225.6 nm meas  1.159 +- 0.015 | f_bound   0.65 /   0.86 | no finite f; ceiling 1.016; 284 K: none (ceiling 1.016)
+    R007 Churaev [1] tube r 181-255     tube   241.6 nm meas  1.101 +- 0.015 | f_bound   0.42 /   0.55 | no finite f; ceiling 1.014; 284 K: none (ceiling 1.015)
+    R008 Churaev [1] tube r 181-255     tube   255.1 nm meas  1.125 +- 0.015 | f_bound   0.51 /   0.68 | no finite f; ceiling 1.014; 284 K: none (ceiling 1.014)
+    R009 Churaev [1] tube r 547-998     tube   547.1 nm meas  1.030 +- 0.015 | f_bound   0.12 /   0.16 | no finite f; ceiling 1.006; 284 K: none (ceiling 1.007)
+    R010 Churaev [1] tube r 547-998     tube   739.9 nm meas  1.013 +- 0.015 | f_bound   0.05 /   0.07 | no finite f; ceiling 1.005; 284 K: none (ceiling 1.005)
+    R011 Churaev [1] tube r 547-998     tube   997.5 nm meas  1.006 +- 0.015 | f_bound   0.02 /   0.03 | no finite f; ceiling 1.003; 284 K: none (ceiling 1.004)
+    R046 Haneveld [3] slit H 10.5       slit    10.5 nm meas  1.320 +- 0.110 | f_bound   1.32 /   1.73 | f_pred 299 K = 3.08; 284 K: 3.78
+    R047 Haneveld [3] slit H 22.4       slit    22.4 nm meas  1.114 +- 0.050 | f_bound   0.47 /   0.62 | f_pred 299 K = 1.51; 284 K: 1.84
+    R048 Haneveld [3] slit H 46         slit    46.0 nm meas  1.020 +- 0.040 | f_bound   0.08 /   0.11 | f_pred <= 1 (data at or below BC1 prediction); 284 K: <=1
+    R049 Tas [2] slit H 53              slit    52.6 nm meas  1.265 +- 0.110 | f_bound   1.09 /   1.43 | no finite f; ceiling 1.106; 284 K: none (ceiling 1.110)
+    R050 Tas [2] slit H 53              slit    54.3 nm meas  1.240 +- 0.110 | f_bound   0.99 /   1.30 | no finite f; ceiling 1.102; 284 K: none (ceiling 1.107)
+    R051 Tas [2] slit H 53              slit    52.7 nm meas  1.205 +- 0.110 | f_bound   0.84 /   1.11 | no finite f; ceiling 1.105; 284 K: none (ceiling 1.110)
+    R052 Tas [2] slit H 53              slit    52.6 nm meas  1.190 +- 0.110 | f_bound   0.78 /   1.03 | no finite f; ceiling 1.106; 284 K: none (ceiling 1.110)
+    R070 Tas [2] slit H 53              slit    53.0 nm meas  1.240 +- 0.110 | f_bound   0.99 /   1.30 | no finite f; ceiling 1.105; 284 K: none (ceiling 1.110)
+    R053 Tas [2] slit H 102-161         slit   104.5 nm meas  1.137 +- 0.110 | f_bound   0.56 /   0.74 | no finite f; ceiling 1.051; 284 K: none (ceiling 1.054)
+    R054 Tas [2] slit H 102-161         slit   102.4 nm meas  1.067 +- 0.110 | f_bound   0.28 /   0.36 | no finite f; ceiling 1.053; 284 K: none (ceiling 1.055)
+    R055 Tas [2] slit H 102-161         slit   110.9 nm meas  1.099 +- 0.110 | f_bound   0.41 /   0.54 | no finite f; ceiling 1.048; 284 K: none (ceiling 1.050)
+    R056 Tas [2] slit H 102-161         slit   111.2 nm meas  1.058 +- 0.110 | f_bound   0.24 /   0.31 | no finite f; ceiling 1.048; 284 K: none (ceiling 1.050)
+    R057 Tas [2] slit H 102-161         slit   152.6 nm meas  1.076 +- 0.110 | f_bound   0.31 /   0.41 | no finite f; ceiling 1.035; 284 K: none (ceiling 1.036)
+    R058 Tas [2] slit H 102-161         slit   154.9 nm meas  1.060 +- 0.110 | f_bound   0.25 /   0.32 | no finite f; ceiling 1.034; 284 K: none (ceiling 1.036)
+    R059 Tas [2] slit H 102-161         slit   161.2 nm meas  1.086 +- 0.110 | f_bound   0.35 /   0.47 | no finite f; ceiling 1.033; 284 K: none (ceiling 1.034)
+    R060 Tas [2] slit H 102-161         slit   152.7 nm meas  1.034 +- 0.110 | f_bound   0.14 /   0.18 | f_pred 299 K = 89.04; 284 K: 40.11
+    R071 Tas [2] slit H 102-161         slit   152.0 nm meas  1.070 +- 0.060 | f_bound   0.29 /   0.38 | no finite f; ceiling 1.035; 284 K: none (ceiling 1.037)
+    R061 Tas [2] 0.1 M NaCl slit H 53-1 slit    52.9 nm meas  1.045 +- 0.110 | f_bound   0.19 /   0.24 | f_pred 299 K = 1.17; 284 K: 1.41
+    R062 Tas [2] 0.1 M NaCl slit H 53-1 slit    54.4 nm meas  1.038 +- 0.110 | f_bound   0.16 /   0.21 | f_pred <= 1 (data at or below BC1 prediction); 284 K: 1.04
+    R063 Tas [2] 0.1 M NaCl slit H 53-1 slit    52.7 nm meas  1.003 +- 0.110 | f_bound   0.01 /   0.02 | f_pred <= 1 (data at or below BC1 prediction); 284 K: <=1
+    R064 Tas [2] 0.1 M NaCl slit H 53-1 slit   102.2 nm meas  1.027 +- 0.110 | f_bound   0.11 /   0.15 | f_pred 299 K = 1.64; 284 K: 1.94
+    R065 Tas [2] 0.1 M NaCl slit H 53-1 slit   104.6 nm meas  1.015 +- 0.110 | f_bound   0.06 /   0.08 | f_pred <= 1 (data at or below BC1 prediction); 284 K: <=1
+    R066 Tas [2] 0.1 M NaCl slit H 53-1 slit   110.9 nm meas  0.999 +- 0.110 | f_bound  -0.01 /  -0.01 | f_pred <= 1 (data at or below BC1 prediction); 284 K: <=1
+    R067 Tas [2] 0.1 M NaCl slit H 53-1 slit   152.4 nm meas  0.994 +- 0.110 | f_bound  -0.02 /  -0.03 | f_pred <= 1 (data at or below BC1 prediction); 284 K: <=1
+    R068 Tas [2] 0.1 M NaCl slit H 53-1 slit   155.0 nm meas  0.986 +- 0.110 | f_bound  -0.06 /  -0.08 | f_pred <= 1 (data at or below BC1 prediction); 284 K: <=1
+    R069 Tas [2] 0.1 M NaCl slit H 53-1 slit   161.0 nm meas  1.002 +- 0.110 | f_bound   0.01 /   0.01 | f_pred <= 1 (data at or below BC1 prediction); 284 K: <=1
+    R040 Li [6] plate H 25-415          slit    25.0 nm meas  1.117 +- 0.104 | f_bound   0.48 /   0.63 | f_pred 299 K = 2.02; 284 K: 2.42
+    R041 Li [6] plate H 25-415          slit    50.0 nm meas  1.043 +- 0.037 | f_bound   0.18 /   0.23 | f_pred <= 1 (data at or below BC1 prediction); 284 K: 1.14
+    R042 Li [6] plate H 25-415          slit   100.0 nm meas  0.970 +- 0.058 | f_bound  -0.12 /  -0.16 | f_pred <= 1 (data at or below BC1 prediction); 284 K: <=1
+    R043 Li [6] plate H 25-415          slit   189.0 nm meas  0.963 +- 0.032 | f_bound  -0.15 /  -0.20 | f_pred <= 1 (data at or below BC1 prediction); 284 K: <=1
+    R044 Li [6] plate H 25-415          slit   415.0 nm meas  0.938 +- 0.038 | f_bound  -0.26 /  -0.34 | f_pred <= 1 (data at or below BC1 prediction); 284 K: <=1
+    R077 Kazoe [4] plate H 234          slit   234.0 nm meas  1.312 +- 0.067 | f_bound   1.28 /   1.69 | no finite f; ceiling 1.023; 284 K: none (ceiling 1.024)
+    R078 Kazoe [4] plate H 417-745      slit   417.0 nm meas  0.897 +- 0.101 | f_bound  -0.42 /  -0.56 | f_pred <= 1 (data at or below BC1 prediction); 284 K: <=1
+    R079 Kazoe [4] plate H 417-745      slit   745.0 nm meas  1.099 +- 0.090 | f_bound   0.41 /   0.54 | no finite f; ceiling 1.007; 284 K: none (ceiling 1.007)
+    R080 Kazoe [5] square Dh 73         sq      73.0 nm meas  4.736 +- 0.523 | f_bound  15.38 /  20.22 | no finite f; ceiling 1.095; 284 K: none (ceiling 1.099)
+    R081 Kazoe [5] square Dh 119        sq     119.0 nm meas  5.549 +- 0.492 | f_bound  18.73 /  24.62 | no finite f; ceiling 1.058; 284 K: none (ceiling 1.061)
+    R072 Kazoe [4] square Dh 190        sq     190.0 nm meas  3.600 +- 0.606 | f_bound  10.71 /  14.07 | no finite f; ceiling 1.036; 284 K: none (ceiling 1.038)
+    R034 Li [6] square Dh 200           sq     200.0 nm meas  2.471 +- 0.205 | f_bound   6.06 /   7.96 | no finite f; ceiling 1.035; 284 K: none (ceiling 1.036)
+    R035 Li [6] square Dh 393           sq     393.0 nm meas  1.763 +- 0.171 | f_bound   3.14 /   4.13 | no finite f; ceiling 1.018; 284 K: none (ceiling 1.018)
+    R073 Kazoe [4] square Dh 394        sq     394.0 nm meas  2.804 +- 0.213 | f_bound   7.43 /   9.76 | no finite f; ceiling 1.018; 284 K: none (ceiling 1.018)
+    R036 Li [6] square Dh 491           sq     491.0 nm meas  1.888 +- 0.144 | f_bound   3.66 /   4.81 | no finite f; ceiling 1.014; 284 K: none (ceiling 1.015)
+    R074 Kazoe [4] square Dh 760-1691   sq     760.0 nm meas  1.211 +- 0.101 | f_bound   0.87 /   1.14 | no finite f; ceiling 1.009; 284 K: none (ceiling 1.010)
+    R075 Kazoe [4] square Dh 760-1691   sq    1691.0 nm meas  1.133 +- 0.022 | f_bound   0.55 /   0.72 | no finite f; ceiling 1.004; 284 K: none (ceiling 1.004)
+    R037 Li [6] square Dh 838-1530      sq     838.0 nm meas  1.120 +- 0.072 | f_bound   0.49 /   0.65 | no finite f; ceiling 1.008; 284 K: none (ceiling 1.009)
+    R038 Li [6] square Dh 838-1530      sq    1112.0 nm meas  0.855 +- 0.038 | f_bound  -0.60 /  -0.79 | f_pred <= 1 (data at or below BC1 prediction); 284 K: <=1
+    R039 Li [6] square Dh 838-1530      sq    1530.0 nm meas  0.976 +- 0.034 | f_bound  -0.10 /  -0.13 | f_pred <= 1 (data at or below BC1 prediction); 284 K: <=1
+
+(d) Joint change: factor on eta_r (f) needed to reach the measured value for a prescribed factor g on zeta (299 K).
+    g < 1: longer spin length (larger lambda^-1); g > 1: shorter. Per group the range over members; 'none' = measured above the ceiling for that g.
+    group                                        g=0.25            g=1.0            g=4.0           g=16.0
+    Churaev [1] tube r 41-60                    -+3none          -+3none          -+3none      13.62+2none
+    Churaev [1] tube r 181-255                  -+5none          -+5none          -+5none          -+5none
+    Churaev [1] tube r 547-998                  -+3none          -+3none      11.83+2none  3.79+1none+1<=1
+    Haneveld [3] slit H 10.5                    -+1none             3.08             1.61             1.38
+    Haneveld [3] slit H 22.4                      23.00             1.51           -+1<=1           -+1<=1
+    Haneveld [3] slit H 46                       -+1<=1           -+1<=1           -+1<=1           -+1<=1
+    Tas [2] slit H 53                           -+5none          -+5none 13.28-25.84+3none        1.65-3.21
+    Tas [2] slit H 102-161                      -+9none      89.04+8none 1.42-272.61+3none   1.15-3.39+3<=1
+    Tas [2] 0.1 M NaCl slit H 53-161   2.36-16.13+1none+5<=1   1.17-1.64+7<=1           -+9<=1           -+9<=1
+    Li [6] plate H 25-415               7.90+1none+3<=1        2.02+4<=1           -+5<=1           -+5<=1
+    Kazoe [4] plate H 234                       -+1none          -+1none          -+1none          -+1none
+    Kazoe [4] plate H 417-745              -+1none+1<=1     -+1none+1<=1     -+1none+1<=1     -+1none+1<=1
+    Kazoe [5] square Dh 73                      -+1none          -+1none          -+1none          -+1none
+    Kazoe [5] square Dh 119                     -+1none          -+1none          -+1none          -+1none
+    Kazoe [4] square Dh 190                     -+1none          -+1none          -+1none          -+1none
+    Li [6] square Dh 200                        -+1none          -+1none          -+1none          -+1none
+    Li [6] square Dh 393                        -+1none          -+1none          -+1none          -+1none
+    Kazoe [4] square Dh 394                     -+1none          -+1none          -+1none          -+1none
+    Li [6] square Dh 491                        -+1none          -+1none          -+1none          -+1none
+    Kazoe [4] square Dh 760-1691                -+2none          -+2none          -+2none          -+2none
+    Li [6] square Dh 838-1530              -+1none+2<=1     -+1none+2<=1     -+1none+2<=1     -+1none+2<=1
+
+(e) Headline numbers
+    tubes r = 41-60 nm (Churaev, ~20 C): f_bound = 1.40-1.68 (299 K), 1.83-2.20 (284 K); needed eta_r/eta0 = 0.339-0.407 (MD 0.185-0.243)
+    tubes r = 41-60 nm: BC1 prediction reaches the measured value at f = none (ceiling 1.068), none (ceiling 1.060), none (ceiling 1.089) (299 K); ceiling of the tube BC1 prediction at r = 41-60 nm: 1.060-1.089
+    squares D_h <= 491 nm (n = 7): f_bound = 3.1-18.7 (299 K), 4.1-24.6 (284 K) (19-25 for the single largest value 5.55); no finite f_pred for any of them: True; ceilings 1.014-1.095 vs measured 1.76-5.55
+    Tas slits H = 53 nm: f_bound 0.78-1.09 (299 K), 1.03-1.43 (284 K); f_pred -
+    Haneveld 10.5 nm slit: f_bound 1.32 (299 K) / 1.73 (284 K); f_pred 3.08 (f)
+    Kazoe plate 234 nm: f_bound 1.28 (299 K) / 1.69 (284 K); f_pred 1.02 (none)
+    Churaev tubes r = 181-255 nm: measured 1.10-1.19; f_bound 0.42-0.79; f_pred -
+
+(f) Finite-difference checks of the square large-size law (299 K coefficients; stretched grid N = 160; solved one after the other)
+    D_h =    73 nm, f =    1 (mu = +0.530, kappa = 0.340 mPa s, lambda D_h = 37.3): FD 1.03975  law 1.04195  diff -0.00220
+    D_h =    73 nm, f =    3 (mu = +0.190, kappa = 1.020 mPa s, lambda D_h = 54.7): FD 1.06160  law 1.06162  diff -0.00001
+    D_h =    73 nm, f =   20 (mu = -2.700, kappa = 6.800 mPa s, lambda D_h = 76.8): FD 1.09136  law 1.08643  diff +0.00493
+    D_h =   119 nm, f =    1 (mu = +0.530, kappa = 0.340 mPa s, lambda D_h = 60.7): FD 1.02495  law 1.02574  diff -0.00079
+    D_h =   119 nm, f =    3 (mu = +0.190, kappa = 1.020 mPa s, lambda D_h = 89.2): FD 1.03789  law 1.03780  diff +0.00009
+    D_h =   119 nm, f =   20 (mu = -2.700, kappa = 6.800 mPa s, lambda D_h = 125.1): FD 1.05528  law 1.05302  diff +0.00226
+    ceiling of the square law (f -> infinity): 1 + 8/(lambda_inf D_h), lambda_inf = 2 sqrt(eta0/zeta) = 1.1547 /nm: D_h = 73 nm 1.0949; 119 nm 1.0582

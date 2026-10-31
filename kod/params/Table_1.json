@@ -1,0 +1,18 @@
+{
+ "label": "Table 1",
+ "script": "water_slip_length.py; check_hansen2010_table_eq23.py",
+ "parameters": {
+  "source": "Hansen et al. 2010 Table II (SPC/Fw), 284-299 K",
+  "map": "mu = eta0 - eta_r, kappa = 2 eta_r, gamma = zeta0 + zeta_r"
+ },
+ "domain": "not applicable",
+ "mesh": "closed form",
+ "tolerances": "exact arithmetic",
+ "initial_guess": "not applicable",
+ "software": {
+  "python": "3.12.10",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1"
+ },
+ "date": "2026-10-31"
+}

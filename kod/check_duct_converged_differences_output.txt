@@ -1,0 +1,59 @@
+Square duct, BC1 wall, mu = gamma = 1; grids N = 80/160/320; Richardson with formal p = 2 (R2) and observed p (Rp)
+
+(d) tanh stretching parameter s = stretch_for(lambda a): s = 0 for lambda a <= 3, else min(3, 0.8 + 0.5 ln(lambda a));
+    grid x = (L/2)[1 + tanh(s xi)/tanh(s)], xi uniform in [-1, 1] (micropolar_duct_2d.grid1d)
+    lambda a =    1: s = 0.0000
+    lambda a =   10: s = 1.9513
+    lambda a =   30: s = 2.5006
+    lambda a =  100: s = 3.0000
+
+(c) Table 2: columns N = 40, 80, 160 and the last column; R from (80, 160) with p = 2
+    lam*a k/mu |  N=40        N=80        N=160       N=320      | p(40,80,160) p(80,160,320) | R(80,160;p=2)  |mu160-R| | R2(80..320)  Rp(80..320)  |mu160-R2| |mu160-Rp|
+        1   1.0 | 1.99233787 1.99232524 1.99232209 1.99232130 |   2.00   2.00 | 1.99232104 | 1.05e-06 | 1.99232104 1.99232104 1.05e-06 1.05e-06
+       10   1.0 | 1.74587096 1.74510301 1.74491026 1.74486203 |   1.99   2.00 | 1.74484601 | 6.42e-05 | 1.74484595 1.74484593 6.43e-05 6.43e-05
+      100   1.0 | 1.53075747 1.52986004 1.52963113 1.52957362 |   1.97   1.99 | 1.52955483 | 7.63e-05 | 1.52955445 1.52955432 7.67e-05 7.68e-05
+       10  10.0 | 8.07371107 8.06361195 8.06107279 8.06043710 |   1.99   2.00 | 8.06022641 | 8.46e-04 | 8.06022520 8.06022480 8.48e-04 8.48e-04
+    Table 2 last column (printed): 1.1e-06, 6.4e-05, 7.6e-05, 8.5e-04.
+    |mu160 - R| for every row, three variants:
+    lambda a = 1, k/mu = 1.0: (80,160) p = 2 -> 1.05e-06; (80,160,320) p = 2 -> 1.05e-06; (80,160,320) observed p = 2.000 -> 1.05e-06; (40,80,160) observed p = 2.002 -> 1.05e-06
+    lambda a = 10, k/mu = 1.0: (80,160) p = 2 -> 6.42e-05; (80,160,320) p = 2 -> 6.43e-05; (80,160,320) observed p = 1.999 -> 6.43e-05; (40,80,160) observed p = 1.994 -> 6.46e-05
+    lambda a = 100, k/mu = 1.0: (80,160) p = 2 -> 7.63e-05; (80,160,320) p = 2 -> 7.67e-05; (80,160,320) observed p = 1.993 -> 7.68e-05; (40,80,160) observed p = 1.971 -> 7.84e-05
+    lambda a = 10, k/mu = 10.0: (80,160) p = 2 -> 8.46e-04; (80,160,320) p = 2 -> 8.48e-04; (80,160,320) observed p = 1.998 -> 8.48e-04; (40,80,160) observed p = 1.992 -> 8.53e-04
+
+(a) FD (Richardson) against Eq. (19): mu_app/(mu+kappa/2) vs 1 + 4 kappa/[(mu+kappa) lambda a]
+    lam*a k/mu |  FD(R2)      FD(Rp)     law        | abs diff (R2)  abs diff (Rp) | rel diff (R2)  rel diff (Rp) | N=160 single grid abs
+       30  0.41 | 1.035707 1.035707 1.038771 | 3.06e-03      3.06e-03     | 2.96e-03      2.96e-03     | 3.03e-03
+       30  1.00 | 1.063083 1.063083 1.066667 | 3.58e-03      3.58e-03     | 3.37e-03      3.37e-03     | 3.52e-03
+       30 10.00 | 1.121228 1.121228 1.121212 | 1.62e-05      1.60e-05     | 1.44e-05      1.43e-05     | 1.98e-04
+      100  0.41 | 1.011359 1.011359 1.011631 | 2.72e-04      2.72e-04     | 2.69e-04      2.69e-04     | 2.46e-04
+      100  1.00 | 1.019703 1.019703 1.020000 | 2.97e-04      2.97e-04     | 2.91e-04      2.91e-04     | 2.46e-04
+      100 10.00 | 1.036447 1.036446 1.036364 | 8.29e-05      8.27e-05     | 8.00e-05      7.98e-05     | 2.16e-04
+    largest over kappa/mu at lambda a = 30: absolute 3.58e-03, relative 3.37e-03   (single grid N = 160: 3.5e-3 and 2.5e-4)
+    largest over kappa/mu at lambda a = 100: absolute 2.97e-04, relative 2.91e-04   (single grid N = 160: 3.5e-3 and 2.5e-4)
+
+(b) alpha+beta in {0, -0.9 gamma, 10 gamma}: change of mu_app relative to alpha+beta = 0
+    absolute = |mu_app(c) - mu_app(0)| (units of mu = 1); relative = absolute / mu_app(0); converged = Richardson (R2) of N = 80/160/320
+    lam*a k/mu |  c/gamma  mu_app(0) conv | abs conv     rel conv   | rel single N=80
+       30  0.10 |   -0.9   1.061431        | 4.52e-05   4.26e-05   | 4.27e-05
+       30  0.10 |   10.0   1.061431        | 8.56e-05   8.06e-05   | 8.39e-05
+       30  0.41 |   -0.9   1.248027        | 1.54e-04   1.23e-04   | 1.24e-04
+       30  0.41 |   10.0   1.248027        | 2.99e-04   2.40e-04   | 2.50e-04
+       30  1.00 |   -0.9   1.594625        | 2.99e-04   1.87e-04   | 1.88e-04
+       30  1.00 |   10.0   1.594625        | 5.98e-04   3.75e-04   | 3.94e-04
+       30 10.00 |   -0.9   6.727370        | 1.66e-03   2.46e-04   | 2.49e-04
+       30 10.00 |   10.0   6.727370        | 3.55e-03   5.28e-04   | 5.65e-04
+      100  0.10 |   -0.9   1.053698        | 2.05e-06   1.95e-06   | 1.97e-06
+      100  0.10 |   10.0   1.053698        | 5.35e-06   5.08e-06   | 5.32e-06
+      100  0.41 |   -0.9   1.218688        | 6.61e-06   5.42e-06   | 5.48e-06
+      100  0.41 |   10.0   1.218688        | 1.74e-05   1.43e-05   | 1.51e-05
+      100  1.00 |   -0.9   1.529554        | 1.21e-05   7.89e-06   | 8.00e-06
+      100  1.00 |   10.0   1.529554        | 3.23e-05   2.11e-05   | 2.25e-05
+      100 10.00 |   -0.9   6.218679        | 5.88e-05   9.46e-06   | 9.69e-06
+      100 10.00 |   10.0   6.218679        | 1.62e-04   2.61e-05   | 2.87e-05
+    largest at lambda a = 30 (kappa/mu = 0.1, 0.41, 1, 10): absolute 3.55e-03, relative (converged) 5.28e-04, relative single N=80 5.65e-04
+    largest at lambda a = 100 (kappa/mu = 0.1, 0.41, 1, 10): absolute 1.62e-04, relative (converged) 2.61e-05, relative single N=80 2.87e-05
+    spread metric (max - min)/min over the three alpha+beta values, kappa/mu = 0.1, 0.41, 1, 10: lambda a = 30: converged 7.75e-04; single grid N = 80 8.14e-04
+    spread metric (max - min)/min over the three alpha+beta values, kappa/mu = 0.1, 0.41, 1, 10: lambda a = 100: converged 3.55e-05; single grid N = 80 3.84e-05
+    (the quoted 8.1e-04 and 3.8e-05 are this spread metric on N = 80 for kappa/mu = 0.1, 1, 10 (without 0.41); it is not relative to mu_app(alpha+beta = 0).)
+
+[total time 1039 s]

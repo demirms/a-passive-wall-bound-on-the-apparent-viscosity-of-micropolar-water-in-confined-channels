@@ -1,0 +1,53 @@
+# run_all.txt -- scripts that produce the numbers, tables and figures of the manuscript, in run order
+# Output folders (relative to the repository root): the data table is written to ../01_arastirma/veri_tablosu.csv
+# (digitize_capillary_data.py) and the figures to ../sekil/ (fig_*.py); both folders are created if missing.
+cikti: cikti
+cikti: ../01_arastirma
+cikti: ../sekil
+# Source PDFs (../literatur/) are copyrighted and NOT distributed. Four scripts need them and, without them,
+# stop with "SKIPPED: source PDF required, not distributed" and keep their saved output files:
+#   check_hansen2010_slit_discrepancy.py, check_khanukaeva2023_walls.py (section D only),
+#   check_digitization_accuracy.py, bondarenko2024_fig12_digitize.py
+# girdi: ../literatur      (enable locally when the PDFs are present)
+digitize_capillary_data.py
+check_dissipation_unidirectional.py
+check_slit_wall_conditions.py
+check_slit_asymptotics.py
+hansen2010_md_vs_deryagin.py
+check_hansen2010_table_eq23.py
+migun_fit_corrected_check.py  after: hansen2010_md_vs_deryagin.py
+check_kazoe_resistance_formula.py
+micropolar_duct_2d.py
+check_tube_m3_bound.py
+water_slip_length.py  after: micropolar_duct_2d.py, digitize_capillary_data.py
+temperature_comparison.py  after: hansen2010_md_vs_deryagin.py, digitize_capillary_data.py
+compare_data_md_bound.py  after: hansen2010_md_vs_deryagin.py, digitize_capillary_data.py
+paper_numbers.py  after: micropolar_duct_2d.py, water_slip_length.py
+fig_tube_wall_family.py
+fig_size_bounds.py  after: micropolar_duct_2d.py
+fig_data_size.py  after: digitize_capillary_data.py
+fig_data_temperature.py  after: digitize_capillary_data.py
+params_tables.py
+check_extended_tables.py  after: micropolar_duct_2d.py
+check_hansen2010_mapping.py
+check_hansen2010_slit_discrepancy.py
+check_tube_nonaxisymmetric_modes.py
+check_khanukaeva2023_walls.py
+check_duct_converged_differences.py  after: micropolar_duct_2d.py
+check_temperature_envelope.py  after: micropolar_duct_2d.py, digitize_capillary_data.py
+data_table3_extended.py  after: micropolar_duct_2d.py, digitize_capillary_data.py
+data_group_sensitivity.py  after: data_table3_extended.py
+data_measurement_factors.py
+data_public_table.py  after: data_table3_extended.py
+data_table3_markdown.py  after: data_table3_extended.py
+check_digitization_accuracy.py  after: digitize_capillary_data.py, water_slip_length.py
+tube_joint_eta_r_zeta.py  after: data_group_sensitivity.py, data_table3_extended.py
+data_points_above_bound.py  after: data_table3_extended.py, digitize_capillary_data.py
+bondarenko2024_fig12_digitize.py  after: data_table3_extended.py, micropolar_duct_2d.py
+check_wall_power_sign_conventions.py
+check_bc4_slip_order.py
+check_tube_fourier_orthogonality.py
+khanukaeva_n07_beta_power.py
+square_ceiling_fd_check.py  after: micropolar_duct_2d.py
+wu2017_interfacial_viscosity_200nm.py
+# Helper modules imported by the scripts above: paper_common.py, params_writer.py (writes params/*.json)

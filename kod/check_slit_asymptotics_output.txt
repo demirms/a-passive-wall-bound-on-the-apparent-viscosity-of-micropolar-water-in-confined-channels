@@ -1,0 +1,4 @@
+A1 large-gap identity residual: 0
+A2 narrow-gap series mu_app = (kappa/15 + mu/15)*(-kappa*x**2 + 15*kappa + 30*mu)/(kappa + 2*mu)
+A2 series at x=0 minus (mu+k): 0
+A2 series minus (mu+k)(1 - k x^2/(15(2mu+k))): 0

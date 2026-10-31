@@ -1,0 +1,23 @@
+{
+ "label": "Fig. 4",
+ "script": "fig_data_size.py",
+ "parameters": {
+  "eta0 [mPa s]": 0.7,
+  "eta_r [mPa s]": 0.17,
+  "zeta0+zeta_r [mPa s nm^2]": 2.1,
+  "T [K]": 299,
+  "wall": "BC1",
+  "bound band": "284-299 K, Hansen 2010 Table II"
+ },
+ "domain": "tube, slit: closed forms; square: 2D cross-section, finite differences for D_h <= 200 nm, large-size law 1 + c/D_h beyond",
+ "mesh": "square: stretched grid, 160 x 160 intervals; tube, slit: closed forms",
+ "tolerances": "square law within 3e-4 of the 2D solver at D_h = 200 nm (junction, printed in the output)",
+ "initial_guess": "not applicable",
+ "software": {
+  "python": "3.12.10",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "matplotlib": "3.11.2"
+ },
+ "date": "2026-10-31"
+}

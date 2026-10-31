@@ -1,0 +1,75 @@
+==============================================================================
+Part A. Energy identity in a general section (Eringen conventions, outward normal)
+==============================================================================
+A0 d/dz of the axial flux t_zl v_l + m_zl nu_l = G*w(x, y)   (expected G*w)
+A1 residual div_xy(t.v + m.nu) + G w - [Phi_E + v.(div t) + nu.(div m + eps:t)] = 0
+A2 residual Phi_E - [Eq. (5) + 2 kappa nu_z^2 + gamma |grad nu_z|^2] = 0
+A3 residual t_kz,k - LHS Eq. (3) = 0
+A4 residual angular momentum (4.9) x, y - LHS Eq. (4) = 0, 0
+A4' axial spin: (4.9)_z = gamma Lap nu_z - 2 kappa nu_z, residual 0
+   -> A1 integrated over the section with the divergence theorem and the OUTWARD normal n:
+      oint (t_kl n_k v_l + m_kl n_k nu_l) ds = int Phi dA - G Q + int R dA;
+      no-slip (v = 0) removes the first term, R = 0 for a solution: int Phi = G Q + oint m_(n).nu ds  (Eq. 8).
+A5 exact test, square [-1,1]^2, polynomial fields, (mu,kappa,alpha,beta,gamma,G) = (7/5,3/4,1/3,-1/5,9/7,5/2):
+   int Phi = 633555017/27783000 = 22.8036935176
+   G Q     = 4.00000000000
+   oint m_(n).nu ds, outward n = 8.98258071483   (inward n: -8.98258071483)
+   int R dA (balance residuals of the test field) = -9.82111280279
+   residual int Phi - G Q - oint P + int R, outward normal: 0
+   same with the inward normal (wrong orientation): 17.9651614297  (not zero)
+   w on the four edges: [0, 0, 0, 0]
+
+==============================================================================
+Part B. BC3 wall power, limits, and the functional with the wall term
+==============================================================================
+B1 P = m_(n).nu with nu = -(l_s/gamma) m_(n): P = l_s*(-m_x**2 - m_y**2 - m_z**2)/gamma_p
+   residual P + (l_s/gamma)|m|^2 = 0
+   residual P + (gamma/l_s)|nu|^2 = 0
+   P <= 0 for l_s > 0 and gamma > 0 (a negative multiple of a sum of squares).
+   limit l_s -> 0 at fixed m_(n): nu -> [0, 0, 0],  P -> 0  (BC1: nu = 0, P = 0)
+   limit l_s -> oo at fixed nu: m_(n) -> [0, 0, 0],  P -> 0  (BC4: m_(n) = 0, P = 0)
+B2a symmetry Phi_bil(X,Y) - Phi_bil(Y,X) = 0
+B2b residual div_xy(t[X].v[Y] + m[X].nu[Y]) - [Phi_bil(X,Y) + v[Y].div t[X] + nu[Y].(div m[X] + eps:t[X])] = 0
+   -> for a solution X and a variation Y with u = 0 on the wall:
+      d/de [2G int(w+e u) - int Phi(X+eY) - (gamma/l_s) oint |nu+e phi|^2]_(e=0)
+        = -2 oint (m_(n)[X] + (gamma/l_s) nu) . phi ds,
+      so the natural wall condition is m_(n) = -(gamma/l_s) nu, i.e. nu = -(l_s/gamma) m_(n) = BC3 (sign checked in B1).
+   value at the solution: 2GQ - int Phi - (gamma/l_s) oint|nu|^2 with int Phi = GQ - (gamma/l_s) oint|nu|^2: J - GQ = 0
+
+==============================================================================
+Part C. BC2 in the tube: wall power and its sign
+==============================================================================
+C1 residual m_kl n_k nu_l - nu (gamma nu' - beta nu/R) at r = R (outward n = e_r): 0
+   div nu for nu(r) e_theta = 0 (alpha does not enter)
+C2 tube, closed form nu = G r e/2 + C I1(lam r), BC2 nu_R = n (curl v)_theta; P from d nu/dr at the wall vs Eq. (14)
+   (mu, kappa, gamma, G, R) = (1, 1, 1, 1, 1) -> lam R = sqrt(1.5); pole n_p = 1 + mu/kappa = 2
+    beta       n        s_hat       P (direct)       P (Eq. 14)  rel.diff   ODE res  sign
+      -1 -0.5000 -2.00000e-01   2.94282744e-02   2.94282744e-02   1.0e-31   2.5e-32  ACTIVE P>0
+      -1  0.0000  0.00000e+00   0.00000000e+00   0.00000000e+00         -   1.2e-32  P=0 (BC1)
+      -1  0.0477  2.44257e-02  -3.68620903e-04  -3.68620903e-04   5.2e-31   2.5e-32  passive P<0
+      -1  0.0954  5.00745e-02   2.31456097e-34  -1.54304065e-34         -   0.0e+00  P=0 (n = n*, BC4 end)
+      -1  1.0477  1.10015e+00   6.79730873e-01   6.79730873e-01   0.0e+00   0.0e+00  ACTIVE P>0
+      -1  1.9000  1.90000e+01   2.11849012e+02   2.11849012e+02   0.0e+00   1.6e-30  ACTIVE P>0
+      -1  3.0000 -3.00000e+00   5.38390072e+00   5.38390072e+00   0.0e+00   3.9e-31  ACTIVE P>0
+   beta = -1: n* = 0.095373
+       0 -0.5000 -2.00000e-01   1.94282744e-02   1.94282744e-02   3.2e-31   2.5e-32  ACTIVE P>0
+       0  0.0000  0.00000e+00   0.00000000e+00   0.00000000e+00         -   1.2e-32  P=0 (BC1)
+       0  0.0801  4.17184e-02  -6.40221640e-04  -6.40221640e-04   7.5e-31   2.5e-32  passive P<0
+       0  0.1602  8.70692e-02   8.62324886e-34   2.68302729e-34         -   1.2e-32  P=0 (n = n*, BC4 end)
+       0  1.0801  1.17414e+00   4.31910848e-01   4.31910848e-01   2.3e-31   2.0e-31  ACTIVE P>0
+       0  1.9000  1.90000e+01   1.21599012e+02   1.21599012e+02   0.0e+00   1.6e-30  ACTIVE P>0
+       0  3.0000 -3.00000e+00   3.13390072e+00   3.13390072e+00   0.0e+00   3.9e-31  ACTIVE P>0
+   beta = 0: n* = 0.160191
+       1 -0.5000 -2.00000e-01   9.42827440e-03   9.42827440e-03   4.9e-31   2.5e-32  ACTIVE P>0
+       1  0.0000  0.00000e+00   0.00000000e+00   0.00000000e+00         -   1.2e-32  P=0 (BC1)
+       1  0.2500  1.42857e-01  -2.40517204e-03  -2.40517204e-03   3.2e-31   2.5e-32  passive P<0
+       1  0.5000  3.33333e-01   0.00000000e+00   0.00000000e+00         -   0.0e+00  P=0 (n = n*, BC4 end)
+       1  1.2500  1.66667e+00   1.96422383e-01   1.96422383e-01   2.5e-31   0.0e+00  ACTIVE P>0
+       1  1.9000  1.90000e+01   3.13490124e+01   3.13490124e+01   2.0e-31   1.6e-30  ACTIVE P>0
+       1  3.0000 -3.00000e+00   8.83900725e-01   8.83900725e-01   2.2e-31   3.9e-31  ACTIVE P>0
+   beta = 1: n* = 0.500000
+   largest relative difference P(direct) vs Eq. (14): 7.5e-31
+   -> BC2 is passive only for 0 <= n <= n*; P > 0 for n < 0, for n* < n < n_p and for n > n_p (s_hat < 0).
+   (beta = gamma gives n* = 1/2 exactly, cf. Sec. III.)
+
+runtime 2.1 s

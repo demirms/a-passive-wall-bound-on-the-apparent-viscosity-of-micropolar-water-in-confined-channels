@@ -1,0 +1,51 @@
+(i) Measured / predicted, pressure-driven rows (BC1, 299 K)
+    Kazoe [4] 394 nm, figure value: 2.45/1.008 = 2.43
+    Kazoe [4] 394 nm, Table 1 value: 2.8/1.008 = 2.78
+    Kazoe [5] 119 nm: 5.55/1.025 = 5.41
+    members (pressure-driven squares, D_h <= 491 nm): R080 (73 nm) 4.55, R081 (119 nm) 5.41, R072 (190 nm) 3.54, R073 (394 nm) 2.78
+    range 2.78-5.41   (data_table3_extended_output.txt: 2.78-5.41)
+    all squares D_h <= 491 nm (n = 7, incl. filling-type squares of Li [6]): measured/predicted 1.75-5.41
+    manuscript range '2.4-5.4': lower end 2.43 = Li [6] 200 nm (filling under applied pressure) or 2.43 = 2.45/1.008 (figure value of the 394 nm square); upper end 5.41 (Kazoe [5], 119 nm).
+    tubes r = 41-60 nm (n = 3): measured 1.339-1.407, measured/predicted 1.29-1.37 (about 1.3-1.4 in round numbers)
+
+(ii) eta_r/eta0 from the coupling number N and from kappa/mu
+    N = 0.65: N^2/(1-N^2) = 0.7316
+    kappa/mu = 5.25: (kappa/2)/(mu + kappa/2) = 0.7241
+
+(iii) excess over the 299 K bound 1.2429 in units of sigma (own uncertainty of the member), groups above the bound
+    sq: groups above the bound: Kazoe [5] square Dh 73 +6.68 sigma (1/1); Kazoe [5] square Dh 119 +8.75 sigma (1/1); Kazoe [4] square Dh 190 +3.89 sigma (1/1); Li [6] square Dh 200 +6.00 sigma (1/1); Li [6] square Dh 393 +3.04 sigma (1/1); Kazoe [4] square Dh 394 +7.33 sigma (1/1); Li [6] square Dh 491 +4.48 sigma (1/1)
+      range +3.0 ... +8.8 sigma
+    tube: groups above the bound: Churaev [1] tube r 41-60 +10.94 sigma (3/3)
+      range +10.9 ... +10.9 sigma
+
+(iv) the points above the 299 K bound; normalisation and the bound at the measurement temperature
+    Table 1 range 284-319 K (10.85-45.85 C); eta_r/eta0: 284 K 0.1848, 289 K 0.2048, 293 K 0.2237, 299 K 0.2429, 305 K 0.2623, 309 K 0.2929, 313 K 0.2981, 319 K 0.3333; largest bound 1.3333 (319 K)
+    selected rows 89, above the 299 K bound 24
+    id    source          T [C]   meas    unc bound(T) meas-bnd(T) meas-1.333 >1.333 by>1sig  reported_quantity | conversion
+    R001  Churaev_1970     20.0  1.407  0.015   1.2242      +0.183     +0.074    yes     yes  eta/eta0 (read directly) | none
+    R002  Churaev_1970     20.0  1.361  0.015   1.2242      +0.137     +0.028    yes     yes  eta/eta0 (read directly) | none
+    R003  Churaev_1970     20.0  1.339  0.015   1.2242      +0.115     +0.006    yes      no  eta/eta0 (read directly) | none
+    R015  Churaev_1970     24.3  1.478  0.015   1.2379      +0.240     +0.145    yes     yes  eta/eta0 at the same T | none
+    R016  Churaev_1970     31.9  1.475  0.015   1.2627      +0.212     +0.142    yes     yes  eta/eta0 at the same T | none
+    R017  Churaev_1970     40.0  1.392  0.015   1.2990      +0.093     +0.059    yes     yes  eta/eta0 at the same T | none
+    R018  Churaev_1970     46.4  1.327  0.015   1.3333      -0.006     -0.006     no      no  eta/eta0 at the same T | none
+    R019  Churaev_1970     53.9  1.310  0.015   1.3333      -0.023     -0.023     no      no  eta/eta0 at the same T | none
+    R022  Churaev_1970     19.3  1.414  0.015   1.2211      +0.193     +0.081    yes     yes  eta/eta0 at the same T | none
+    R023  Churaev_1970     22.5  1.382  0.015   1.2322      +0.150     +0.049    yes     yes  eta/eta0 at the same T | none
+    R024  Churaev_1970     29.2  1.416  0.015   1.2537      +0.162     +0.083    yes     yes  eta/eta0 at the same T | none
+    R025  Churaev_1970     40.1  1.444  0.015   1.2996      +0.144     +0.111    yes     yes  eta/eta0 at the same T | none
+    R034  Li_2012          26.1  2.471  0.205   1.2437      +1.227     +1.138    yes     yes  mu = 2.144 x10^-3 Pa s (read) | eta_ratio = mu/0.868 mPa s (bulk value stated in paper, 26.1 C)
+    R035  Li_2012          26.1  1.763  0.171   1.2437      +0.519     +0.430    yes     yes  mu = 1.531 x10^-3 Pa s (read) | eta_ratio = mu/0.868 mPa s (bulk value stated in paper, 26.1 C)
+    R036  Li_2012          26.1  1.888  0.144   1.2437      +0.644     +0.555    yes     yes  mu = 1.639 x10^-3 Pa s (read) | eta_ratio = mu/0.868 mPa s (bulk value stated in paper, 26.1 C)
+    R045  Haneveld_2008    22.7  2.500  0.400   1.2328      +1.267     +1.167    yes     yes  C (dimensionless correction factor) | eq.(3): a = sqrt((1/C) gamma cos(theta) h0/(3 eta)) -> a ~ eta^-1/2, C
+    R046  Haneveld_2008    22.2  1.320  0.110   1.2312      +0.089     -0.013     no      no  C (dimensionless correction factor) | eq.(3): a = sqrt((1/C) gamma cos(theta) h0/(3 eta)) -> a ~ eta^-1/2, C
+    R049  Tas_2004         21.5  1.265  0.110   1.2290      +0.036     -0.068     no      no  apparent viscosity / bulk viscosity (Fig. 4) | none
+    R072  Kazoe_2022        n/s  3.600  0.606   1.3333      +2.267     +2.267    yes     yes  mu (Pa s), Table 1 | eta_ratio = mu/0.892 mPa s; mu0 NOT given in paper: inferred from text
+    R073  Kazoe_2022        n/s  2.804  0.213   1.3333      +1.471     +1.471    yes     yes  mu (Pa s), Table 1 | eta_ratio = mu/0.892 mPa s; mu0 NOT given in paper: inferred from text
+    R076  Kazoe_2022        n/s  3.443  0.572   1.3333      +2.110     +2.110    yes     yes  mu (Pa s), Table 1 | eta_ratio = mu/0.892 mPa s; mu0 NOT given in paper: inferred from text
+    R077  Kazoe_2022        n/s  1.312  0.067   1.3333      -0.021     -0.021     no      no  mu (Pa s), Table 1 | eta_ratio = mu/0.892 mPa s; mu0 NOT given in paper: inferred from text
+    R080  Kazoe_2023        n/s  4.736  0.523   1.3333      +3.403     +3.403    yes     yes  mu/mu0 (Fig. 4); mu0 from literature [19], va | none
+    R081  Kazoe_2023        n/s  5.549  0.492   1.3333      +4.216     +4.216    yes     yes  mu/mu0 (Fig. 4); mu0 from literature [19], va | none
+    above their own bound(T): 21/24; above the most favourable bound 1.333 even so: 19/24; also by more than one error bar: 18/24
+    (T = 'n/s': not stated, largest bound used; 'room temperature (22-26 C)': 24 C; outside 11-46 C the end value of Table 1, no extrapolation.)
+    WARNING: only 19 of the 24 points stay above the most favourable bound (1.333); 5 fall below it: R018, R019, R046, R049, R077

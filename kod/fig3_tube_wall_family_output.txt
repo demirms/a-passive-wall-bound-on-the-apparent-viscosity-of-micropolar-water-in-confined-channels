@@ -1,0 +1,3 @@
+kappa/mu=1 lamR=1: M1/(mu+k)=0.987094 M5/(mu+k)=0.930145 sigma*=0.19367 (mu+k/2)/(mu+k)=0.750000 bound crossed at sigma=-0.04083
+kappa/mu=1 lamR=10: M1/(mu+k)=0.820047 M5/(mu+k)=0.756775 sigma*=0.89520 (mu+k/2)/(mu+k)=0.750000 bound crossed at sigma=-1.92677
+kappa/mu=10 lamR=10: M1/(mu+k)=0.645743 M5/(mu+k)=0.554479 sigma*=0.89520 (mu+k/2)/(mu+k)=0.545455 bound crossed at sigma=-1.92677

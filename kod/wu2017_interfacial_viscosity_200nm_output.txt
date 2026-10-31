@@ -1,0 +1,36 @@
+Wu et al. 2017, Eq. (2)-(3): mu(d)/mu_inf with t = 0.7 nm, A_i/A_t = 1 - ((d-2t)/d)^2
+A_i/A_t: d=200: 0.01395, d=300: 0.00931, d=500: 0.00559
+
+(a) mu(d)/mu_inf (Wu's area-weighted definition)
+  d[nm]  theta=  0   theta= 30   theta= 60   theta= 90   
+    200     1.0314      1.0239      1.0163      1.0088   
+    300     1.0210      1.0159      1.0109      1.0059   
+    500     1.0126      1.0096      1.0065      1.0035   
+  mu_i/mu_inf = 3.250 (theta=0), 2.710 (theta=30), 2.170 (theta=60), 1.630 (theta=90)
+  200 nm, theta = 0: 1.0314  (acceptance criterion <= 1.05: met; independent estimate ~1.03)
+  theta at which mu_i = mu_inf: 125.0 deg
+
+(b) enhancement factor eps of Eq. (7), flow-rate ratio to no-slip bulk Hagen-Poiseuille
+  true slip length l_st [nm] = 0.41/(cos(theta)+1)^2: 0: 0.102, 30: 0.118, 60: 0.182, 90: 0.410, 120: 1.640, 140: 7.491, 150: 22.842
+  d[nm]  theta=  0   theta= 30   theta= 60   theta= 90   theta=120   theta=140   theta=150   
+    100     0.9488      0.9636      0.9826      1.0150      1.1284      1.6113      2.8632   
+    200     0.9735      0.9813      0.9911      1.0075      1.0643      1.3045      1.9258   
+    300     0.9822      0.9874      0.9940      1.0050      1.0429      1.2028      1.6159   
+    500     0.9892      0.9924      0.9964      1.0030      1.0257      1.1215      1.3689   
+
+(c) scan d = 200-20000 nm (log grid, 400 points) x theta = 0-149.99 deg (3000 points)
+  max eps = 1.9246 at d = 200.0 nm, theta = 149.99 deg; eps < 2 everywhere: True
+  at theta = 150 deg exactly: eps(200 nm) = 1.9258
+  max of mu(d)/mu_inf over theta in [0, 90] deg, d >= 200 nm: 1.0314 (theta = 0, d = 200 nm)
+  eps >= 1 only if the slip term outweighs the viscosity term; for theta <= 90 deg at 200 nm eps = 0.9735 ... 1.0075, i.e. a flow REDUCTION by up to 2.6 %
+
+(d) our cross-check (flux-based, exact no-slip two-layer Poiseuille tube; NOT Wu's definition)
+  d[nm]  theta=  0   theta= 30   theta= 60   theta= 90   
+    200     1.0196      1.0178      1.0152      1.0108   
+    300     1.0130      1.0118      1.0101      1.0072   
+    500     1.0078      1.0071      1.0060      1.0043   
+  ratio Wu-area-weighted / flux-based at 200 nm, theta = 0: 1.605 (excess over bulk)
+  For a thin layer the excess over bulk is 2x(r-1) (Wu, area-weighted) against 4x(1-1/r) (flux-based), x = t/R,
+  so the ratio of the two excesses is r/2: Wu's value is the larger one for r = mu_i/mu_inf > 2 (theta < 69 deg),
+  the flux-based one for 1 < r < 2 (at most twice Wu's tiny excess). Both stay below 1.032 at d >= 200 nm.
+  max over theta in [0, 90] deg and d in {200, 300, 500} nm of either definition: 1.0314

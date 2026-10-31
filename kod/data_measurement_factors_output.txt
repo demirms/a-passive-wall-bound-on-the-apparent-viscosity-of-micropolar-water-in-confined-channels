@@ -1,0 +1,43 @@
+(1) Kazoe et al. 2023 [5] (Anal. Sci. 39, 779; p. 782: mass flowmetry, Q = 4.5 D_h^4 dP/(128 mu L); 200,000 channels of 70 nm and 150,000 of 100 nm;
+    D_h = 73 +- 2 nm (W = 73 +- 3, H = 72 +- 1), D_h = 119 +- 1 nm (W = 130 +- 3, H = 110 +- 1); widths by SEM, depths by AFM)
+    70 nm channel: D_h(stated) = 73 +- 2 nm -> mu ~ D_h^4: +-11.0 % (4 dD_h/D_h); propagating W +- 3, H +- 1 nm: formula 8.6 %, exact rectangle 8.6 % (d ln mu/d ln W = 1.99, d ln mu/d ln H = 2.01)
+      measured ratio 4.74 would be 1.00 only if D_h were 49.5 nm (i.e. 32 % smaller than stated, 12 times the stated D_h uncertainty), or if a fraction phi = 1 - 1/ratio = 78.9 % of the channels carried no flow (inferred viscosity ~ 1/(1 - phi)); a 1 % unflowing fraction changes it by 1.01 %.
+    100 nm channel: D_h(stated) = 119 +- 1 nm -> mu ~ D_h^4: +-3.4 % (4 dD_h/D_h); propagating W +- 3, H +- 1 nm: formula 4.7 %, exact rectangle 4.7 % (d ln mu/d ln W = 1.84, d ln mu/d ln H = 2.15)
+      measured ratio 5.55 would be 1.00 only if D_h were 77.5 nm (i.e. 35 % smaller than stated, 41 times the stated D_h uncertainty), or if a fraction phi = 1 - 1/ratio = 82.0 % of the channels carried no flow (inferred viscosity ~ 1/(1 - phi)); a 1 % unflowing fraction changes it by 1.01 %.
+    Formula check (existing output of check_kazoe_resistance_formula.py, not re-run): exact/formula flow rate 0.9997 (73 x 72) and 1.0007 (130 x 110); the 4.5 D_h^4/128 law is not the source of a factor of 5.
+
+(2) Kazoe et al. 2022 [4] (Anal. Sci. 38, 281; Table 1, p. 283: 190 +- 8 nm square, N = 11,100; p. 283: 'approximately 99% of the nanochannels were successfully fabricated without breaking')
+    D_h = 190 +- 8 nm -> mu ~ D_h^4: +-16.8 %; 1 % broken channels would raise the viscosity by 1.01 %; ratio 3.6 would need phi = 72 % blocked or D_h = 138 nm.
+    Same paper, p. 286: the 10 mM KCl solution (Debye length ~3 nm) gives 3.07e-3 Pa s (text: 3.08e-3), 'almost the same' as pure water (3.21e-3, Debye length ~100 nm); the authors conclude that the electroviscous effect is not dominant in the square channels (but is for the plate channel, p. 286).
+
+(3) Churaev et al. 1970 [1] (pp. 215-216)
+    Eq. (4): v l_1 = r^2 (P_c - P)/(8 eta): eta from the slope of the v(P) lines (the capillary pressure, i.e. the contact angle and the meniscus term, sets the intercept, not the slope).
+    r from the bubble-detachment pressure P_0 (r_0 = 2 sigma/P_0); systematic error from the adsorption film 'not more than 3-4 %' even for the finest capillaries (p. 215);
+    different liquids in the same capillary agree to ~1 % (p. 215). eta ~ r^2:
+      radius error 3 % -> viscosity error 6.1 %
+      radius error 4 % -> viscosity error 8.2 %
+      measured ratio 1.339 would be 1.00 only if the radius were 13.6 % smaller than stated (r_true/r = 0.864)
+      measured ratio 1.361 would be 1.00 only if the radius were 14.3 % smaller than stated (r_true/r = 0.857)
+      measured ratio 1.407 would be 1.00 only if the radius were 15.7 % smaller than stated (r_true/r = 0.843)
+      ratio 1.16 (r = 170 nm peak): radius 7.2 % smaller
+      ratio 1.23 (r = 170 nm peak): radius 9.8 % smaller
+    Gas-column correction, Eq. (5): the second term is 'small compared to 1' ('the difference between l_1 and l is not more than a few per cent', p. 216).
+
+(4) Capillary-filling and filling-under-pressure sets
+    Tas et al. 2004 [2] (Appl. Phys. Lett. 85, 3274; p. 3275): eta_app from the slope a of x = a t^(1/2) with cos(theta) = 0.94 +- 0.02 (low-speed advancing angle, macroscopic measurement) and bulk viscosity at the substrate temperature (+-0.5 C);
+      error bars (+-0.11 at 53 nm) 'represent the random errors, mainly ... in the channel height, the contact angle, and in the bulk viscosity'; height 53 +- 6 nm (random, 11 %), 5 % systematic height error is NOT in the bars;
+      cos(theta) alone: 2.1 % in eta; eta ~ h cos(theta)/a^2, so a 5 % height error is a 5 % error in eta.
+    Haneveld et al. 2008 [3] (J. Appl. Phys. 104, 014309; pp. 014309-3/-4): modified Washburn x = (1/C) sqrt(gamma cos(theta) h_0/(3 eta)) t^(1/2) - b t, the loss term b is fitted, cos(theta) = 0.99 +- 0.01 (macroscopic), C = apparent-viscosity factor; 10.5 +- 0.8 nm channel (7.6 % in h_0, i.e. in C) vs the quoted C = 1.32 +- 0.11 (8.3 %). Each point of their Fig. 5 is one chip (2-3 chips per height); the text does not say whether +-0.11 is a standard deviation or an extreme range.
+      The authors list four possible causes of C > 1: dynamic contact angle, electroviscous effect, geometry (wall deformation), and wall-liquid interaction; for 5 nm they suspect channel collapse (p. 014309-4/-5).
+    Li et al. 2012 [6] (J. Phys. Chem. Lett.; PDF p. 3): viscosity from the SLOPE and surface tension force gamma cos(theta) from the INTERCEPT of Dx^2/Dt versus the external pressure P_ex (0-2 MPa); a constant dynamic contact angle is assumed and the linearity is taken as evidence; the contact angle therefore does not enter the viscosity if constant.
+    Hence only the data of Refs. [1, 4, 5] (pressure-driven flow, viscosity from the resistance or the slope of flow rate versus pressure) are directly comparable with the fully developed Poiseuille flow of the model;
+    those of Refs. [2, 3] (spontaneous filling) depend on the contact angle and on the front loss and are kept as supporting data; Ref. [6] (slope method) is intermediate.
+
+(5) Normalisation viscosity (Kazoe et al. do not state the temperature; Li et al.: 26.1 C, 0.868 mPa s)
+    Kazoe 2022 190 nm (3.21 mPa s x 1e-3)      bulk viscosity 1.002 mPa s (20 C, handbook): ratio 3.20
+    Kazoe 2022 190 nm (3.21 mPa s x 1e-3)      bulk viscosity 0.890 mPa s (25 C, handbook): ratio 3.61
+    Kazoe 2022 190 nm (3.21 mPa s x 1e-3)      bulk viscosity 0.868 mPa s (26.1 C, handbook): ratio 3.70
+    Kazoe 2022 394 nm (Table 1: 2.50)          bulk viscosity 1.002 mPa s (20 C, handbook): ratio 2.50
+    Kazoe 2022 394 nm (Table 1: 2.50)          bulk viscosity 0.890 mPa s (25 C, handbook): ratio 2.81
+    Kazoe 2022 394 nm (Table 1: 2.50)          bulk viscosity 0.868 mPa s (26.1 C, handbook): ratio 2.88
+    The ratios 4.74 and 5.55 of Kazoe 2023 are read from Fig. 4 (normalisation: bulk viscosity from the literature [19], temperature not stated). A change of the bulk viscosity between 20 and 25 C changes the ratios by 12.6 %: 4.74 -> 4.21 (if normalised at 0.890 but 1.002 is right) or 5.33 (reverse); 5.55 -> 4.93 or 6.25; all stay far above the bound 1.243.

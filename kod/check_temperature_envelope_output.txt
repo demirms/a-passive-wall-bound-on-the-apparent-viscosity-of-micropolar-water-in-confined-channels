@@ -1,0 +1,68 @@
+(a) BC1 predictions of the Table 3 groups at 284, 289, 293, 299 K (MD-MD normalisation, Hansen 2010 Table II)
+    per group: range over the members at each T; 'max T' = temperature of the largest member prediction; 'excess' = (max over T) - (299 K) for that member
+    group                                      284 K           289 K           293 K           299 K   max T   max excess over 299 K   | 299 K as printed: check
+    Churaev tube r 41-60                 1.023-1.033     1.024-1.034     1.026-1.037     1.025-1.036   293 K   +0.0009                  | 1.025-1.036 vs printed 1.025-1.036: identical   envelope(max over T) 1.026-1.037
+    Churaev tube r 181-255               1.006-1.008     1.006-1.008     1.006-1.009     1.006-1.008   293 K   +0.0003                  | 1.006-1.008 vs printed 1.006-1.008: identical   envelope(max over T) 1.006-1.009
+    Churaev tube r 547-998               1.001-1.003     1.001-1.003     1.002-1.003     1.002-1.003   293 K   +0.0001                  | 1.002-1.003 vs printed 1.002-1.003: identical   envelope(max over T) 1.002-1.003
+    Haneveld slit H 10.5                       1.135           1.146           1.158           1.162   299 K   +0.0000                  | 1.162 vs printed 1.162: identical   envelope(max over T) 1.162
+    Haneveld slit H 22.4                       1.082           1.087           1.093           1.092   293 K   +0.0010                  | 1.092 vs printed 1.092: identical   envelope(max over T) 1.093
+    Haneveld slit H 46                         1.044           1.046           1.049           1.048   293 K   +0.0011                  | 1.048 vs printed 1.048: identical   envelope(max over T) 1.049
+    Tas slit H 53                        1.037-1.039     1.039-1.040     1.042-1.043     1.041-1.042   293 K   +0.0011                  | 1.041-1.042 vs printed 1.041-1.042: identical   envelope(max over T) 1.042-1.043
+    Tas slit H 102-161                   1.013-1.020     1.014-1.021     1.015-1.023     1.014-1.022   293 K   +0.0006                  | 1.014-1.022 vs printed 1.014-1.022: identical   envelope(max over T) 1.015-1.023
+    Tas 0.1 M NaCl slit H 53-161         1.013-1.038     1.014-1.040     1.015-1.043     1.014-1.042   293 K   +0.0011                  | 1.014-1.042 vs printed 1.014-1.042: identical   envelope(max over T) 1.015-1.043
+    Li plate H 25-415                    1.005-1.075     1.005-1.079     1.006-1.085     1.006-1.084   293 K   +0.0012                  | 1.006-1.084 vs printed 1.006-1.084: identical   envelope(max over T) 1.006-1.085
+    Kazoe plate H 234                          1.009           1.009           1.010           1.010   293 K   +0.0003                  | 1.010 vs printed 1.010: identical   envelope(max over T) 1.010
+    Kazoe plate H 417-745                1.003-1.005     1.003-1.005     1.003-1.006     1.003-1.005   293 K   +0.0002                  | 1.003-1.005 vs printed 1.003-1.005: identical   envelope(max over T) 1.003-1.006
+    Kazoe square Dh 73                         1.036           1.038           1.041           1.040   293 K   +0.0009                  | 1.040 vs printed 1.040: identical   envelope(max over T) 1.041
+    Kazoe square Dh 119                        1.023           1.024           1.026           1.025   293 K   +0.0007                  | 1.025 vs printed 1.025: identical   envelope(max over T) 1.026
+    Kazoe square Dh 190                        1.015           1.015           1.016           1.016   293 K   +0.0005                  | 1.016 vs printed 1.016: identical   envelope(max over T) 1.016
+    Li square Dh 200                           1.014           1.015           1.016           1.015   293 K   +0.0004                  | 1.015 vs printed 1.015: identical   envelope(max over T) 1.016
+    Li square Dh 393                           1.007           1.008           1.008           1.008   293 K   +0.0002                  | 1.008 vs printed 1.008: identical   envelope(max over T) 1.008
+    Kazoe square Dh 394                        1.007           1.007           1.008           1.008   293 K   +0.0002                  | 1.008 vs printed 1.008: identical   envelope(max over T) 1.008
+    Li square Dh 491                           1.006           1.006           1.006           1.006   293 K   +0.0002                  | 1.006 vs printed 1.006: identical   envelope(max over T) 1.006
+    Kazoe square Dh 760-1691             1.002-1.004     1.002-1.004     1.002-1.004     1.002-1.004   293 K   +0.0001                  | 1.002-1.004 vs printed 1.002-1.004: identical   envelope(max over T) 1.002-1.004
+    Li square Dh 838-1530                1.002-1.003     1.002-1.004     1.002-1.004     1.002-1.004   293 K   +0.0001                  | 1.002-1.004 vs printed 1.002-1.004: identical   envelope(max over T) 1.002-1.004
+    largest excess of the T-maximum over the 299 K value among all groups: 0.0012 (Li plate H 25-415)
+    299 K column vs Table 3: 21/21 groups identical to the printed 3-decimal values, 0 DIFF
+
+    Fig. 4 lines (closed forms; square: large-size law (19)) at four temperatures; D_h = 2r (tube), 2H (slit)
+    curve                    284 K       289 K       293 K       299 K   max T   (max over T) - (299 K)
+    tube D_h=20            1.10804     1.11544     1.12426     1.12480   299 K   +0.00000
+    slit D_h=20            1.13841     1.14964     1.16186     1.16618   299 K   +0.00000
+    square law D_h=20      1.14263     1.14873     1.15816     1.15313   293 K   +0.00503
+    tube D_h=82            1.03297     1.03457     1.03688     1.03595   293 K   +0.00092
+    slit D_h=82            1.04862     1.05109     1.05458     1.05337   293 K   +0.00121
+    square law D_h=82      1.03479     1.03628     1.03858     1.03735   293 K   +0.00123
+    tube D_h=100           1.02732     1.02861     1.03051     1.02970   293 K   +0.00080
+    slit D_h=100           1.04045     1.04244     1.04531     1.04421   293 K   +0.00110
+    square law D_h=100     1.02853     1.02975     1.03163     1.03063   293 K   +0.00101
+    tube D_h=234           1.01198     1.01251     1.01332     1.01293   293 K   +0.00039
+    slit D_h=234           1.01789     1.01870     1.01992     1.01934   293 K   +0.00057
+    square law D_h=234     1.01219     1.01271     1.01352     1.01309   293 K   +0.00043
+    tube D_h=500           1.00566     1.00591     1.00628     1.00609   293 K   +0.00019
+    slit D_h=500           1.00847     1.00885     1.00941     1.00913   293 K   +0.00029
+    square law D_h=500     1.00571     1.00595     1.00633     1.00613   293 K   +0.00020
+
+    Bound 1 + eta_r/eta0 at 284, 289, 293, 299 K: 1.1848, 1.2048, 1.2237, 1.2429  (largest at 299 K)
+
+(b) Fig. 5: tube r = 48 and 170 nm, all eight temperatures of Table II (BC1)
+    r = 48 nm: 284K 1.02840, 289K 1.02975, 293K 1.03172, 299K 1.03090, 305K 1.03439, 309K 1.03492, 313K 1.03456, 319K 1.03745
+      monotone increasing: False; steps that decrease: 293->299 K (-0.00083), 309->313 K (-0.00037); overall change 1.0284 -> 1.0374
+      284-299 K: monotone False; maximum at 293 K
+    r = 170 nm: 284K 1.00829, 289K 1.00865, 293K 1.00921, 299K 1.00893, 305K 1.00994, 309K 1.01005, 313K 1.00994, 319K 1.01075
+      monotone increasing: False; steps that decrease: 293->299 K (-0.00028), 309->313 K (-0.00011); overall change 1.0083 -> 1.0107
+      284-299 K: monotone False; maximum at 293 K
+    bound 1 + eta_r/eta0 over 284-319 K: 1.1848, 1.2048, 1.2237, 1.2429, 1.2623, 1.2929, 1.2981, 1.3333; monotone increasing: True
+
+(c) bound with the experimental bulk viscosity: 1 + 0.17/0.890 = 1.1910; with the 1.0 mPa s reference of Hansen et al. Fig. 3: 1 + 0.17/1.0 = 1.1700
+
+(d) Tube, passive wall-spin range n* = s*(mu+kappa)/(1+s* kappa) (upper end of the passive range of the spin-slip parameter; n* < 1/2 means that n = 1/2 lies just outside it, i.e. is weakly active)
+    T[K]  beta[mPa s nm^2]  beta/gamma | r=40   r=50   r=60   r=100  r=200  r=300  r=500  (n*, beta = 0 / beta = zeta0 - zeta_r)
+    284   -0.20            -0.0667   | 0.4750/0.4734 0.4801/0.4789 0.4835/0.4825 0.4902/0.4896 0.4951/0.4948 0.4968/0.4966 0.4981/0.4979
+    289   -0.30            -0.1111   | 0.4765/0.4740 0.4813/0.4793 0.4845/0.4828 0.4908/0.4898 0.4954/0.4949 0.4970/0.4966 0.4982/0.4980
+    293   -0.20            -0.0769   | 0.4771/0.4754 0.4818/0.4805 0.4849/0.4838 0.4910/0.4904 0.4955/0.4952 0.4970/0.4968 0.4982/0.4981
+    299   -0.30            -0.1429   | 0.4796/0.4768 0.4838/0.4816 0.4866/0.4847 0.4920/0.4909 0.4960/0.4955 0.4974/0.4970 0.4984/0.4982
+    r = 40-500 nm, 284-299 K: n* (beta = 0) in [0.4750, 0.4984]; n* (beta = zeta0 - zeta_r) in [0.4734, 0.4982]
+    mapping check (check_hansen2010_mapping_output.txt): beta = 0 -> [0.4750, 0.4984]; beta = zeta0 - zeta_r -> [0.4734, 0.4982]
+    r = 40-60 nm: n* (beta = 0) = 0.4750-0.4866; n* (beta = zeta0 - zeta_r) = 0.4734-0.4847; all below 1/2: True
+    (paper_common.s_star is used; check_tube_m3_bound.py was not imported.)

@@ -1,0 +1,144 @@
+====================================================================================================
+STAGE 1  Figure reading (reference numbers not loaded yet)
+====================================================================================================
+Kazoe 2022 Fig. 5: y ticks (px) [99.0, 362.0, 625.5, 889.5, 1153.5], x ticks (px) [306.5, 702.5, 1098.5, 1495.0]; 4 square and 3 plate markers found
+Kazoe 2023 Fig. 4: y tick px [347.0, 478.0, 610.0, 742.0, 1138.0], log-x ticks 100 -> 475.5, 1000 -> 1091.5
+Churaev 1984 Fig. 3: y ticks (px) [471.5, 788.5, 1106.5], x ticks (px) [506.5, 820.0, 1134.0], axis tilt -8.33 px per 1000 px, 1/r at axis foot -0.005
+Haneveld 2008 Fig. 5: 11 grid lines used; x axis px [331.0, 1309.5]
+Tas 2004 Fig. 4: 12 diamonds found; grid rows (px) [282.5, 374.5, 467.5, 557.0, 657.5, 750.5, 848.0, 940.5, 1034.0]
+Li 2012 Fig. 4a: y ticks (px) [387.5, 590.0, 792.5, 995.5]; 6 square, 5 plate markers
+Stage 1 finished: 83 readings written to data/digitization_figure_readings.csv
+
+====================================================================================================
+STAGE 2  Comparison with the published numbers (data/digitization_reference_values.csv)
+====================================================================================================
+
+Pairs (deviation = re-read minus published, in viscosity-ratio units):
+pair            source        item          read  published      dev   rel %  ref.res  flag / note
+K22_sq190       Kazoe_2022    sq1          3.602      3.600   +0.002    +0.1    0.006  
+K22_sq394       Kazoe_2022    sq2          2.462      2.804   -0.341   -12.2    0.006  source inconsistency (Table 1 vs both figures)
+K22_sq760       Kazoe_2022    sq3          1.203      1.211   -0.008    -0.7    0.006  
+K22_sq1691      Kazoe_2022    sq4          1.133      1.133   +0.000    +0.0    0.006  
+K22_pl234       Kazoe_2022    pl1          1.315      1.312   +0.003    +0.2    0.006  
+K22_pl417       Kazoe_2022    pl2          0.900      0.897   +0.002    +0.3    0.006  
+K22_pl745       Kazoe_2022    pl3          1.093      1.099   -0.006    -0.5    0.006  
+K23_circ190     Kazoe_2023    circ1        3.609      3.600   +0.009    +0.3    0.006  
+K23_circ394     Kazoe_2023    circ2        2.495      2.804   -0.308   -11.0    0.006  source inconsistency (Table 1 vs both figures)
+K23_circ760     Kazoe_2023    circ3        1.213      1.211   +0.002    +0.1    0.006  
+K23_circ1691    Kazoe_2023    circ4        1.152      1.133   +0.019    +1.7    0.006  
+T04_53nm        Tas_2004      0            1.224      1.230   -0.006    -0.5    0.005  
+T04_152nm       Tas_2004      2            1.063      1.070   -0.007    -0.7    0.005  
+H08_5nm         Haneveld_2008 h5           2.532      2.500   +0.032    +1.3    0.050  
+H08_11nm        Haneveld_2008 h10          1.319      1.320   -0.001    -0.1    0.005  
+H08_47nm        Haneveld_2008 h47          1.044      1.020   +0.024    +2.3    0.005  unresolved reading (dots merge with the C = 1.0 line)
+L12_pl415       Li_2012       pl5          0.940      0.952   -0.012    -1.2    0.001  
+L12_sq1559      Li_2012       sq6          0.956      0.969   -0.013    -1.3    0.001  
+C84_exp2        Churaev_1984  pt1          0.888      0.888   +0.000    +0.0    0.001  
+C84_exp3        Churaev_1984  pt2          0.938      0.939   -0.001    -0.1    0.001  
+C84_exp4        Churaev_1984  pt3          0.940      0.941   -0.000    -0.0    0.001  
+C84_exp5        Churaev_1984  pt4          0.878      0.878   -0.000    -0.0    0.001  
+C84_exp6        Churaev_1984  pt5          0.910      0.910   -0.000    -0.0    0.001  
+C84_exp8        Churaev_1984  pt6          0.948      0.949   -0.000    -0.0    0.001  
+C84_exp9        Churaev_1984  pt7          0.958      0.959   -0.000    -0.0    0.001  
+C84_exp10       Churaev_1984  pt8          0.980      0.980   -0.000    -0.0    0.001  
+C84_exp11       Churaev_1984  pt9          0.959      0.959   +0.000    +0.0    0.001  
+C84_exp12       Churaev_1984  pt10         1.003      1.003   +0.000    +0.0    0.001  
+
+Statistics (viscosity-ratio units).  Pairs with a source inconsistency or an unresolved reading are NOT in 'main'.
+HEADLINE enhancement data (no Churaev) n=15  mean|dev|=0.0082  RMS=0.0116  max|dev|=0.0321 (H08_5nm)  signed mean=+0.0012  mean|rel|=0.60 %  max|rel|=1.72 %
+all non-flagged incl. Churaev 1984     n=25  mean|dev|=0.0050  RMS=0.0090  max|dev|=0.0321 (H08_5nm)  signed mean=+0.0006  mean|rel|=0.37 %  max|rel|=1.72 %
+  (headline pairs: 15 readings of 12 distinct published values; Kazoe 2023 re-plots 3 Kazoe 2022 values)
+  Churaev_1984                         n=10  mean|dev|=0.0002  RMS=0.0003  max|dev|=0.0006 (C84_exp3)  signed mean=-0.0002  mean|rel|=0.03 %  max|rel|=0.06 %
+  Haneveld_2008                        n=2   mean|dev|=0.0165  RMS=0.0227  max|dev|=0.0321 (H08_5nm)  signed mean=+0.0156  mean|rel|=0.68 %  max|rel|=1.28 %
+  Kazoe_2022                           n=6   mean|dev|=0.0036  RMS=0.0045  max|dev|=0.0081 (K22_sq760)  signed mean=-0.0011  mean|rel|=0.30 %  max|rel|=0.67 %
+  Kazoe_2023                           n=3   mean|dev|=0.0101  RMS=0.0125  max|dev|=0.0195 (K23_circ1691)  signed mean=+0.0101  mean|rel|=0.70 %  max|rel|=1.72 %
+  Li_2012                              n=2   mean|dev|=0.0122  RMS=0.0122  max|dev|=0.0127 (L12_sq1559)  signed mean=-0.0122  mean|rel|=1.27 %  max|rel|=1.31 %
+  Tas_2004                             n=2   mean|dev|=0.0067  RMS=0.0067  max|dev|=0.0074 (T04_152nm)  signed mean=-0.0067  mean|rel|=0.59 %  max|rel|=0.69 %
+  Churaev 1984 in percentage points of Delta eta: mean|dev| = 0.027 pp, max = 0.060 pp (n=10); the ratio-unit values above are tiny because Delta eta itself is small (<= 14 %)
+
+Flagged pairs (kept out of the main statistics):
+  K22_sq394: read 2.462 vs published 2.804 (dev -0.341, -12.2 %): source inconsistency (Table 1 vs both figures)
+  K23_circ394: read 2.495 vs published 2.804 (dev -0.308, -11.0 %): source inconsistency (Table 1 vs both figures)
+  H08_47nm: read 1.044 vs published 1.020 (dev +0.024, +2.3 %): unresolved reading (dots merge with the C = 1.0 line)
+ALL pairs incl. flagged                n=28  mean|dev|=0.0285  RMS=0.0875  max|dev|=0.3414 (K22_sq394)  signed mean=-0.0218  mean|rel|=1.24 %  max|rel|=12.18 %
+
+Kazoe 394 nm point: Kazoe 2022 Fig. 5 -> 2.462; Kazoe 2023 Fig. 4 (same data) -> 2.495; Table 1 -> 2.804.  The two figures agree to 0.033; the table is +0.325 above them (source inconsistency, not a reading error).
+Kazoe 2022 with ONE fitted mu0 = 0.893 mPa s (text-derived value: 0.892): mean|dev| = 0.0045, max|dev| = 0.0068 (n=6)
+
+Size-axis accuracy (re-read size vs published size):
+  Kazoe_2022 sq1             read   190.711 nm  published   190.000 nm  rel dev +0.37 %
+  Kazoe_2022 sq2             read   394.548 nm  published   394.000 nm  rel dev +0.14 %
+  Kazoe_2022 sq3             read   762.464 nm  published   760.000 nm  rel dev +0.32 %
+  Kazoe_2022 sq4             read  1692.036 nm  published  1691.000 nm  rel dev +0.06 %
+  Kazoe_2022 pl1             read   233.624 nm  published   234.000 nm  rel dev -0.16 %
+  Kazoe_2022 pl2             read   416.004 nm  published   417.000 nm  rel dev -0.24 %
+  Kazoe_2022 pl3             read   744.794 nm  published   745.000 nm  rel dev -0.03 %
+  Kazoe_2023 circ1           read   189.429 nm  published   190.000 nm  rel dev -0.30 %
+  Kazoe_2023 circ2           read   393.909 nm  published   394.000 nm  rel dev -0.02 %
+  Kazoe_2023 circ3           read   767.357 nm  published   760.000 nm  rel dev +0.97 %
+  Kazoe_2023 circ4           read  1686.799 nm  published  1691.000 nm  rel dev -0.25 %
+  Churaev_1984 exp10 (1/r)   read     0.212 1e-6/m  published     0.217 1e-6/m  rel dev -2.39 %
+  Churaev_1984 exp11 (1/r)   read     0.159 1e-6/m  published     0.172 1e-6/m  rel dev -7.61 %
+  Churaev_1984 exp12 (1/r)   read     0.132 1e-6/m  published     0.139 1e-6/m  rel dev -5.20 %
+  Churaev_1984 exp2 (1/r)    read     1.111 1e-6/m  published     1.136 1e-6/m  rel dev -2.21 %
+  Churaev_1984 exp3 (1/r)    read     0.653 1e-6/m  published     0.667 1e-6/m  rel dev -2.05 %
+  Churaev_1984 exp4 (1/r)    read     0.561 1e-6/m  published     0.565 1e-6/m  rel dev -0.76 %
+  Churaev_1984 exp5 (1/r)    read     0.553 1e-6/m  published     0.565 1e-6/m  rel dev -2.16 %
+  Churaev_1984 exp6 (1/r)    read     0.541 1e-6/m  published     0.552 1e-6/m  rel dev -2.06 %
+  Churaev_1984 exp8 (1/r)    read     0.407 1e-6/m  published     0.417 1e-6/m  rel dev -2.39 %
+  Churaev_1984 exp9 (1/r)    read     0.223 1e-6/m  published     0.230 1e-6/m  rel dev -3.02 %
+  Churaev 1984 1/r axis (scan with tilted axes): mean|rel dev| = 2.98 %, max = 7.61 % (n=10)
+  size axis (Kazoe, nm): mean|rel dev| = 0.26 %, max = 0.97 % (n=11)
+
+Test-retest against the earlier digitization (veri_tablosu.csv, same figures, informational):
+  Li sq1 R034                  new   2.478  old   2.471  diff +0.007
+  Li sq2 R035                  new   1.768  old   1.763  diff +0.005
+  Li sq3 R036                  new   1.901  old   1.888  diff +0.013
+  Li sq4 R037                  new   1.132  old   1.120  diff +0.012
+  Li sq5 R038                  new   0.865  old   0.855  diff +0.010
+  Li sq6 R039                  new   0.956  old   0.976  diff -0.020
+  Li pl1 R040                  new   1.118  old   1.117  diff +0.001
+  Li pl2 R041                  new   1.038  old   1.043  diff -0.005
+  Li pl3 R042                  new   0.963  old   0.970  diff -0.007
+  Li pl4 R043                  new   0.957  old   0.963  diff -0.006
+  Li pl5 R044                  new   0.940  old   0.938  diff +0.002
+  Tas (rank-matched) rank1     new   1.033  old   1.034  diff -0.001
+  Tas (rank-matched) rank2     new   1.056  old   1.058  diff -0.002
+  Tas (rank-matched) rank3     new   1.059  old   1.060  diff -0.001
+  Tas (rank-matched) rank4     new   1.066  old   1.067  diff -0.001
+  Tas (rank-matched) rank5     new   1.075  old   1.076  diff -0.001
+  Tas (rank-matched) rank6     new   1.084  old   1.086  diff -0.002
+  Tas (rank-matched) rank7     new   1.099  old   1.099  diff -0.000
+  Tas (rank-matched) rank8     new   1.136  old   1.137  diff -0.001
+  Tas (rank-matched) rank9     new   1.190  old   1.190  diff -0.000
+  Tas (rank-matched) rank10    new   1.204  old   1.205  diff -0.001
+  Tas (rank-matched) rank11    new   1.239  old   1.240  diff -0.001
+  Tas (rank-matched) rank12    new   1.264  old   1.265  diff -0.001
+  Kazoe 2023 circ1 R084        new   3.609  old   3.601  diff +0.008
+  Kazoe 2023 circ2 R085        new   2.495  old   2.487  diff +0.008
+  Kazoe 2023 circ3 R086        new   1.213  old   1.210  diff +0.003
+  Kazoe 2023 circ4 R087        new   1.152  old   1.134  diff +0.018
+  test-retest (n=27): mean|diff| = 0.0051, RMS = 0.0074, max|diff| = 0.0199
+
+====================================================================================================
+Comparison with the measured enhancements and the bound (water rows of the paper's data table)
+====================================================================================================
+water rows: 89; rows with measured ratio > 1: 79; rows above the 299 K bound (1.243): 24 (of which read from a figure: 18)
+measured enhancements (ratio - 1), rows > 1: min 0.002, median 0.140, max 4.549
+measured enhancements of the above-bound rows: min 0.265, median 0.430
+margin (measured - bound) of the above-bound rows: min 0.022, median 0.187, max 4.306
+mean re-reading deviation 0.0082, largest 0.0321
+  mean deviation / smallest margin above the bound = 0.372; largest deviation / smallest margin = 1.458
+  mean deviation / median margin = 0.044; largest deviation / median margin = 0.172
+  mean deviation / smallest enhancement (rows > 1) = 4.093; / median enhancement = 0.058
+  mean deviation / median enhancement of above-bound rows = 0.019
+above-bound rows that stay above the bound if every reading is shifted down by the largest deviation: 23 of 24; by the mean deviation: 24 of 24
+  figure-read above-bound rows that stay above after a shift by the largest deviation: 17 of 18
+  smallest margins: R049 1.265 (+0.022, figure); R019 1.310 (+0.067, figure); R077 1.312 (+0.069, table/text); R046 1.320 (+0.077, table/text); R018 1.327 (+0.084, figure); R003 1.339 (+0.096, figure)
+largest deviation among pairs whose published value is given with resolution <= 0.01: 0.0195 (K23_circ1691, n=14); the 5 nm Haneveld value (2.5) is only given to 0.05
+water rows whose measured enhancement (ratio - 1) is not larger than the largest deviation 0.032: 13 of 89 (these are rows that are practically bulk-like anyway)
+stated measurement uncertainty of the water rows (eta_ratio_unc, authors' error bars or read-off floor): median 0.057, 10th percentile 0.015, n = 89; mean re-reading deviation / median stated uncertainty = 0.145
+  largest measured ratios: R081 5.549; R080 4.736; R072 3.600
+
+veri_tablosu.csv sha256 before 968db84d0f2e9e1b..., after 968db84d0f2e9e1b...: UNCHANGED
+main pairs: 25 from 6 sources (Churaev_1984, Haneveld_2008, Kazoe_2022, Kazoe_2023, Li_2012, Tas_2004); flagged pairs: 3

@@ -1,0 +1,50 @@
+# Reproducibility of the computed results
+
+This repository holds the code and data behind the computed results of the paper *A passive-wall bound on the apparent viscosity of micropolar water in confined channels*. The paper has no appendices; it points here for the details. Wall-condition labels follow the paper: BC1 (zero wall spin), BC2 (spin proportional to vorticity), BC3 (spin slip), BC4 (zero couple traction). In the scripts and in the parameter files the wall conditions BC1 and BC2 may appear under their working names `M1` and `M3` (script and output file names containing `m3` refer to BC2), and `a` in the tube formulas is the paper's $q=\lambda R$.
+
+No item needs an initial guess. All results were computed with Python 3.12.10, NumPy 2.5.3, SciPy 1.18.1, SymPy 1.14.0 (mpmath 1.3.0) and Matplotlib 3.11.2; the four scripts that read source PDFs also need PyMuPDF 1.28.2 and Pillow 12.3.0. The full parameter files are in `params/`, written by `params_writer.py` when each script runs. `run_all.py` runs every script listed in `run_all.txt`, in that order, and writes the screen output of each script to `cikti/`.
+
+## Figure numbering
+
+Script, output-file and parameter-file names carry a figure number that differs from the paper's by one, because the file names were kept when the paper's figures were renumbered. Some comments and printed texts inside the scripts and `*_output.txt` files use the numbering of the file names. The mapping is:
+
+| Paper | Script | Figure files written to `../sekil/` | Parameter file | Number in file names |
+|---|---|---|---|---|
+| Fig. 1 | `fig_size_bounds.py` | `fig2_size_bounds.pdf/.png` | `params/Fig_2.json` | 2 |
+| Fig. 2 | `fig_tube_wall_family.py` | `fig3_tube_wall_family.pdf/.png` | `params/Fig_3.json` | 3 |
+| Fig. 3 | `fig_data_size.py` | `fig4_data_size.pdf/.png` | `params/Fig_4.json` | 4 |
+| Fig. 4 | `fig_data_temperature.py` | `fig5_data_temperature.pdf/.png` | `params/Fig_5.json` | 5 |
+
+Tables 1–3 keep their numbers (`params/Table_1.json` … `Table_3.json`).
+
+## Parameters, domains, meshes and tolerances
+
+The table uses the paper numbers.
+
+| Item | Script | Parameters | Domain / mesh | Tolerances |
+|---|---|---|---|---|
+| Fig. 1 | `fig_size_bounds.py` | mu=1; kappa=1; gamma=1; alpha+beta=0; … (full list in `fig_size_bounds.py`) | slit and tube: closed forms; square: side a, 2D cross-section / square: stretched grid, 80 x 80 intervals, second order | sparse direct solve; grid error at most 0.00085 at N = 160 (micropolar_duct_2d.py (b)) |
+| Fig. 2 | `fig_tube_wall_family.py` | mu=1; kappa/mu=[1, 1, 10]; lambda R=[1, 10, 10]; beta/gamma=0; … (full list in `fig_tube_wall_family.py`) | tube 0 <= r <= R (closed form, modified Bessel functions) / closed form; 1601 sigma points | closed form (agrees with finite differences to 1.1e-9, check_tube_m3_bound.py N1) |
+| Fig. 3 | `fig_data_size.py` | eta0 [mPa s]=0.7; eta_r [mPa s]=0.17; zeta0+zeta_r [mPa s nm^2]=2.1; … (full list in `fig_data_size.py`) | tube, slit: closed forms; square: large-size law 1 + c/D_h / closed forms (no grid) | square law within 3e-3 of the 2D solver at lambda a = 30 (micropolar_duct_2d.py (e)) |
+| Fig. 4 | `fig_data_temperature.py` | coefficients=Hansen 2010 Table II, 284-319 K (MD-MD ratios); wall=BC1; … (full list in `fig_data_temperature.py`) | tube, closed form / closed form (no grid) | closed form |
+| Table 1 | `water_slip_length.py, check_hansen2010_table_eq23.py` | source=Hansen et al. 2010 Table II (SPC/Fw), 284-299 K; … (full list in `water_slip_length.py; check_hansen2010_table_eq23.py`) | not applicable / closed form | exact arithmetic |
+| Table 2 | `micropolar_duct_2d.py, check_tube_m3_bound.py` | square=mu = gamma = 1, alpha + beta = 0, kappa/mu = 1 and 10, lambda a = 1, 10, 100; … (full list in `micropolar_duct_2d.py; check_tube_m3_bound.py`) | square side a; tube radius R / square: N = 40, 80, 160 per side; tube: N = 1000, 2000, 4000 radial intervals | Richardson extrapolation; sparse direct solves |
+| Table 3 | `water_slip_length.py, micropolar_duct_2d.py` | coefficients=Hansen 2010 Table II at 299 K (eta0 0.70, eta_r 0.17 mPa s, zeta 2.1 mPa s nm^2); … (full list in `water_slip_length.py; micropolar_duct_2d.py`) | tube, slit: closed forms; square: 2D cross-section of side D_h / square: stretched grid, 160 x 160 (120 x 120 check) | N = 120/160 difference <= 2e-5 |
+
+## Further numbers of the paper
+
+- Grid stretching of the duct solver (`micropolar_duct_2d.py`): x = (L/2)[1 + tanh(s xi)/tanh s], xi in [-1, 1], with s = min(3, 0.8 + 0.5 ln(lambda a)) for lambda a > 3 and s = 0 (uniform grid) otherwise; printed by `check_duct_converged_differences.py`, part (d).
+- Converged comparisons (N = 80/160/320, Richardson extrapolation): `check_duct_converged_differences.py`.
+- Data table for distribution: `data/water_viscosity_data_public.csv` (142 rows, ASCII) with `data/README_data.md`, produced by `data_public_table.py`.
+- Digitization accuracy: `check_digitization_accuracy.py` writes `data/digitization_accuracy_pairs.csv`.
+- Extended Table 3 and its sensitivity checks: `data_table3_extended.py`, `data_group_sensitivity.py`, `data_measurement_factors.py`, `data_points_above_bound.py`, `check_extended_tables.py`.
+- Joint change of the rotational and spin viscosities, ceilings and finite-difference checks: `tube_joint_eta_r_zeta.py`, `square_ceiling_fd_check.py`.
+- Wall power, passivity and energy-identity checks: `check_wall_power_sign_conventions.py`, `check_bc4_slip_order.py`, `check_tube_fourier_orthogonality.py`, `khanukaeva_n07_beta_power.py`.
+- Other digitization and literature checks: `bondarenko2024_fig12_digitize.py`, `wu2017_interfacial_viscosity_200nm.py`, `check_hansen2010_slit_discrepancy.py`, `check_khanukaeva2023_walls.py`.
+
+## Running everything
+
+- Run from this folder (`kod/`): `python run_all.py`. Set `OPENBLAS_NUM_THREADS=1` on small machines; the slowest script (`check_duct_converged_differences.py`) takes about 20 min.
+- The data table is written to `../01_arastirma/veri_tablosu.csv` and the figures to `../sekil/` (folders next to `kod/`, created if missing). The distributed public copy of the data table is `data/water_viscosity_data_public.csv` (written by `data_public_table.py`).
+- Source PDFs are copyrighted and not distributed. Four scripts read them: `check_hansen2010_slit_discrepancy.py` (vector data of the published figures of Hansen et al. 2010 and 2015), `check_khanukaeva2023_walls.py` (section D only: digitized figures of Khanukaeva and Troshkin 2023), `check_digitization_accuracy.py` (figure crops for the reading-accuracy check) and `bondarenko2024_fig12_digitize.py` (screenshot of Fig. 12 of Bondarenko et al. 2024). **Source PDF required, not distributed:** without the files these scripts print `SKIPPED: source PDF required, not distributed` and keep their saved output files (`*_output.txt`, `data/digitization_*.csv`), which are distributed.
+- Helper modules: `paper_common.py` (closed forms and water coefficients) and `params_writer.py` (writes `params/*.json`).

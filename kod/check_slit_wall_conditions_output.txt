@@ -1,0 +1,168 @@
+S1 ODE residuals (general C): 0, 0; u(h) = 0; u'(0) = 0
+S2 Q formula check: 0
+S3 M1 limit h->inf: 7/4 (expect mu+k/2 = 7/4)
+S3 M1 limit h->0  : 5/2 (expect mu+k = 5/2)
+N0 energy identity rel. error M1 {}: 0.00e+00
+N0 energy identity rel. error M3 {'n': -0.3}: -1.62e-16
+N0 energy identity rel. error M3 {'n': 0.3}: -1.51e-16
+N0 energy identity rel. error M4 {'ll': 0.5}: -4.99e-16
+N0 energy identity rel. error M5 {}: -4.42e-16
+
+Table A: M1 (mu=1, gamma=1): mu+k/2 <= refined lower <= mu_app <= mu+k ;  refined = mu+k-k^2/(2k+gamma*pi^2/(4h^2))
+  k/mu=  0.1 h*lam=   0.01: mu_app=1.100000 | mu+k/2=1.0500 refined=1.099998 mu+k=1.1000 | ok=True P=2.8e-23
+  k/mu=  0.1 h*lam=   0.10: mu_app=1.099965 | mu+k/2=1.0500 refined=1.099789 mu+k=1.1000 | ok=True P=-0.0e+00
+  k/mu=  0.1 h*lam=   1.00: mu_app=1.096820 | mu+k/2=1.0500 refined=1.085098 mu+k=1.1000 | ok=True P=-3.3e-17
+  k/mu=  0.1 h*lam=   3.00: mu_app=1.083065 | mu+k/2=1.0500 refined=1.060371 mu+k=1.1000 | ok=True P=-4.3e-16
+  k/mu=  0.1 h*lam=  10.00: mu_app=1.063046 | mu+k/2=1.0500 refined=1.051151 mu+k=1.1000 | ok=True P=-0.0e+00
+  k/mu=  0.1 h*lam= 100.00: mu_app=1.051419 | mu+k/2=1.0500 refined=1.050012 mu+k=1.1000 | ok=True P=6.7e-13
+  k/mu=  1.0 h*lam=   0.01: mu_app=1.999996 | mu+k/2=1.5000 refined=1.999973 mu+k=2.0000 | ok=True P=4.8e-24
+  k/mu=  1.0 h*lam=   0.10: mu_app=1.999556 | mu+k/2=1.5000 refined=1.997313 mu+k=2.0000 | ok=True P=-3.9e-21
+  k/mu=  1.0 h*lam=   1.00: mu_app=1.960212 | mu+k/2=1.5000 refined=1.824595 mu+k=2.0000 | ok=True P=-0.0e+00
+  k/mu=  1.0 h*lam=   3.00: mu_app=1.802688 | mu+k/2=1.5000 refined=1.585275 mu+k=2.0000 | ok=True P=-0.0e+00
+  k/mu=  1.0 h*lam=  10.00: mu_app=1.608579 | mu+k/2=1.5000 refined=1.509085 mu+k=2.0000 | ok=True P=-0.0e+00
+  k/mu=  1.0 h*lam= 100.00: mu_app=1.511221 | mu+k/2=1.5000 refined=1.500093 mu+k=2.0000 | ok=True P=-0.0e+00
+  k/mu= 10.0 h*lam=   0.01: mu_app=10.999939 | mu+k/2=6.0000 refined=10.999629 mu+k=11.0000 | ok=True P=1.5e-25
+  k/mu= 10.0 h*lam=   0.10: mu_app=10.993898 | mu+k/2=6.0000 refined=10.963123 mu+k=11.0000 | ok=True P=1.2e-22
+  k/mu= 10.0 h*lam=   1.00: mu_app=10.468761 | mu+k/2=6.0000 refined=8.868581 mu+k=11.0000 | ok=True P=-0.0e+00
+  k/mu= 10.0 h*lam=   3.00: mu_app=8.636689 | mu+k/2=6.0000 refined=6.650432 mu+k=11.0000 | ok=True P=2.3e-18
+  k/mu= 10.0 h*lam=  10.00: mu_app=6.839378 | mu+k/2=6.0000 refined=6.066399 mu+k=11.0000 | ok=True P=-4.2e-17
+  k/mu= 10.0 h*lam= 100.00: mu_app=6.082108 | mu+k/2=6.0000 refined=6.000673 mu+k=11.0000 | ok=True P=3.7e-15
+Table A all ok: True
+
+Table B: M3 (psi = -n u'), mu=1, gamma=1. passive iff P<=0.
+  k=  0.5 h*lam=  0.3 n= -1.00: mu_app/(mu+k)=1.32859 mu_app/(mu+k/2)=1.59431 P=+8.657e-02 ACTIVE  >mu+k
+  k=  0.5 h*lam=  0.3 n= -0.50: mu_app/(mu+k)=1.16390 mu_app/(mu+k/2)=1.39668 P=+2.875e-02 ACTIVE  >mu+k
+  k=  0.5 h*lam=  0.3 n= -0.20: mu_app/(mu+k)=1.06489 mu_app/(mu+k/2)=1.27787 P=+5.778e-03 ACTIVE  >mu+k
+  k=  0.5 h*lam=  0.3 n= -0.05: mu_app/(mu+k)=1.01534 mu_app/(mu+k/2)=1.21841 P=+4.923e-04 ACTIVE  >mu+k
+  k=  0.5 h*lam=  0.3 n=  0.05: mu_app/(mu+k)=0.98228 mu_app/(mu+k/2)=1.17874 P=+2.560e-04 ACTIVE
+  k=  0.5 h*lam=  0.3 n=  0.20: mu_app/(mu+k)=0.93267 mu_app/(mu+k/2)=1.11920 P=+6.347e-03 ACTIVE
+  k=  0.5 h*lam=  0.3 n=  0.45: mu_app/(mu+k)=0.84990 mu_app/(mu+k/2)=1.01988 P=+4.077e-02 ACTIVE
+  k=  0.5 h*lam=  1.0 n= -1.00: mu_app/(mu+k)=1.28634 mu_app/(mu+k/2)=1.54360 P=+4.282e-01 ACTIVE  >mu+k
+  k=  0.5 h*lam=  1.0 n= -0.50: mu_app/(mu+k)=1.13893 mu_app/(mu+k/2)=1.36671 P=+1.566e-01 ACTIVE  >mu+k
+  k=  0.5 h*lam=  1.0 n= -0.20: mu_app/(mu+k)=1.04878 mu_app/(mu+k/2)=1.25854 P=+3.962e-02 ACTIVE  >mu+k
+  k=  0.5 h*lam=  1.0 n= -0.05: mu_app/(mu+k)=1.00323 mu_app/(mu+k/2)=1.20387 P=+6.043e-03 ACTIVE  >mu+k
+  k=  0.5 h*lam=  1.0 n=  0.05: mu_app/(mu+k)=0.97267 mu_app/(mu+k/2)=1.16721 P=-2.997e-03 passive
+  k=  0.5 h*lam=  1.0 n=  0.20: mu_app/(mu+k)=0.92656 mu_app/(mu+k/2)=1.11188 P=+9.759e-03 ACTIVE
+  k=  0.5 h*lam=  1.0 n=  0.45: mu_app/(mu+k)=0.84897 mu_app/(mu+k/2)=1.01876 P=+1.308e-01 ACTIVE
+  k=  0.5 h*lam=  3.0 n= -1.00: mu_app/(mu+k)=1.11388 mu_app/(mu+k/2)=1.33665 P=+3.801e+00 ACTIVE  >mu+k
+  k=  0.5 h*lam=  3.0 n= -0.50: mu_app/(mu+k)=1.03122 mu_app/(mu+k/2)=1.23746 P=+1.566e+00 ACTIVE  >mu+k
+  k=  0.5 h*lam=  3.0 n= -0.20: mu_app/(mu+k)=0.97685 mu_app/(mu+k/2)=1.17222 P=+4.859e-01 ACTIVE
+  k=  0.5 h*lam=  3.0 n= -0.05: mu_app/(mu+k)=0.94817 mu_app/(mu+k/2)=1.13780 P=+9.749e-02 ACTIVE
+  k=  0.5 h*lam=  3.0 n=  0.05: mu_app/(mu+k)=0.92846 mu_app/(mu+k/2)=1.11415 P=-7.840e-02 passive
+  k=  0.5 h*lam=  3.0 n=  0.20: mu_app/(mu+k)=0.89795 mu_app/(mu+k/2)=1.07754 P=-1.762e-01 passive
+  k=  0.5 h*lam=  3.0 n=  0.45: mu_app/(mu+k)=0.84445 mu_app/(mu+k/2)=1.01335 P=+2.994e-01 ACTIVE
+  k=  0.5 h*lam= 10.0 n= -1.00: mu_app/(mu+k)=0.92721 mu_app/(mu+k/2)=1.11266 P=+4.710e+01 ACTIVE
+  k=  0.5 h*lam= 10.0 n= -0.50: mu_app/(mu+k)=0.90299 mu_app/(mu+k/2)=1.08359 P=+2.021e+01 ACTIVE
+  k=  0.5 h*lam= 10.0 n= -0.20: mu_app/(mu+k)=0.88564 mu_app/(mu+k/2)=1.06277 P=+6.641e+00 ACTIVE
+  k=  0.5 h*lam= 10.0 n= -0.05: mu_app/(mu+k)=0.87598 mu_app/(mu+k/2)=1.05118 P=+1.411e+00 ACTIVE
+  k=  0.5 h*lam= 10.0 n=  0.05: mu_app/(mu+k)=0.86913 mu_app/(mu+k/2)=1.04296 P=-1.211e+00 passive
+  k=  0.5 h*lam= 10.0 n=  0.20: mu_app/(mu+k)=0.85816 mu_app/(mu+k/2)=1.02979 P=-3.398e+00 passive
+  k=  0.5 h*lam= 10.0 n=  0.45: mu_app/(mu+k)=0.83777 mu_app/(mu+k/2)=1.00532 P=-2.729e-01 passive
+  k=  0.5 h*lam= 30.0 n= -1.00: mu_app/(mu+k)=0.86468 mu_app/(mu+k/2)=1.03761 P=+4.371e+02 ACTIVE
+  k=  0.5 h*lam= 30.0 n= -0.50: mu_app/(mu+k)=0.85700 mu_app/(mu+k/2)=1.02840 P=+1.894e+02 ACTIVE
+  k=  0.5 h*lam= 30.0 n= -0.20: mu_app/(mu+k)=0.85134 mu_app/(mu+k/2)=1.02160 P=+6.306e+01 ACTIVE
+  k=  0.5 h*lam= 30.0 n= -0.05: mu_app/(mu+k)=0.84812 mu_app/(mu+k/2)=1.01774 P=+1.356e+01 ACTIVE
+  k=  0.5 h*lam= 30.0 n=  0.05: mu_app/(mu+k)=0.84581 mu_app/(mu+k/2)=1.01497 P=-1.179e+01 passive
+  k=  0.5 h*lam= 30.0 n=  0.20: mu_app/(mu+k)=0.84205 mu_app/(mu+k/2)=1.01047 P=-3.434e+01 passive
+  k=  0.5 h*lam= 30.0 n=  0.45: mu_app/(mu+k)=0.83492 mu_app/(mu+k/2)=1.00190 P=-1.174e+01 passive
+  k=  1.0 h*lam=  0.3 n= -1.00: mu_app/(mu+k)=1.49113 mu_app/(mu+k/2)=1.98817 P=+2.884e-02 ACTIVE  >mu+k
+  k=  1.0 h*lam=  0.3 n= -0.50: mu_app/(mu+k)=1.24506 mu_app/(mu+k/2)=1.66008 P=+1.058e-02 ACTIVE  >mu+k
+  k=  1.0 h*lam=  0.3 n= -0.20: mu_app/(mu+k)=1.09695 mu_app/(mu+k/2)=1.46261 P=+2.306e-03 ACTIVE  >mu+k
+  k=  1.0 h*lam=  0.3 n= -0.05: mu_app/(mu+k)=1.02277 mu_app/(mu+k/2)=1.36369 P=+2.094e-04 ACTIVE  >mu+k
+  k=  1.0 h*lam=  0.3 n=  0.05: mu_app/(mu+k)=0.97326 mu_app/(mu+k/2)=1.29768 P=+1.034e-04 ACTIVE
+  k=  1.0 h*lam=  0.3 n=  0.20: mu_app/(mu+k)=0.89893 mu_app/(mu+k/2)=1.19857 P=+2.844e-03 ACTIVE
+  k=  1.0 h*lam=  0.3 n=  0.45: mu_app/(mu+k)=0.77485 mu_app/(mu+k/2)=1.03313 P=+2.055e-02 ACTIVE
+  k=  1.0 h*lam=  1.0 n= -1.00: mu_app/(mu+k)=1.41390 mu_app/(mu+k/2)=1.88520 P=+1.475e-01 ACTIVE  >mu+k
+  k=  1.0 h*lam=  1.0 n= -0.50: mu_app/(mu+k)=1.20123 mu_app/(mu+k/2)=1.60165 P=+5.992e-02 ACTIVE  >mu+k
+  k=  1.0 h*lam=  1.0 n= -0.20: mu_app/(mu+k)=1.06960 mu_app/(mu+k/2)=1.42614 P=+1.661e-02 ACTIVE  >mu+k
+  k=  1.0 h*lam=  1.0 n= -0.05: mu_app/(mu+k)=1.00261 mu_app/(mu+k/2)=1.33682 P=+2.716e-03 ACTIVE  >mu+k
+  k=  1.0 h*lam=  1.0 n=  0.05: mu_app/(mu+k)=0.95751 mu_app/(mu+k/2)=1.27668 P=-1.480e-03 passive
+  k=  1.0 h*lam=  1.0 n=  0.20: mu_app/(mu+k)=0.88917 mu_app/(mu+k/2)=1.18556 P=+3.769e-03 ACTIVE
+  k=  1.0 h*lam=  1.0 n=  0.45: mu_app/(mu+k)=0.77343 mu_app/(mu+k/2)=1.03124 P=+6.563e-02 ACTIVE
+  k=  1.0 h*lam=  3.0 n= -1.00: mu_app/(mu+k)=1.12921 mu_app/(mu+k/2)=1.50561 P=+1.369e+00 ACTIVE  >mu+k
+  k=  1.0 h*lam=  3.0 n= -0.50: mu_app/(mu+k)=1.02551 mu_app/(mu+k/2)=1.36734 P=+6.244e-01 ACTIVE  >mu+k
+  k=  1.0 h*lam=  3.0 n= -0.20: mu_app/(mu+k)=0.95384 mu_app/(mu+k/2)=1.27178 P=+2.106e-01 ACTIVE
+  k=  1.0 h*lam=  3.0 n= -0.05: mu_app/(mu+k)=0.91485 mu_app/(mu+k/2)=1.21980 P=+4.452e-02 ACTIVE
+  k=  1.0 h*lam=  3.0 n=  0.05: mu_app/(mu+k)=0.88757 mu_app/(mu+k/2)=1.18342 P=-3.733e-02 passive
+  k=  1.0 h*lam=  3.0 n=  0.20: mu_app/(mu+k)=0.84454 mu_app/(mu+k/2)=1.12605 P=-9.162e-02 passive
+  k=  1.0 h*lam=  3.0 n=  0.45: mu_app/(mu+k)=0.76661 mu_app/(mu+k/2)=1.02215 P=+1.448e-01 ACTIVE
+  k=  1.0 h*lam= 10.0 n= -1.00: mu_app/(mu+k)=0.86705 mu_app/(mu+k/2)=1.15607 P=+1.724e+01 ACTIVE
+  k=  1.0 h*lam= 10.0 n= -0.50: mu_app/(mu+k)=0.84081 mu_app/(mu+k/2)=1.12108 P=+8.165e+00 ACTIVE
+  k=  1.0 h*lam= 10.0 n= -0.20: mu_app/(mu+k)=0.82049 mu_app/(mu+k/2)=1.09398 P=+2.902e+00 ACTIVE
+  k=  1.0 h*lam= 10.0 n= -0.05: mu_app/(mu+k)=0.80857 mu_app/(mu+k/2)=1.07810 P=+6.460e-01 ACTIVE
+  k=  1.0 h*lam= 10.0 n=  0.05: mu_app/(mu+k)=0.79984 mu_app/(mu+k/2)=1.06645 P=-5.744e-01 passive
+  k=  1.0 h*lam= 10.0 n=  0.20: mu_app/(mu+k)=0.78534 mu_app/(mu+k/2)=1.04712 P=-1.714e+00 passive
+  k=  1.0 h*lam= 10.0 n=  0.45: mu_app/(mu+k)=0.75659 mu_app/(mu+k/2)=1.00879 P=-2.294e-01 passive
+  k=  1.0 h*lam= 30.0 n= -1.00: mu_app/(mu+k)=0.78809 mu_app/(mu+k/2)=1.05079 P=+1.606e+02 ACTIVE
+  k=  1.0 h*lam= 30.0 n= -0.50: mu_app/(mu+k)=0.78017 mu_app/(mu+k/2)=1.04022 P=+7.675e+01 ACTIVE
+  k=  1.0 h*lam= 30.0 n= -0.20: mu_app/(mu+k)=0.77380 mu_app/(mu+k/2)=1.03173 P=+2.760e+01 ACTIVE
+  k=  1.0 h*lam= 30.0 n= -0.05: mu_app/(mu+k)=0.76997 mu_app/(mu+k/2)=1.02663 P=+6.212e+00 ACTIVE
+  k=  1.0 h*lam= 30.0 n=  0.05: mu_app/(mu+k)=0.76711 mu_app/(mu+k/2)=1.02282 P=-5.588e+00 passive
+  k=  1.0 h*lam= 30.0 n=  0.20: mu_app/(mu+k)=0.76228 mu_app/(mu+k/2)=1.01637 P=-1.724e+01 passive
+  k=  1.0 h*lam= 30.0 n=  0.45: mu_app/(mu+k)=0.75235 mu_app/(mu+k/2)=1.00313 P=-6.806e+00 passive
+  k= 10.0 h*lam=  0.3 n= -1.00: mu_app/(mu+k)=1.88111 mu_app/(mu+k/2)=3.44871 P=+2.229e-04 ACTIVE  >mu+k
+  k= 10.0 h*lam=  0.3 n= -0.50: mu_app/(mu+k)=1.44027 mu_app/(mu+k/2)=2.64049 P=+9.840e-05 ACTIVE  >mu+k
+  k= 10.0 h*lam=  0.3 n= -0.20: mu_app/(mu+k)=1.17367 mu_app/(mu+k/2)=2.15173 P=+2.561e-05 ACTIVE  >mu+k
+  k= 10.0 h*lam=  0.3 n= -0.05: mu_app/(mu+k)=1.03978 mu_app/(mu+k/2)=1.90627 P=+2.750e-06 ACTIVE  >mu+k
+  k= 10.0 h*lam=  0.3 n=  0.05: mu_app/(mu+k)=0.95031 mu_app/(mu+k/2)=1.74223 P=+1.046e-06 ACTIVE
+  k= 10.0 h*lam=  0.3 n=  0.20: mu_app/(mu+k)=0.81576 mu_app/(mu+k/2)=1.49555 P=+4.118e-05 ACTIVE
+  k= 10.0 h*lam=  0.3 n=  0.45: mu_app/(mu+k)=0.59062 mu_app/(mu+k/2)=1.08280 P=+4.327e-04 ACTIVE
+  k= 10.0 h*lam=  1.0 n= -1.00: mu_app/(mu+k)=1.65686 mu_app/(mu+k/2)=3.03757 P=+1.278e-03 ACTIVE  >mu+k
+  k= 10.0 h*lam=  1.0 n= -0.50: mu_app/(mu+k)=1.32053 mu_app/(mu+k/2)=2.42096 P=+6.350e-04 ACTIVE  >mu+k
+  k= 10.0 h*lam=  1.0 n= -0.20: mu_app/(mu+k)=1.10343 mu_app/(mu+k/2)=2.02295 P=+2.156e-04 ACTIVE  >mu+k
+  k= 10.0 h*lam=  1.0 n= -0.05: mu_app/(mu+k)=0.99018 mu_app/(mu+k/2)=1.81534 P=+4.185e-05 ACTIVE
+  k= 10.0 h*lam=  1.0 n=  0.05: mu_app/(mu+k)=0.91285 mu_app/(mu+k/2)=1.67357 P=-2.860e-05 passive
+  k= 10.0 h*lam=  1.0 n=  0.20: mu_app/(mu+k)=0.79401 mu_app/(mu+k/2)=1.45568 P=+2.081e-05 ACTIVE
+  k= 10.0 h*lam=  1.0 n=  0.45: mu_app/(mu+k)=0.58793 mu_app/(mu+k/2)=1.07786 P=+1.359e-03 ACTIVE
+  k= 10.0 h*lam=  3.0 n= -1.00: mu_app/(mu+k)=1.04843 mu_app/(mu+k/2)=1.92212 P=+1.347e-02 ACTIVE  >mu+k
+  k= 10.0 h*lam=  3.0 n= -0.50: mu_app/(mu+k)=0.94007 mu_app/(mu+k/2)=1.72346 P=+7.440e-03 ACTIVE
+  k= 10.0 h*lam=  3.0 n= -0.20: mu_app/(mu+k)=0.85448 mu_app/(mu+k/2)=1.56654 P=+2.994e-03 ACTIVE
+  k= 10.0 h*lam=  3.0 n= -0.05: mu_app/(mu+k)=0.80358 mu_app/(mu+k/2)=1.47323 P=+7.149e-04 ACTIVE
+  k= 10.0 h*lam=  3.0 n=  0.05: mu_app/(mu+k)=0.76592 mu_app/(mu+k/2)=1.40419 P=-6.641e-04 passive
+  k= 10.0 h*lam=  3.0 n=  0.20: mu_app/(mu+k)=0.70280 mu_app/(mu+k/2)=1.28846 P=-2.037e-03 passive
+  k= 10.0 h*lam=  3.0 n=  0.45: mu_app/(mu+k)=0.57517 mu_app/(mu+k/2)=1.05448 P=+2.567e-03 ACTIVE
+  k= 10.0 h*lam= 10.0 n= -1.00: mu_app/(mu+k)=0.67578 mu_app/(mu+k/2)=1.23894 P=+1.768e-01 ACTIVE
+  k= 10.0 h*lam= 10.0 n= -0.50: mu_app/(mu+k)=0.65619 mu_app/(mu+k/2)=1.20301 P=+1.005e-01 ACTIVE
+  k= 10.0 h*lam= 10.0 n= -0.20: mu_app/(mu+k)=0.63825 mu_app/(mu+k/2)=1.17012 P=+4.210e-02 ACTIVE
+  k= 10.0 h*lam= 10.0 n= -0.05: mu_app/(mu+k)=0.62633 mu_app/(mu+k/2)=1.14828 P=+1.045e-02 ACTIVE
+  k= 10.0 h*lam= 10.0 n=  0.05: mu_app/(mu+k)=0.61683 mu_app/(mu+k/2)=1.13086 P=-1.013e-02 passive
+  k= 10.0 h*lam= 10.0 n=  0.20: mu_app/(mu+k)=0.59940 mu_app/(mu+k/2)=1.09890 P=-3.551e-02 passive
+  k= 10.0 h*lam= 10.0 n=  0.45: mu_app/(mu+k)=0.55702 mu_app/(mu+k/2)=1.02121 P=-1.209e-02 passive
+  k= 10.0 h*lam= 30.0 n= -1.00: mu_app/(mu+k)=0.58591 mu_app/(mu+k/2)=1.07417 P=+1.663e+00 ACTIVE
+  k= 10.0 h*lam= 30.0 n= -0.50: mu_app/(mu+k)=0.58053 mu_app/(mu+k/2)=1.06430 P=+9.521e-01 ACTIVE
+  k= 10.0 h*lam= 30.0 n= -0.20: mu_app/(mu+k)=0.57541 mu_app/(mu+k/2)=1.05491 P=+4.022e-01 ACTIVE
+  k= 10.0 h*lam= 30.0 n= -0.05: mu_app/(mu+k)=0.57189 mu_app/(mu+k/2)=1.04847 P=+1.006e-01 ACTIVE
+  k= 10.0 h*lam= 30.0 n=  0.05: mu_app/(mu+k)=0.56903 mu_app/(mu+k/2)=1.04322 P=-9.835e-02 passive
+  k= 10.0 h*lam= 30.0 n=  0.20: mu_app/(mu+k)=0.56362 mu_app/(mu+k/2)=1.03330 P=-3.532e-01 passive
+  k= 10.0 h*lam= 30.0 n=  0.45: mu_app/(mu+k)=0.54954 mu_app/(mu+k/2)=1.00749 P=-2.136e-01 passive
+PASSIVE M3 cases with mu_app > mu+k: 0
+Fine scan (25 k x 40 h x 71 n in [-3,0.5]): mu_app>mu+k with passive wall: 0; with active wall: 36280; max passive ratio None
+
+Table C: M4 (psi = -ls psi'), M5, mu=1, gamma=1
+  k=  0.1 h*lam=   0.01: M1/(mu+k)=1.00000  M4(ls/h=0.1,1,10)/(mu+k)=1.00000, 1.00000, 1.00000  M5/(mu+k)=1.00000
+  k=  0.1 h*lam=   0.10: M1/(mu+k)=0.99997  M4(ls/h=0.1,1,10)/(mu+k)=0.99995, 0.99989, 0.99982  M5/(mu+k)=0.99981
+  k=  0.1 h*lam=   1.00: M1/(mu+k)=0.99711  M4(ls/h=0.1,1,10)/(mu+k)=0.99588, 0.99113, 0.98736  M5/(mu+k)=0.98662
+  k=  0.1 h*lam=  10.00: M1/(mu+k)=0.96641  M4(ls/h=0.1,1,10)/(mu+k)=0.96103, 0.95668, 0.95582  M5/(mu+k)=0.95572
+  k=  0.1 h*lam= 100.00: M1/(mu+k)=0.95584  M4(ls/h=0.1,1,10)/(mu+k)=0.95467, 0.95457, 0.95456  M5/(mu+k)=0.95456
+  k=  1.0 h*lam=   0.01: M1/(mu+k)=1.00000  M4(ls/h=0.1,1,10)/(mu+k)=1.00000, 0.99999, 0.99999  M5/(mu+k)=0.99999
+  k=  1.0 h*lam=   0.10: M1/(mu+k)=0.99978  M4(ls/h=0.1,1,10)/(mu+k)=0.99968, 0.99922, 0.99877  M5/(mu+k)=0.99867
+  k=  1.0 h*lam=   1.00: M1/(mu+k)=0.98011  M4(ls/h=0.1,1,10)/(mu+k)=0.97186, 0.94103, 0.91773  M5/(mu+k)=0.91330
+  k=  1.0 h*lam=  10.00: M1/(mu+k)=0.80429  M4(ls/h=0.1,1,10)/(mu+k)=0.77892, 0.75932, 0.75555  M5/(mu+k)=0.75510
+  k=  1.0 h*lam= 100.00: M1/(mu+k)=0.75561  M4(ls/h=0.1,1,10)/(mu+k)=0.75056, 0.75011, 0.75006  M5/(mu+k)=0.75006
+  k= 10.0 h*lam=   0.01: M1/(mu+k)=0.99999  M4(ls/h=0.1,1,10)/(mu+k)=0.99999, 0.99998, 0.99997  M5/(mu+k)=0.99997
+  k= 10.0 h*lam=   0.10: M1/(mu+k)=0.99945  M4(ls/h=0.1,1,10)/(mu+k)=0.99919, 0.99806, 0.99694  M5/(mu+k)=0.99669
+  k= 10.0 h*lam=   1.00: M1/(mu+k)=0.95171  M4(ls/h=0.1,1,10)/(mu+k)=0.93249, 0.86456, 0.81692  M5/(mu+k)=0.80820
+  k= 10.0 h*lam=  10.00: M1/(mu+k)=0.62176  M4(ls/h=0.1,1,10)/(mu+k)=0.58494, 0.55790, 0.55284  M5/(mu+k)=0.55223
+  k= 10.0 h*lam= 100.00: M1/(mu+k)=0.55292  M4(ls/h=0.1,1,10)/(mu+k)=0.54619, 0.54560, 0.54554  M5/(mu+k)=0.54553
+M4/M5 bound or passivity violations: 0
+
+Slip-equivalent length of the M1 wall layer: b defined by mu_app/(mu+k/2) = 1 - 3 b/h (h -> inf)
+  k/mu=0.41: h*lam=100.0: b*lam = -0.144560
+  k/mu=0.41: h*lam=200.0: b*lam = -0.144978
+  k/mu=0.41: h*lam=400.0: b*lam = -0.145185
+  k/mu=1.0: h*lam=100.0: b*lam = -0.249351
+  k/mu=1.0: h*lam=200.0: b*lam = -0.249682
+  k/mu=1.0: h*lam=400.0: b*lam = -0.249842
+  k/mu=10.0: h*lam=100.0: b*lam = -0.456158
+  k/mu=10.0: h*lam=200.0: b*lam = -0.455362
+  k/mu=10.0: h*lam=400.0: b*lam = -0.454956

@@ -1,0 +1,53 @@
+MD: kappa/mu = 0.410,  1/K = 2.07 nm,  l = sqrt(zeta/eta0) = 1.58 nm
+Slit check vs Hansen (5% @200 nm, 15% @100 nm, 50% @20 nm; height = 2h):
+  height   200 nm: 1-Q/Qn =   0.9 %
+  height   100 nm: 1-Q/Qn =   1.8 %
+  height    20 nm: 1-Q/Qn =   7.2 %
+Tube (quartz capillary radii), MD coefficients vs Migun fit / data:
+  r0   500 nm: eta_e/eta_n MD = 1.002
+  r0   300 nm: eta_e/eta_n MD = 1.004
+  r0   100 nm: eta_e/eta_n MD = 1.012
+  r0    50 nm: eta_e/eta_n MD = 1.023
+  r0    40 nm: eta_e/eta_n MD = 1.029
+MD prediction (tube, M1) vs T; bound = 1 + eta_r/eta0
+  T_C  bound  r=48nm  r=170nm
+ 10.9  1.185   1.028    1.008
+ 15.9  1.205   1.030    1.009
+ 19.9  1.224   1.032    1.009
+ 25.9  1.243   1.031    1.009
+ 31.9  1.262   1.034    1.010
+ 35.9  1.293   1.035    1.010
+ 39.9  1.298   1.035    1.010
+ 45.9  1.333   1.037    1.011
+
+Churaev 1970 Fig. 5 data (r, T, measured):
+  R001 r= 53.03 nm  T=~20 (caption: t~20 C) C  eta/eta0=1.407
+  R002 r= 59.76 nm  T=~20 (caption: t~20 C) C  eta/eta0=1.361
+  R003 r= 41.25 nm  T=~20 (caption: t~20 C) C  eta/eta0=1.339
+  R004 r=   181 nm  T=~20 (caption: t~20 C) C  eta/eta0=1.192
+  R005 r= 199.5 nm  T=~20 (caption: t~20 C) C  eta/eta0=1.13
+  R006 r= 225.6 nm  T=~20 (caption: t~20 C) C  eta/eta0=1.159
+  R007 r= 241.6 nm  T=~20 (caption: t~20 C) C  eta/eta0=1.101
+  R008 r= 255.1 nm  T=~20 (caption: t~20 C) C  eta/eta0=1.125
+  R009 r= 547.1 nm  T=~20 (caption: t~20 C) C  eta/eta0=1.03
+  R010 r= 739.9 nm  T=~20 (caption: t~20 C) C  eta/eta0=1.013
+  R011 r= 997.5 nm  T=~20 (caption: t~20 C) C  eta/eta0=1.006
+  R015 r=    48 nm  T=  24.3 C  eta/eta0=1.478
+  R016 r=    48 nm  T=  31.9 C  eta/eta0=1.475
+  R017 r=    48 nm  T=  40.0 C  eta/eta0=1.392
+  R018 r=    48 nm  T=  46.4 C  eta/eta0=1.327
+  R019 r=    48 nm  T=  53.9 C  eta/eta0=1.31
+  R020 r=    48 nm  T=  60.1 C  eta/eta0=1.187
+  R021 r=    48 nm  T=  68.9 C  eta/eta0=1.02
+  R022 r=    48 nm  T=  19.3 C  eta/eta0=1.414
+  R023 r=    48 nm  T=  22.5 C  eta/eta0=1.382
+  R024 r=    48 nm  T=  29.2 C  eta/eta0=1.416
+  R025 r=    48 nm  T=  40.1 C  eta/eta0=1.444
+  R026 r=   170 nm  T=   8.1 C  eta/eta0=1.137
+  R027 r=   170 nm  T=  18.4 C  eta/eta0=1.191
+  R028 r=   170 nm  T=  19.4 C  eta/eta0=1.148
+  R029 r=   170 nm  T=  21.4 C  eta/eta0=1.177
+  R030 r=   170 nm  T=  30.0 C  eta/eta0=1.232
+  R031 r=   170 nm  T=  40.6 C  eta/eta0=1.16
+  R032 r=   170 nm  T=  51.4 C  eta/eta0=1.105
+  R033 r=   170 nm  T=  66.2 C  eta/eta0=1.016

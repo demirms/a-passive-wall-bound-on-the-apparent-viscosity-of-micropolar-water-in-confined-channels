@@ -1,0 +1,9 @@
+(1) Eq. (23) limit h->0 (298 K set): 14.53 %
+(2) largest measured (Kazoe 2023, D_h = 119 nm) = 5.549; eta_r/eta0 needed >= 4.549; MD 284-299 K: 0.185-0.243; needed/MD = 18.7-24.6
+(3) fitted length 1/kappa_tilde = 14.22 nm; MD 1/lambda (284-299 K) = 1.959-2.286 nm; length ratio 6.2-7.3; eta_r ratio 2.98-3.92
+(4) equivalent immobile layer h0_eq = -b = 0.357-0.395 nm (284-299 K); Churaev et al. 1970 model h0 = 8 nm -> ratio 20-22
+(5) 299 K: 1/lambda = 1.959 nm; square lambda D_h = 37-251; tube lambda R (r = 41-60 nm) = 21-31
+(5) 284 K: 1/lambda = 2.286 nm; square lambda D_h = 32-215; tube lambda R (r = 41-60 nm) = 18-26
+(6) alpha+beta in {0, -0.9 gamma, 10 gamma}: max relative change of mu_app at lambda a = 30: 8.1e-04
+(6) alpha+beta in {0, -0.9 gamma, 10 gamma}: max relative change of mu_app at lambda a = 100: 3.8e-05
+(7) water rows compared (no duplicates, all electrolytes): 89; above the 299 K bound 1.243: 24

@@ -1,0 +1,64 @@
+(1) Table 1, all temperatures (MD-MD normalisation)
+    T[K]  eta0   eta_r  zeta    ratio    1/lam[nm]  b[nm]     c[nm]    bound
+    284   0.92   0.170  3.00    0.184783   2.286259  -0.356573  2.852581  1.184783
+    289   0.83   0.170  2.70    0.204819   2.187199  -0.371824  2.974591  1.204819
+    293   0.76   0.170  2.60    0.223684   2.163052  -0.395397  3.163172  1.223684
+    299   0.70   0.170  2.10    0.242857   1.959141  -0.382821  3.062566  1.242857
+    305   0.61   0.160  2.13    0.262295   2.049653  -0.425902  3.407215  1.262295
+    309   0.56   0.164  1.83    0.292857   1.899105  -0.430184  3.441471  1.292857
+    313   0.54   0.161  1.70    0.298148   1.851159  -0.425159  3.401273  1.298148
+    319   0.48   0.160  1.62    0.333333   1.837117  -0.459279  3.674235  1.333333
+
+(2) bound 284 K = 1.184783 -> two decimals 1.18; 299 K = 1.242857 -> 1.24
+(3) Migun fit, kappa/mu = 5.25, 1/lam = 14.2248 nm: r = 300 nm 1.07999; r = 40 nm 1.48481
+(3) Migun fit, kappa/mu = 5.25, 1/lam = 14.2000 nm: r = 300 nm 1.07985; r = 40 nm 1.48432
+
+(4) Slit, equivalent slip length b*lam from mu_app/(mu+k/2) = 1 - 3 b/h (mu = gamma = 1)
+    k/mu= 0.41 h*lam=   100: BC1 -0.14456 (Eq. 18: -0.14539); BC3 lam*ls=0.1 -0.13150, 1 -0.07285, 10 -0.01440; BC4 -0.001439
+    k/mu= 0.41 h*lam=   200: BC1 -0.14498 (Eq. 18: -0.14539); BC3 lam*ls=0.1 -0.13184, 1 -0.07277, 10 -0.01381; BC4 -0.000723
+    k/mu= 0.41 h*lam=   400: BC1 -0.14518 (Eq. 18: -0.14539); BC3 lam*ls=0.1 -0.13201, 1 -0.07273, 10 -0.01352; BC4 -0.000363
+    k/mu= 1.00 h*lam=   100: BC1 -0.24935 (Eq. 18: -0.25000); BC3 lam*ls=0.1 -0.22676, 1 -0.12546, 10 -0.02477; BC4 -0.002475
+    k/mu= 1.00 h*lam=   200: BC1 -0.24968 (Eq. 18: -0.25000); BC3 lam*ls=0.1 -0.22702, 1 -0.12523, 10 -0.02375; BC4 -0.001244
+    k/mu= 1.00 h*lam=   400: BC1 -0.24984 (Eq. 18: -0.25000); BC3 lam*ls=0.1 -0.22715, 1 -0.12512, 10 -0.02324; BC4 -0.000623
+    k/mu=10.00 h*lam=   100: BC1 -0.45616 (Eq. 18: -0.45455); BC3 lam*ls=0.1 -0.41459, 1 -0.22881, 10 -0.04506; BC4 -0.004501
+    k/mu=10.00 h*lam=   200: BC1 -0.45536 (Eq. 18: -0.45455); BC3 lam*ls=0.1 -0.41392, 1 -0.22804, 10 -0.04320; BC4 -0.002261
+    k/mu=10.00 h*lam=   400: BC1 -0.45496 (Eq. 18: -0.45455); BC3 lam*ls=0.1 -0.41357, 1 -0.22766, 10 -0.04226; BC4 -0.001134
+
+(5) Additional data groups of the data-size figure (values from veri_tablosu.csv, listed in fig4_data_size_output.txt)
+    R009 tube   547.1 meas 1.030 +- 0.015 pred 1.00279 (meas-pred)/unc +1.81 above bound 1.2429: False
+    R010 tube   739.9 meas 1.013 +- 0.015 pred 1.00207 (meas-pred)/unc +0.73 above bound 1.2429: False
+    R011 tube   997.5 meas 1.006 +- 0.015 pred 1.00153 (meas-pred)/unc +0.30 above bound 1.2429: False
+  -> Churaev tube r 547-998 nm: measured 1.006-1.030, predicted 1.00153-1.00279, (meas-pred)/unc +0.30 .. +1.81
+    R047 slit    22.4 meas 1.114 +- 0.050 pred 1.09243 (meas-pred)/unc +0.43 above bound 1.2429: False
+  -> Haneveld slit H 22.4 nm: measured 1.114-1.114, predicted 1.09243-1.09243, (meas-pred)/unc +0.43 .. +0.43
+    R048 slit    46.0 meas 1.020 +- 0.040 pred 1.04787 (meas-pred)/unc -0.70 above bound 1.2429: False
+  -> Haneveld slit H 46 nm: measured 1.020-1.020, predicted 1.04787-1.04787, (meas-pred)/unc -0.70 .. -0.70
+    R053 slit   104.5 meas 1.137 +- 0.110 pred 1.02161 (meas-pred)/unc +1.05 above bound 1.2429: False
+    R054 slit   102.4 meas 1.067 +- 0.110 pred 1.02205 (meas-pred)/unc +0.41 above bound 1.2429: False
+    R055 slit   110.9 meas 1.099 +- 0.110 pred 1.02039 (meas-pred)/unc +0.71 above bound 1.2429: False
+    R056 slit   111.2 meas 1.058 +- 0.110 pred 1.02033 (meas-pred)/unc +0.34 above bound 1.2429: False
+    R057 slit   152.6 meas 1.076 +- 0.110 pred 1.01488 (meas-pred)/unc +0.56 above bound 1.2429: False
+    R058 slit   154.9 meas 1.060 +- 0.110 pred 1.01467 (meas-pred)/unc +0.41 above bound 1.2429: False
+    R059 slit   161.2 meas 1.086 +- 0.110 pred 1.01410 (meas-pred)/unc +0.65 above bound 1.2429: False
+    R060 slit   152.7 meas 1.034 +- 0.110 pred 1.01487 (meas-pred)/unc +0.17 above bound 1.2429: False
+    R071 slit   152.0 meas 1.070 +- 0.060 pred 1.01494 (meas-pred)/unc +0.92 above bound 1.2429: False
+  -> Tas slit H 102-161 nm (pure water): measured 1.034-1.137, predicted 1.01410-1.02205, (meas-pred)/unc +0.17 .. +1.05
+    R078 slit   417.0 meas 0.897 +- 0.101 pred 1.00549 (meas-pred)/unc -1.07 above bound 1.2429: False
+    R079 slit   745.0 meas 1.099 +- 0.090 pred 1.00308 (meas-pred)/unc +1.07 above bound 1.2429: False
+  -> Kazoe plate H 417-745 nm: measured 0.897-1.099, predicted 1.00308-1.00549, (meas-pred)/unc -1.07 .. +1.07
+    R074 sq     760.0 meas 1.211 +- 0.101 pred 1.00403 (meas-pred)/unc +2.05 above bound 1.2429: False
+    R075 sq    1691.0 meas 1.133 +- 0.022 pred 1.00181 (meas-pred)/unc +5.96 above bound 1.2429: False
+  -> Kazoe square D_h 760-1691 nm: measured 1.133-1.211, predicted 1.00181-1.00403, (meas-pred)/unc +2.05 .. +5.96
+    R037 sq     838.0 meas 1.120 +- 0.072 pred 1.00365 (meas-pred)/unc +1.62 above bound 1.2429: False
+    R038 sq    1112.0 meas 0.855 +- 0.038 pred 1.00275 (meas-pred)/unc -3.89 above bound 1.2429: False
+    R039 sq    1530.0 meas 0.976 +- 0.034 pred 1.00200 (meas-pred)/unc -0.76 above bound 1.2429: False
+  -> Li square D_h 838-1530 nm: measured 0.855-1.120, predicted 1.00200-1.00365, (meas-pred)/unc -3.89 .. +1.62
+
+(6) BC2 tube scan: full grid 1720593; grid n on the pole for 3 kappa/mu values -> omitted 279; evaluated 1720314 (28 225 + 1 692 089 = 1720314)
+
+(7) BC2 tube: negative-n violation interval exists iff kappa(1/4 - J) < (2 mu + kappa) J
+    284 K: kappa/mu = 0.4533; interval of negative n only for lam R < 24.066
+    289 K: kappa/mu = 0.5152; interval of negative n only for lam R < 21.940
+    293 K: kappa/mu = 0.5763; interval of negative n only for lam R < 20.285
+    299 K: kappa/mu = 0.6415; interval of negative n only for lam R < 18.866
+    (experimental tubes r = 41-60 nm: lam R = 18-31, paper_numbers_output.txt (5))

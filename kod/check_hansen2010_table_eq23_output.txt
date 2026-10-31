@@ -1,0 +1,23 @@
+T eta_r/eta0  1/K[nm]  l=sqrt((z0+zr)/eta0)[nm]
+284 0.185 2.286 1.806
+289 0.205 2.187 1.804
+293 0.224 2.163 1.85
+299 0.243 1.959 1.732
+305 0.262 2.05 1.869
+309 0.293 1.899 1.808
+313 0.298 1.851 1.774
+319 0.333 1.837 1.837
+Fig3 1/K nm 2.0739986953311456
+residual1,residual2: 0 0
+Q/Q0 (sympy)      : 0.982668985733011
+1 - X_Hansen(23)  : 0.982668985733011
+Q/Q0 alt: 1/(1+..)  1.00000000000000
+difference (simplify): 0
+numerical difference, 3 points: [-2.77555756156289e-17, -2.08166817117217e-17, 0]
+channel height 20 nm: reduction % (23) = 7.16668002842121
+channel height 100 nm: reduction % (23) = 1.73310142669895
+channel height 200 nm: reduction % (23) = 0.885300713349474
+slit  Kolpashchikov(2.9): 0.9719483095550011  Hansen(23): 0.9719483095550011  mun==eta0: True
+tube alpha=0.0: Migun(5) Q/Qn=0.972177  Chaturani(9) Q/Qn=0.972177  k_Migun=19.2864 a_Chat=19.2864
+tube alpha=0.3: Migun(5) Q/Qn=0.979636  Chaturani(9) Q/Qn=0.979636  k_Migun=19.2864 a_Chat=19.2864
+tube alpha=0.7: Migun(5) Q/Qn=0.990708  Chaturani(9) Q/Qn=0.990708  k_Migun=19.2864 a_Chat=19.2864

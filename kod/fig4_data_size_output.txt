@@ -1,0 +1,59 @@
+source geometry D_h[nm] measured unc id
+Churaev_1970 tube 82.5 1.339 0.015 R003
+Churaev_1970 tube 106.1 1.407 0.015 R001
+Churaev_1970 tube 119.5 1.361 0.015 R002
+Churaev_1970 tube 362.0 1.192 0.015 R004
+Churaev_1970 tube 399.0 1.130 0.015 R005
+Churaev_1970 tube 451.2 1.159 0.015 R006
+Churaev_1970 tube 483.2 1.101 0.015 R007
+Churaev_1970 tube 510.2 1.125 0.015 R008
+Churaev_1970 tube 1094.2 1.030 0.015 R009
+Churaev_1970 tube 1479.8 1.013 0.015 R010
+Churaev_1970 tube 1995.0 1.006 0.015 R011
+Tas_2004 slit 105.2 1.190 0.110 R052
+Tas_2004 slit 105.2 1.265 0.110 R049
+Tas_2004 slit 105.4 1.205 0.110 R051
+Tas_2004 slit 106.0 1.240 0.110 R070
+Tas_2004 slit 108.6 1.240 0.110 R050
+Tas_2004 slit 204.8 1.067 0.110 R054
+Tas_2004 slit 209.0 1.137 0.110 R053
+Tas_2004 slit 221.8 1.099 0.110 R055
+Tas_2004 slit 222.4 1.058 0.110 R056
+Tas_2004 slit 304.0 1.070 0.060 R071
+Tas_2004 slit 305.2 1.076 0.110 R057
+Tas_2004 slit 305.4 1.034 0.110 R060
+Tas_2004 slit 309.8 1.060 0.110 R058
+Tas_2004 slit 322.4 1.086 0.110 R059
+Haneveld_2008 slit 21.0 1.320 0.110 R046
+Haneveld_2008 slit 44.8 1.114 0.050 R047
+Haneveld_2008 slit 92.0 1.020 0.040 R048
+Li_2012 slit 50.0 1.117 0.104 R040
+Li_2012 slit 100.0 1.043 0.037 R041
+Li_2012 slit 200.0 0.970 0.058 R042
+Li_2012 slit 378.0 0.963 0.032 R043
+Li_2012 slit 830.0 0.938 0.038 R044
+Kazoe_2022 slit 468.0 1.312 0.067 R077
+Kazoe_2022 slit 834.0 0.897 0.101 R078
+Kazoe_2022 slit 1490.0 1.099 0.090 R079
+Li_2012 square 200.0 2.471 0.205 R034
+Li_2012 square 393.0 1.763 0.171 R035
+Li_2012 square 491.0 1.888 0.144 R036
+Li_2012 square 838.0 1.120 0.072 R037
+Li_2012 square 1112.0 0.855 0.038 R038
+Li_2012 square 1530.0 0.976 0.034 R039
+Kazoe_2022 square 190.0 3.600 0.606 R072
+Kazoe_2022 square 394.0 2.804 0.213 R073
+Kazoe_2022 square 760.0 1.211 0.101 R074
+Kazoe_2022 square 1691.0 1.133 0.022 R075
+Kazoe_2023 square 73.0 4.736 0.523 R080
+Kazoe_2023 square 119.0 5.549 0.492 R081
+bound band 1.1848-1.2429; large-size coefficient c(299 K) = 3.0626 nm, b = -0.3828 nm
+D_h = 20 nm: tube 1.1248, slit 1.1662, square law 1.1531
+D_h = 82 nm: tube 1.0360, slit 1.0534, square law 1.0373
+D_h = 100 nm: tube 1.0297, slit 1.0442, square law 1.0306
+D_h = 234 nm: tube 1.0129, slit 1.0193, square law 1.0131
+D_h = 500 nm: tube 1.0061, slit 1.0091, square law 1.0061
+square-duct curve: FD (N = 160) at D_h = 8.0, 12.7, 20.1, 31.8, 50.3, 79.7, 126.3, 200.0 nm ...; law (19) for D_h > 200 nm
+junction D_h = 200 nm: FD 1.01506 vs law (19) 1.01531 (difference 2.5e-04)
+FD square values: D_h = 8 nm 1.1989 (lambda D_h = 4.1); 20 nm 1.1214; 73 nm 1.0400 (interpolated)
+assertion: every plotted point of the tube, slit and square curves is below the 299 K bound 1.2429 (largest: tube 1.2025, slit 1.2241, square 1.1989): passed

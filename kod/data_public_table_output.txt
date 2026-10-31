@@ -1,0 +1,8 @@
+rows written: 142 (source table: 142); unique ids: True
+non-ASCII characters in the public CSV: none
+values identical to veri_tablosu.csv (id, size, eta_ratio, uncertainty): True
+rows per source: Cheng_2002 31, Churaev_1970 33, Churaev_1984 24, Haneveld_2008 4, Kazoe_2022 8, Kazoe_2023 8, Li_2012 11, Tas_2004 23
+rows per method class: capillary filling 27, filling under applied pressure 11, pressure-driven 104
+duplicate rows: 7; in the 89 water rows: 89; above the 299 K bound (of the 89): 24; in Table 3: 57; in Fig. 4: 48
+rows with an empty uncertainty: 0
+README_data.md written; non-ASCII characters: none

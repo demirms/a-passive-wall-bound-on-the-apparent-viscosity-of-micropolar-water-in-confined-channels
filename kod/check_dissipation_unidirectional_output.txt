@@ -1,0 +1,17 @@
+C1 Phi expanded form: 0
+C2 Phi = (mu+k/2)|gw|^2 + 2k|curl/2-nu|^2 + grad: 0
+    div v = 0: 0
+C3 EL(w) + (mom_z + G): 0
+C3 EL(a) + ang_x: 0
+C3 EL(b) + ang_y: 0
+    mom_x, mom_y identically zero: 0
+C4 ang_z depends on w,a,b? (0 = no): 0
+C4 mom_z gains c-terms? (0 = no): 0
+C4 ang_x gains c-terms? (0 = no): 0
+C5 2D gradient form decomposition: 0
+C6 int|grad nu|^2 - int div^2 - int curl^2: 0
+C6 int nu_{k,l}nu_{l,k} - int div^2: 0
+C7 min_s quad - (mu+k-k^2/(2k+g lam))A^2: 0
+C7 second derivative in s (must be >0): 2(2k+g lam): 0
+C8 scaling identity: 0
+ALL ZERO: True

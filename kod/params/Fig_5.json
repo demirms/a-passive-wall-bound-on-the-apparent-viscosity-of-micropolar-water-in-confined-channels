@@ -1,0 +1,23 @@
+{
+ "label": "Fig. 5",
+ "script": "fig_data_temperature.py",
+ "parameters": {
+  "coefficients": "Hansen 2010 Table II, 284-319 K (MD-MD ratios)",
+  "wall": "BC1",
+  "radii [nm]": [
+   48,
+   170
+  ]
+ },
+ "domain": "tube, closed form",
+ "mesh": "closed form (no grid)",
+ "tolerances": "closed form",
+ "initial_guess": "not applicable",
+ "software": {
+  "python": "3.12.10",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "matplotlib": "3.11.2"
+ },
+ "date": "2026-10-31"
+}

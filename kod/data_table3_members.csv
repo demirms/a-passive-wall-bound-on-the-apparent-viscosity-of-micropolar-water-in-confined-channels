@@ -1,0 +1,58 @@
+group,id,source_key,kind,size_nm,eta_ratio,unc,unc_type,pred_299K_BC1,method_class
+Churaev [1] tube r 41-60,R001,Churaev_1970,tube,53.03,1.407,0.015,read-off (axis calibration + centring),1.028057,PD
+Churaev [1] tube r 41-60,R002,Churaev_1970,tube,59.76,1.361,0.015,read-off (axis calibration + centring),1.024983,PD
+Churaev [1] tube r 41-60,R003,Churaev_1970,tube,41.25,1.339,0.015,read-off (axis calibration + centring),1.035744,PD
+Churaev [1] tube r 181-255,R004,Churaev_1970,tube,181.0,1.192,0.015,read-off (axis calibration + centring),1.008393,PD
+Churaev [1] tube r 181-255,R005,Churaev_1970,tube,199.5,1.13,0.015,read-off (axis calibration + centring),1.007620,PD
+Churaev [1] tube r 181-255,R006,Churaev_1970,tube,225.6,1.159,0.015,read-off (axis calibration + centring),1.006745,PD
+Churaev [1] tube r 181-255,R007,Churaev_1970,tube,241.6,1.101,0.015,read-off (axis calibration + centring),1.006301,PD
+Churaev [1] tube r 181-255,R008,Churaev_1970,tube,255.1,1.125,0.015,read-off (axis calibration + centring),1.005969,PD
+Churaev [1] tube r 547-998,R009,Churaev_1970,tube,547.1,1.03,0.015,read-off (axis calibration + centring),1.002792,PD
+Churaev [1] tube r 547-998,R010,Churaev_1970,tube,739.9,1.013,0.015,read-off (axis calibration + centring),1.002066,PD
+Churaev [1] tube r 547-998,R011,Churaev_1970,tube,997.5,1.006,0.015,read-off (axis calibration + centring),1.001533,PD
+Haneveld [3] slit H 10.5,R046,Haneveld_2008,slit,10.5,1.32,0.11,"authors (text, '32+-11 %')",1.161696,CF
+Haneveld [3] slit H 22.4,R047,Haneveld_2008,slit,22.4,1.114,0.05,grey bar half-width read off (C 1.07-1.17),1.092427,CF
+Haneveld [3] slit H 46,R048,Haneveld_2008,slit,46.0,1.02,0.04,authors (text),1.047866,CF
+Tas [2] slit H 53,R049,Tas_2004,slit,52.58,1.265,0.11,"authors' error bars ~+-0.11 (text: 24+-11 %, 7+-11 %); read-off itself +-0.01",1.042132,CF
+Tas [2] slit H 53,R050,Tas_2004,slit,54.29,1.24,0.11,"authors' error bars ~+-0.11 (text: 24+-11 %, 7+-11 %); read-off itself +-0.01",1.040859,CF
+Tas [2] slit H 53,R051,Tas_2004,slit,52.72,1.205,0.11,"authors' error bars ~+-0.11 (text: 24+-11 %, 7+-11 %); read-off itself +-0.01",1.042025,CF
+Tas [2] slit H 53,R052,Tas_2004,slit,52.58,1.19,0.11,"authors' error bars ~+-0.11 (text: 24+-11 %, 7+-11 %); read-off itself +-0.01",1.042132,CF
+Tas [2] slit H 53,R070,Tas_2004,slit,53.0,1.24,0.11,authors,1.041812,CF
+Tas [2] slit H 102-161,R053,Tas_2004,slit,104.5,1.137,0.11,"authors' error bars ~+-0.11 (text: 24+-11 %, 7+-11 %); read-off itself +-0.01",1.021613,CF
+Tas [2] slit H 102-161,R054,Tas_2004,slit,102.4,1.067,0.11,"authors' error bars ~+-0.11 (text: 24+-11 %, 7+-11 %); read-off itself +-0.01",1.022048,CF
+Tas [2] slit H 102-161,R055,Tas_2004,slit,110.9,1.099,0.11,"authors' error bars ~+-0.11 (text: 24+-11 %, 7+-11 %); read-off itself +-0.01",1.020387,CF
+Tas [2] slit H 102-161,R056,Tas_2004,slit,111.2,1.058,0.11,"authors' error bars ~+-0.11 (text: 24+-11 %, 7+-11 %); read-off itself +-0.01",1.020333,CF
+Tas [2] slit H 102-161,R057,Tas_2004,slit,152.6,1.076,0.11,"authors' error bars ~+-0.11 (text: 24+-11 %, 7+-11 %); read-off itself +-0.01",1.014884,CF
+Tas [2] slit H 102-161,R058,Tas_2004,slit,154.9,1.06,0.11,"authors' error bars ~+-0.11 (text: 24+-11 %, 7+-11 %); read-off itself +-0.01",1.014665,CF
+Tas [2] slit H 102-161,R059,Tas_2004,slit,161.2,1.086,0.11,"authors' error bars ~+-0.11 (text: 24+-11 %, 7+-11 %); read-off itself +-0.01",1.014099,CF
+Tas [2] slit H 102-161,R060,Tas_2004,slit,152.7,1.034,0.11,"authors' error bars ~+-0.11 (text: 24+-11 %, 7+-11 %); read-off itself +-0.01",1.014874,CF
+Tas [2] slit H 102-161,R071,Tas_2004,slit,152.0,1.07,0.06,authors,1.014942,CF
+Tas [2] 0.1 M NaCl slit H 53-161,R061,Tas_2004,slit,52.86,1.045,0.11,"authors' error bars ~+-0.11 (text: 24+-11 %, 7+-11 %); read-off itself +-0.01",1.041918,CF
+Tas [2] 0.1 M NaCl slit H 53-161,R062,Tas_2004,slit,54.43,1.038,0.11,"authors' error bars ~+-0.11 (text: 24+-11 %, 7+-11 %); read-off itself +-0.01",1.040758,CF
+Tas [2] 0.1 M NaCl slit H 53-161,R063,Tas_2004,slit,52.72,1.003,0.11,"authors' error bars ~+-0.11 (text: 24+-11 %, 7+-11 %); read-off itself +-0.01",1.042025,CF
+Tas [2] 0.1 M NaCl slit H 53-161,R064,Tas_2004,slit,102.2,1.027,0.11,"authors' error bars ~+-0.11 (text: 24+-11 %, 7+-11 %); read-off itself +-0.01",1.022091,CF
+Tas [2] 0.1 M NaCl slit H 53-161,R065,Tas_2004,slit,104.6,1.015,0.11,"authors' error bars ~+-0.11 (text: 24+-11 %, 7+-11 %); read-off itself +-0.01",1.021593,CF
+Tas [2] 0.1 M NaCl slit H 53-161,R066,Tas_2004,slit,110.9,0.9987,0.11,"authors' error bars ~+-0.11 (text: 24+-11 %, 7+-11 %); read-off itself +-0.01",1.020387,CF
+Tas [2] 0.1 M NaCl slit H 53-161,R067,Tas_2004,slit,152.4,0.994,0.11,"authors' error bars ~+-0.11 (text: 24+-11 %, 7+-11 %); read-off itself +-0.01",1.014903,CF
+Tas [2] 0.1 M NaCl slit H 53-161,R068,Tas_2004,slit,155.0,0.9859,0.11,"authors' error bars ~+-0.11 (text: 24+-11 %, 7+-11 %); read-off itself +-0.01",1.014656,CF
+Tas [2] 0.1 M NaCl slit H 53-161,R069,Tas_2004,slit,161.0,1.002,0.11,"authors' error bars ~+-0.11 (text: 24+-11 %, 7+-11 %); read-off itself +-0.01",1.014116,CF
+Li [6] plate H 25-415,R040,Li_2012,slit,25.0,1.117,0.104,error bar read off (floor 0.02e-3 Pa s for small bars),1.083984,FP
+Li [6] plate H 25-415,R041,Li_2012,slit,50.0,1.043,0.0368,error bar read off (floor 0.02e-3 Pa s for small bars),1.044210,FP
+Li [6] plate H 25-415,R042,Li_2012,slit,100.0,0.9697,0.0576,error bar read off (floor 0.02e-3 Pa s for small bars),1.022567,FP
+Li [6] plate H 25-415,R043,Li_2012,slit,189.0,0.9633,0.032,error bar read off (floor 0.02e-3 Pa s for small bars),1.012044,FP
+Li [6] plate H 25-415,R044,Li_2012,slit,415.0,0.9377,0.0384,error bar read off (floor 0.02e-3 Pa s for small bars),1.005513,FP
+Kazoe [4] plate H 234,R077,Kazoe_2022,slit,234.0,1.312,0.06729,Table 1 (error propagation of R and size),1.009746,PD
+Kazoe [4] plate H 417-745,R078,Kazoe_2022,slit,417.0,0.8972,0.1009,Table 1 (error propagation of R and size),1.005486,PD
+Kazoe [4] plate H 417-745,R079,Kazoe_2022,slit,745.0,1.099,0.08972,Table 1 (error propagation of R and size),1.003076,PD
+Kazoe [5] square Dh 73,R080,Kazoe_2023,sq,73.0,4.736,0.5228,error bar read off,1.039753,PD
+Kazoe [5] square Dh 119,R081,Kazoe_2023,sq,119.0,5.549,0.492,error bar read off,1.024948,PD
+Kazoe [4] square Dh 190,R072,Kazoe_2022,sq,190.0,3.6,0.6056,Table 1 (error propagation of R and size),1.015835,PD
+Li [6] square Dh 200,R034,Li_2012,sq,200.0,2.471,0.2048,"error bar (authors: SD of size and fit), read off",1.015060,FP
+Li [6] square Dh 393,R035,Li_2012,sq,393.0,1.763,0.1712,"error bar (authors: SD of size and fit), read off",1.007749,FP
+Kazoe [4] square Dh 394,R073,Kazoe_2022,sq,394.0,2.804,0.2131,Table 1 (error propagation of R and size),1.007730,PD
+Li [6] square Dh 491,R036,Li_2012,sq,491.0,1.888,0.144,"error bar (authors: SD of size and fit), read off",1.006219,FP
+Kazoe [4] square Dh 760-1691,R074,Kazoe_2022,sq,760.0,1.211,0.1009,Table 1 (error propagation of R and size),1.004030,PD
+Kazoe [4] square Dh 760-1691,R075,Kazoe_2022,sq,1691.0,1.133,0.02243,Table 1 (error propagation of R and size),1.001811,PD
+Li [6] square Dh 838-1530,R037,Li_2012,sq,838.0,1.12,0.072,"error bar (authors: SD of size and fit), read off",1.003655,FP
+Li [6] square Dh 838-1530,R038,Li_2012,sq,1112.0,0.8545,0.0384,"error bar (authors: SD of size and fit), read off",1.002754,FP
+Li [6] square Dh 838-1530,R039,Li_2012,sq,1530.0,0.9761,0.0336,"error bar (authors: SD of size and fit), read off",1.002002,FP

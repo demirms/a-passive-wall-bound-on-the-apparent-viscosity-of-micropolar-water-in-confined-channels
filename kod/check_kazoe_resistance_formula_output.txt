@@ -1,0 +1,6 @@
+W=   1 D=   1 Dh=   1.00: Q_exact/Q_formula = 0.9997  (viscosity bias factor)
+W=  73 D=  72 Dh=  72.50: Q_exact/Q_formula = 0.9997  (viscosity bias factor)
+W= 130 D= 110 Dh= 119.17: Q_exact/Q_formula = 1.0007  (viscosity bias factor)
+W= 163 D= 230 Dh= 190.79: Q_exact/Q_formula = 1.0046  (viscosity bias factor)
+W= 410 D= 380 Dh= 394.43: Q_exact/Q_formula = 0.9999  (viscosity bias factor)
+W= 777 D= 745 Dh= 760.66: Q_exact/Q_formula = 0.9997  (viscosity bias factor)

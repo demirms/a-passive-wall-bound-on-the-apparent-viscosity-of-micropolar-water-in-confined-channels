@@ -1,0 +1,125 @@
+
+====================================================================================================
+A  Constant map Nowacki form (Khanukaeva & Troshkin, p. 072005-4) -> Eringen form (our Eqs. (1)-(4))
+====================================================================================================
+  from the balance equations: mu = -j + mu_N , kappa = 2*j , gamma = delta + epsilon , alpha + beta = alpha_N + delta - epsilon
+  spin-equation check 2 kappa - 4 j = 0
+  couple-stress split (constitutive): beta = delta - eps, alpha = alpha_N; residual of alpha+beta: 0
+  mu + kappa/2 = mu_N   (= mu_N: their mu is the Newtonian viscosity eta0)
+  kappa/2 = j   (= j: their rotational viscosity is eta_r of Hansen 2010)
+  N^2 = j/(mu_N+j) = kappa/[2(mu+kappa)] = eta_r/(eta0+eta_r);  check: 0
+  (N/L)^2 - (lambda R)^2 = 0
+  1/(2 N^2) - (1 + mu/kappa) = 0  (their bound on n = pole n_p of our BC2)
+  1/(1 - N^2) - (mu+kappa)/(mu+kappa/2) = 0  (bound 1 + eta_r/eta0)
+
+====================================================================================================
+B  Wall conditions and closed forms: their Q_NL, Q_NLn (p. 072005-7) vs our Eq. (13)
+====================================================================================================
+  max relative difference Q_NLn(theirs) vs 1/[mu_app(Eq. 13)/eta0], 5 N x 5 L x 6 n: 5.42e-14
+  -> spinning condition omega = n curl v at r = R is our BC2 with the same n; hyper-stick (n = 0) is BC1.
+  their Eq. (15) normalisation: 2*int(u r dr) = 0.689961 vs Q_NLn = 0.689961; Poiseuille 2*int = 1.000000, 2 pi*int = 3.141593 -> printed factor 2 pi should read 2 (typographical)
+  N = 0.4: L -> inf  Q_NL = 0.840000, 1 - N^2 = 0.840000;  L -> 0  Q_NL = 0.998406;  n = 1/2 gives Q = 1.000000
+  N = 0.65: L -> inf  Q_NL = 0.577500, 1 - N^2 = 0.577500;  L -> 0  Q_NL = 0.997406;  n = 1/2 gives Q = 1.000000
+  -> hyper-stick: Q_NL/Q_0 -> 1 - N^2 = eta0/(eta0+eta_r) in the narrowest capillary, i.e. mu_app -> mu + kappa
+     (= our bound; in their paper only as "a certain constant determined by N", p. 072005-5, Fig. 6 asymptotes).
+
+====================================================================================================
+C  Coefficient sets
+====================================================================================================
+  set                                             N      eta_r/eta0  kappa/mu  1/lam[nm]  L(40nm)  bound 1/(1-N^2)
+  KT2023 (N=0.65, L=0.25 at 40 nm)               0.6500   0.7316     5.452     15.38    0.2500   1.7316
+  Kolpashchikov/Migun fit (N=0.648, 1/lam=14.22) 0.6481   0.7241     5.250     14.22    0.2304   1.7241
+  MD Hansen 2010 Table II, 284 K                   0.3949   0.1848     0.453      2.29    0.0226   1.1848
+  MD Hansen 2010 Table II, 289 K                   0.4123   0.2048     0.515      2.19    0.0225   1.2048
+  MD Hansen 2010 Table II, 293 K                   0.4275   0.2237     0.576      2.16    0.0231   1.2237
+  MD Hansen 2010 Table II, 299 K                   0.4420   0.2429     0.642      1.96    0.0217   1.2429
+  -> their N = 0.65 is the Kolpashchikov fit (N^2 = delta_K/2 = 0.42); their L = 0.25 at 40 nm implies 1/lambda = 15.38 nm
+     (Kolpashchikov 1/lambda = 14.22 nm gives L = 0.230). The MD coupling N = 0.40-0.44 and L = 0.02.
+
+====================================================================================================
+D  Reproduction of Figs. 8 and 9 (raster images on PDF page 9 = p. 072005-8)
+====================================================================================================
+  Fig8: calibration x 721.00 px/um (max tick residual 0.70 px), y -1192.50 px/unit (max residual 1.00 px); 1 px = 1.39 nm, 0.00084 in Q/Q0
+    20 dots (r [um], Q/Q0): (0.037, 0.742), (0.048, 0.713), (0.057, 0.733), (0.070, 0.747), (0.070, 0.797), (0.081, 0.777), (0.100, 0.845), (0.117, 0.838), (0.151, 0.865), (0.176, 0.905), (0.193, 0.884), (0.205, 0.845), (0.219, 0.870), (0.239, 0.911), (0.252, 0.892), (0.286, 0.923), (0.290, 0.926), (0.494, 0.969), (0.738, 0.989), (1.001, 1.000)
+  Fig9: calibration x 716.25 px/um (max tick residual 1.30 px), y -1182.00 px/unit (max residual 1.35 px); 1 px = 1.40 nm, 0.00085 in Q/Q0
+    19 dots (r [um], Q/Q0): (0.038, 0.742), (0.045, 0.713), (0.055, 0.734), (0.066, 0.747), (0.075, 0.796), (0.078, 0.778), (0.100, 0.846), (0.113, 0.840), (0.149, 0.867), (0.176, 0.905), (0.194, 0.883), (0.205, 0.845), (0.220, 0.870), (0.238, 0.913), (0.253, 0.892), (0.288, 0.927), (0.493, 0.969), (0.738, 0.989), (1.001, 1.000)
+
+  Fig8: curve read-off vs closed form (n = 0.0)
+    r[um]  read   KT2023 set  Kolpashchikov set
+    0.30  0.9247   0.9199      0.9260
+    0.40  0.9423   0.9387      0.9434
+    0.60  0.9608   0.9583      0.9616
+    0.70  0.9658   0.9641      0.9669
+    0.80  0.9700   0.9684      0.9709
+    0.90  0.9734   0.9718      0.9741
+    1.00  0.9759   0.9746      0.9766
+
+  Fig9: curve read-off vs closed form (n = 0.068)
+    r[um]  read   KT2023 set  Kolpashchikov set
+    0.30  0.9306   0.9266      0.9322
+    0.40  0.9475   0.9438      0.9482
+    0.60  0.9644   0.9618      0.9648
+    0.70  0.9687   0.9671      0.9697
+    0.80  0.9725   0.9711      0.9734
+    0.90  0.9758   0.9742      0.9763
+    1.00  0.9780   0.9767      0.9786
+
+  Least-squares n from the 20 digitized dots of Fig. 8 (their result: n = 0.068):
+    KT2023 (N=0.65, L=0.25 at 40 nm)               n = 0.0948  (rms 0.0238; n = 0 rms 0.0324; n = 0.068 rms 0.0247)
+                                                   fit on mu_app/eta0 = Q0/Q instead: n = 0.1042
+    Kolpashchikov/Migun fit (N=0.648, 1/lam=14.22) n = 0.0590  (rms 0.0248; n = 0 rms 0.0278; n = 0.068 rms 0.0249)
+                                                   fit on mu_app/eta0 = Q0/Q instead: n = 0.0730
+  Fig. 9 dot count 19 vs Fig. 8 20
+
+====================================================================================================
+E  Passivity of their walls (our Eqs. (14)-(15)); P > 0 = active (wall delivers power)
+====================================================================================================
+  n* (upper end of the passive BC2 range), their constants, beta/gamma = -1 / 0 / +1:
+    set                                             R[nm]   lamR    n*(-1)   n*(0)    n*(+1)   n_pole
+    KT2023 (N=0.65, L=0.25 at 40 nm)                  40    2.60   0.2697   0.3504   0.5000   1.1834
+    KT2023 (N=0.65, L=0.25 at 40 nm)                  60    3.90   0.3436   0.4073   0.5000   1.1834
+    KT2023 (N=0.65, L=0.25 at 40 nm)                 100    6.50   0.4072   0.4489   0.5000   1.1834
+    KT2023 (N=0.65, L=0.25 at 40 nm)                 300   19.50   0.4699   0.4845   0.5000   1.1834
+    KT2023 (N=0.65, L=0.25 at 40 nm)                1000   65.00   0.4911   0.4955   0.5000   1.1834
+    Kolpashchikov/Migun fit (N=0.648, 1/lam=14.22)    40    2.81   0.2850   0.3631   0.5000   1.1905
+    Kolpashchikov/Migun fit (N=0.648, 1/lam=14.22)    60    4.22   0.3551   0.4152   0.5000   1.1905
+    Kolpashchikov/Migun fit (N=0.648, 1/lam=14.22)   100    7.03   0.4141   0.4530   0.5000   1.1905
+    Kolpashchikov/Migun fit (N=0.648, 1/lam=14.22)   300   21.10   0.4721   0.4856   0.5000   1.1905
+    Kolpashchikov/Migun fit (N=0.648, 1/lam=14.22)  1000   70.32   0.4917   0.4958   0.5000   1.1905
+
+  Classification at R = 40 nm and 1000 nm (their constants), beta = 0 unless stated:
+    set       n       R[nm]  s_hat/s*(b=0)  P sign (b=-1/0/+1)     2piRP/(GQ) (b=0)   Q/Q0     mu_app/eta0
+    KT2023   0.000      40     0.0000       0/0/0             -0.000e+00       0.6618   1.5111
+    KT2023   0.000    1000     0.0000       0/0/0             -0.000e+00       0.9746   1.0261
+    KT2023   0.068      40     0.1449       -/-/-             -3.493e-02       0.6900   1.4494
+    KT2023   0.068    1000     0.0846       -/-/-             -1.984e-03       0.9767   1.0238
+    KT2023   0.250      40     0.6367       -/-/-             -5.726e-02       0.7856   1.2729
+    KT2023   0.250    1000     0.3719       -/-/-             -5.937e-03       0.9839   1.0164
+    KT2023   0.300      40     0.8073       +/-/-             -3.696e-02       0.8188   1.2213
+    KT2023   0.300    1000     0.4715       -/-/-             -6.318e-03       0.9864   1.0138
+    KT2023   0.500      40     1.7392       +/+/0             +2.500e-01       1.0000   1.0000
+    KT2023   0.500    1000     1.0157       +/+/0             +4.000e-04       1.0000   1.0000
+    KT2023   0.700      40     3.4421       +/+/+             +1.228e+00       1.3312   0.7512
+    KT2023   0.700    1000     2.0104       +/+/+             +4.956e-02       1.0249   0.9757
+    Kolp.    0.000      40     0.0000       0/0/0             -0.000e+00       0.6735   1.4847
+    Kolp.    0.000    1000     0.0000       0/0/0             -0.000e+00       0.9766   1.0239
+    Kolp.    0.068      40     0.1381       -/-/-             -3.359e-02       0.7008   1.4269
+    Kolp.    0.068    1000     0.0849       -/-/-             -1.829e-03       0.9786   1.0219
+    Kolp.    0.250      40     0.6058       -/-/-             -5.954e-02       0.7934   1.2604
+    Kolp.    0.250    1000     0.3724       -/-/-             -5.468e-03       0.9852   1.0150
+    Kolp.    0.300      40     0.7678       +/-/-             -4.273e-02       0.8254   1.2115
+    Kolp.    0.300    1000     0.4720       -/-/-             -5.816e-03       0.9875   1.0127
+    Kolp.    0.500      40     1.6503       +/+/0             +2.123e-01       1.0000   1.0000
+    Kolp.    0.500    1000     1.0145       +/+/0             +3.397e-04       1.0000   1.0000
+    Kolp.    0.700      40     3.2526       +/+/+             +1.101e+00       1.3170   0.7593
+    Kolp.    0.700    1000     1.9995       +/+/+             +4.504e-02       1.0227   0.9778
+
+  Same n values with the MD constants (Hansen 2010 Table II, 299 K and 284 K), R = 40 nm, beta = 0:
+    284 K  n* = 0.4750;  mu_app/eta0: n=0.0: 1.0337 (-/0);  n=0.068: 1.0297 (-/0);  n=0.5: 1.0000 (+);  n=0.7: 0.9836 (+)
+    299 K  n* = 0.4796;  mu_app/eta0: n=0.0: 1.0368 (-/0);  n=0.068: 1.0325 (-/0);  n=0.5: 1.0000 (+);  n=0.7: 0.9808 (+)
+
+  Data comparison: Churaev 1970 water, r = 41-60 nm: mu_app/eta0 = 1.31-1.48 (our data table R001-R003, R015-R025);
+  BC1 with Kolpashchikov constants at 40 nm gives 1.485 (inside the fitted bound 1.724), with MD constants 1.029-1.038
+  (bound 1.18-1.24).
+
+runtime 0.9 s

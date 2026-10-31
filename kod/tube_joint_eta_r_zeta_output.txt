@@ -1,0 +1,123 @@
+tube_joint_eta_r_zeta.py: BC1 tube, joint change of eta_r (factor f) and zeta (factor g); eta0 fixed.
+Sets (Table 1): 299 K: eta0 0.7, eta_r 0.17, zeta 2.10; 284 K: eta0 0.92, eta_r 0.17, zeta 3.00
+  299 K: eta_r/eta0 = 0.2429, bound 1+eta_r/eta0 = 1.2429, 1/lambda(MD) = 1.959 nm
+  284 K: eta_r/eta0 = 0.1848, bound 1+eta_r/eta0 = 1.1848, 1/lambda(MD) = 2.286 nm
+  check f=g=1: 299 K R=40 1.0368 (independent recomputation: 1.0368); 284 K R=40 1.0337 (independent recomputation: 1.0337)
+  R=41.25: increasing in f (g=1): True, limit f=1e8 1.08855 vs ceiling 1.08855; increasing in g: True
+  R=60: increasing in f (g=1): True, limit f=1e8 1.05987 vs ceiling 1.05987; increasing in g: True
+
+(a) Smallest zeta factor g_min (f -> infinity) for the tube value m at radius R; compare the independent recomputation
+       T   R     m  g_min here  indep.  rel.diff  1/lam_inf [nm]
+     299  41  1.31        9.61    9.61    -0.00%            2.68
+     299  41  1.34       11.24   11.24    -0.02%            2.90
+     299  41  1.41       15.34   15.34    -0.00%            3.39
+     299  41  1.48       19.80   19.80    -0.01%            3.85
+     299  60  1.31       20.58   20.58    -0.00%            3.93
+     299  60  1.34       24.07   24.07    -0.01%            4.25
+     299  60  1.41       32.85   32.85    +0.01%            4.96
+     299  60  1.48       42.40   42.40    +0.00%            5.64
+     284  41  1.31        8.84    8.84    +0.01%            2.68
+     284  41  1.34       10.34   10.34    -0.01%            2.90
+     284  41  1.41       14.11   14.11    +0.02%            3.39
+     284  41  1.48       18.21   18.21    +0.03%            3.85
+     284  60  1.31       18.93   18.93    +0.02%            3.93
+     284  60  1.34       22.14   22.14    +0.01%            4.25
+     284  60  1.41       30.22   30.22    +0.01%            4.96
+     284  60  1.48       39.01   39.01    -0.00%            5.64
+    max relative difference to the independent recomputation: 0.03 % (acceptance < 3 %)
+
+    Tube members of Table 3 (Churaev [1], r = 41-60 nm; measured value, own read-off sigma 0.015):
+    --- 299 K (eta_r/eta0 = 0.2429; ceiling at g=1: see (d))
+    R001 R =  53.03 nm  meas 1.407: g_min(f->inf) =  25.36 (1/lam_inf 4.36 nm);  g_min for capped f: f<=3: 115.5, f<=5: 63.4, f<=10: 41.2, f<=30: 30.1, f<=100: 26.7
+        g=   26.6: f=  109.10 (1/lam   4.55 nm) | g=   38.0: f=   12.14 (1/lam   6.18 nm) | g=   50.7: f=    6.77 (1/lam   7.82 nm) | g=  100.0: f=    3.30 (1/lam  12.99 nm) | g=  300.0: f=    2.08 (1/lam  25.88 nm)
+    R002 R =  59.76 nm  meas 1.361: g_min(f->inf) =  26.40 (1/lam_inf 4.45 nm);  g_min for capped f: f<=3: 107.3, f<=5: 63.1, f<=10: 42.1, f<=30: 31.2, f<=100: 27.8
+        g=   27.7: f=  106.02 (1/lam   4.65 nm) | g=   39.6: f=   11.68 (1/lam   6.34 nm) | g=   52.8: f=    6.46 (1/lam   8.05 nm) | g=  100.0: f=    3.16 (1/lam  13.14 nm) | g=  300.0: f=    1.90 (1/lam  26.70 nm)
+    R003 R =  41.25 nm  meas 1.339: g_min(f->inf) =  11.32 (1/lam_inf 2.91 nm);  g_min for capped f: f<=3: 43.8, f<=5: 26.5, f<=10: 17.9, f<=30: 13.3, f<=100: 11.9
+        g=   11.9: f=  104.55 (1/lam   3.04 nm) | g=   17.0: f=   11.46 (1/lam   4.16 nm) | g=   22.6: f=    6.31 (1/lam   5.30 nm) | g=  100.0: f=    1.94 (1/lam  15.30 nm) | g=  300.0: f=    1.56 (1/lam  28.65 nm)
+    --- 284 K (eta_r/eta0 = 0.1848; ceiling at g=1: see (d))
+    R001 R =  53.03 nm  meas 1.407: g_min(f->inf) =  23.33 (1/lam_inf 4.36 nm);  g_min for capped f: f<=3: 196.2, f<=5: 76.6, f<=10: 43.5, f<=30: 29.2, f<=100: 25.0
+        g=   24.5: f=  143.39 (1/lam   4.55 nm) | g=   35.0: f=   15.95 (1/lam   6.18 nm) | g=   46.7: f=    8.90 (1/lam   7.82 nm) | g=  100.0: f=    4.10 (1/lam  13.76 nm) | g=  300.0: f=    2.69 (1/lam  27.14 nm)
+    R002 R =  59.76 nm  meas 1.361: g_min(f->inf) =  24.29 (1/lam_inf 4.45 nm);  g_min for capped f: f<=3: 159.7, f<=5: 74.3, f<=10: 44.2, f<=30: 30.2, f<=100: 26.0
+        g=   25.5: f=  139.34 (1/lam   4.65 nm) | g=   36.4: f=   15.35 (1/lam   6.34 nm) | g=   48.6: f=    8.49 (1/lam   8.05 nm) | g=  100.0: f=    3.91 (1/lam  13.95 nm) | g=  300.0: f=    2.45 (1/lam  28.03 nm)
+    R003 R =  41.25 nm  meas 1.339: g_min(f->inf) =  10.41 (1/lam_inf 2.91 nm);  g_min for capped f: f<=3: 62.3, f<=5: 30.9, f<=10: 18.7, f<=30: 12.9, f<=100: 11.1
+        g=   10.9: f=  137.41 (1/lam   3.04 nm) | g=   15.6: f=   15.07 (1/lam   4.16 nm) | g=   20.8: f=    8.29 (1/lam   5.30 nm) | g=  100.0: f=    2.48 (1/lam  16.10 nm) | g=  300.0: f=    2.03 (1/lam  29.96 nm)
+
+(b) One pair (f, g) reaching both ends of the 41-60 nm set (2 equations, 2 unknowns); compare the independent recomputation (fsolve)
+       T  m(41)  m(60)       f        g 1/lam[nm] | indep. f, g, 1/lam | max rel.diff
+     299   1.41   1.34   2.142    165.6     19.05 | 2.14, 165.6, 19.05 | 0.09 %   residual 6.7e-16
+     299   1.41   1.37   1.881    359.8     29.34 | 1.88, 359.8, 29.34 | 0.04 %   residual 2.2e-16
+     299   1.38   1.34   1.763    301.9     27.48 | 1.76, 301.9, 27.48 | 0.17 %   residual 2.2e-16
+     284   1.41   1.34   2.815    152.4     19.05 | 2.82, 152.4, 19.05 | 0.17 %   residual 2.0e-15
+     284   1.41   1.37   2.472    331.0     29.34 | 2.47, 331.0, 29.34 | 0.07 %   residual 1.2e-14
+     284   1.38   1.34   2.317    277.8     27.48 | 2.32, 277.8, 27.48 | 0.13 %   residual 2.2e-16
+    -> the pair reaching both ends has 1/lambda = 19 nm (end values 1.41/1.34), 27-29 nm for flatter end values;
+       the two ends fix 2 numbers, the prediction falls with R, so a single pair cannot follow a rise with R (members are not monotone).
+
+    Least-squares fit of one pair (f, g) to the three Table-3 tube members (weights 1/0.015; box 1 <= f, g <= 1000; the unconstrained minimum runs to g -> infinity with a flat 1.369):
+    299 K: f = 1.60, g = 1000, 1/lambda = 51.7 nm, chi^2 = 12.94 (3 points, 2 parameters); predictions 1.368, 1.362, 1.376 vs 1.407, 1.361, 1.339
+    284 K: f = 2.10, g = 1000, 1/lambda = 54.0 nm, chi^2 = 12.73 (3 points, 2 parameters); predictions 1.368, 1.363, 1.375 vs 1.407, 1.361, 1.339
+
+    Smallest internal length 1/lambda among pairs that reach EVERY member of the 41-60 nm set within one error bar from below
+    (prediction >= measured - 0.015 for all three members, the binding member is the one at the largest R and value):
+    299 K, f <= 3: g =   104.4, 1/lambda =  13.63 nm
+    299 K, f <= 5: g =    58.7, 1/lambda =   8.96 nm
+    299 K, f <= 10: g =    39.0, 1/lambda =   6.43 nm
+    299 K, f <= 30: g =    29.0, 1/lambda =   4.97 nm
+    299 K, f <= 100: g =    25.9, 1/lambda =   4.50 nm
+    299 K, f <= inf: g =    24.6, 1/lambda =   4.29 nm
+    284 K, f <= 3: g =   168.8, 1/lambda =  19.64 nm
+    284 K, f <= 5: g =    70.3, 1/lambda =  10.92 nm
+    284 K, f <= 10: g =    40.8, 1/lambda =   7.16 nm
+    284 K, f <= 30: g =    28.0, 1/lambda =   5.19 nm
+    284 K, f <= 100: g =    24.2, 1/lambda =   4.56 nm
+    284 K, f <= inf: g =    22.6, 1/lambda =   4.29 nm
+
+(c) Migun [18] / Kolpashchikov [19] fit as an (f, g) pair: kappa/mu = 5.25 (eta_r/eta0 = 0.7241), 1/lambda = 14.22 nm
+    eta_r/eta0 = (kappa/2)/(mu+kappa/2) = 0.7241
+    299 K: f = 2.98, zeta needed = 237.8 mPa s nm^2 = 113 x MD; check 1/lambda = 14.22 nm; BC1 tube at 40 nm: 1.4847; at 300 nm: 1.0800
+    284 K: f = 3.92, zeta needed = 312.5 mPa s nm^2 = 104 x MD; check 1/lambda = 14.22 nm; BC1 tube at 40 nm: 1.4847; at 300 nm: 1.0800
+    independent recomputation: 299 K x2.98 and x113; 284 K x3.92 and x104; manuscript: 3.0-3.9 and 'fitted length 6.2-7.3 x MD'.
+    fitted length / MD length: 7.26 (299 K), 6.22 (284 K)
+    own normalisation (eta0 = mu + kappa/2 = 1): BC1 tube at 40 nm 1.4847, at 300 nm 1.0800
+
+(d) Ceiling of the BC1 tube prediction (f -> infinity) for zeta factor g (eta0 fixed)
+       T  R [nm]       g=1      g=10     g=100    g=1000   (also bound 1+eta_r/eta0 at f=1, g -> infinity)
+     299   40.00    1.0915    1.3267    2.5315   12.7372
+     299   41.25    1.0886    1.3151    2.4602   12.0650
+     299   48.00    1.0755    1.2642    2.1616    9.2944
+     299   53.03    1.0681    1.2358    2.0046    7.8790
+     299   59.76    1.0601    1.2061    1.8487    6.5131
+     299   60.00    1.0599    1.2051    1.8439    6.4727
+     284   40.00    1.0956    1.3433    2.6348   13.7165
+     284   41.25    1.0925    1.3310    2.5578   12.9859
+     284   48.00    1.0789    1.2772    2.2358    9.9752
+     284   53.03    1.0711    1.2472    2.0670    8.4372
+     284   59.76    1.0628    1.2159    1.8996    6.9534
+     284   60.00    1.0625    1.2150    1.8945    6.9095
+    g = 1 ceiling over 41-60 nm, 284 and 299 K: 1.060-1.093; (independent recomputation over 40-60 nm and four T: 1.060-1.098)
+
+(e) Squares: necessary condition f >= f_bound (bound 1 + f eta_r/eta0 must reach the measured value), independent of zeta
+    id    group                             Dh [nm]   meas f_bound 299    ref f_bound 284    ref diff
+    R080  Kazoe [5] square Dh 73                 73  4.736       15.38  15.38       20.22  20.22 identical
+    R081  Kazoe [5] square Dh 119               119  5.549       18.73  18.73       24.62  24.62 identical
+    R072  Kazoe [4] square Dh 190               190  3.600       10.71  10.71       14.07  14.07 identical
+    R034  Li [6] square Dh 200                  200  2.471        6.06   6.06        7.96   7.96 identical
+    R035  Li [6] square Dh 393                  393  1.763        3.14   3.14        4.13   4.13 identical
+    R073  Kazoe [4] square Dh 394               394  2.804        7.43   7.43        9.76   9.76 identical
+    R036  Li [6] square Dh 491                  491  1.888        3.66   3.66        4.81   4.81 identical
+    R074  Kazoe [4] square Dh 760-1691          760  1.211        0.87   0.87        1.14   1.14 identical
+    R075  Kazoe [4] square Dh 760-1691         1691  1.133        0.55   0.55        0.72   0.72 identical
+    R037  Li [6] square Dh 838-1530             838  1.120        0.49   0.49        0.65   0.65 identical
+    R038  Li [6] square Dh 838-1530            1112  0.855       -0.60  -0.60       -0.79  -0.79 identical
+    R039  Li [6] square Dh 838-1530            1530  0.976       -0.10  -0.10       -0.13  -0.13 identical
+    diff vs data_group_sensitivity_output.txt: 0 differing members (acceptance: 0)
+    squares D_h <= 491 nm, measured > 1.7 (n = 7): f_bound = 3.1-18.7 (299 K), 4.1-24.6 (284 K)  [plan: 3.1-18.7 at 299 K]
+
+    Square with f = 1.1 f_bound: zeta factor g at which the BC1 prediction reaches the measured value (299 K; eta0 fixed).
+    Law (19): 1 + c/D_h with c = 4 kappa/[(mu+kappa) lambda] (large-size limit, valid for lambda D_h >> 1); FD: finite differences N = 80 (root finding), 160 and 320 (check).
+    D_h = 73 nm, measured 4.74: f_bound 15.40, f = 1.1 f_bound = 16.94 (eta_r = 2.88 mPa s, mu = -2.18, bound 5.114); law (19): g = 1930, 1/lambda = 42.4 nm, lambda D_h = 1.72
+      lambda D_h < 4: law (19) is not valid here (large-size limit); FD evaluated for information and marked 'FD not converged' if N = 80/160/320 differ by > 1 %.
+      FD g(N=80) = 3395 (1/lambda = 56.3 nm, lambda D_h = 1.30); prediction at this g: N=80/160/320 = 4.7400, 4.7398, 4.7398; Richardson 4.7397; converged within 1 %
+    D_h = 119 nm, measured 5.55: f_bound 18.74, f = 1.1 f_bound = 20.61 (eta_r = 3.50 mPa s, mu = -2.80, bound 6.005); law (19): g = 7328, 1/lambda = 81.2 nm, lambda D_h = 1.47
+      lambda D_h < 4: law (19) is not valid here (large-size limit); FD evaluated for information and marked 'FD not converged' if N = 80/160/320 differ by > 1 %.
+      FD g(N=80) = 10991 (1/lambda = 99.5 nm, lambda D_h = 1.20); prediction at this g: N=80/160/320 = 5.5500, 5.5498, 5.5497; Richardson 5.5497; converged within 1 %

@@ -1,0 +1,139 @@
+(0) Symbolic identities (sympy simplify of the difference)
+    -8 b - c                                   = 0
+    lambda^2 (water map) - 4 eta_r eta0/((eta0+eta_r) zeta) = 0
+    b (water map) - [-eta_r/((eta0+eta_r) lambda)]          = 0
+
+(1) Negative slip length b = -kappa/[2(mu+kappa)lambda] and large-channel coefficient c = -8b
+    set                      mu     kappa  gamma   1/lam[nm]  b[nm]     c=-8b[nm]  slit -6b[nm]  bound 1+eta_r/eta0
+    A (exp. eta0, 298 K)     0.830  0.340   2.50    2.0740    -0.3014    2.4108     1.8081      1.1700
+    B (MD-MD, 284 K)         0.750  0.340   3.00    2.2863    -0.3566    2.8526     2.1394      1.1848
+    B (MD-MD, 289 K)         0.660  0.340   2.70    2.1872    -0.3718    2.9746     2.2309      1.2048
+    B (MD-MD, 293 K)         0.590  0.340   2.60    2.1631    -0.3954    3.1632     2.3724      1.2237
+    B (MD-MD, 299 K)         0.530  0.340   2.10    1.9591    -0.3828    3.0626     2.2969      1.2429
+
+    Reproduction of '1 + 2.41 nm/D_h': normalisation A gives c = 2.4108 nm -> '2.41' (= 4*0.34/1.17 * 2.0740 nm).
+    Normalisation B (284-299 K): c = 2.853-3.163 nm, b = -0.357 ... -0.395 nm
+    Slit (half-gap h, height H = 2h): mu_app/eta0 ~ 1 - 3b/h = 1 - 6b/H; square/circle: 1 - 8b/D_h.
+
+(2) Cross-checks against existing outputs (normalisation A)
+    tube r =   48 nm: closed form 1.02407  vs  1.024 (compare_data_md_bound, FD);  large-channel law 1 + c/(2r) = 1.02511
+    tube r =   50 nm: closed form 1.02315  vs  1.023 (hansen2010_md_vs_deryagin, FD);  large-channel law 1 + c/(2r) = 1.02411
+    tube r =   40 nm: closed form 1.02862  vs  1.029 (hansen2010_md_vs_deryagin, FD);  large-channel law 1 + c/(2r) = 1.03014
+    slit H = 234.0 nm: Eq. (23) 1.00765  vs  1.008 (compare_data_md_bound)
+    slit H =  10.5 nm: Eq. (23) 1.11903  vs  1.119 (compare_data_md_bound)
+    slit H =  52.6 nm: Eq. (23) 1.03270  vs  1.033 (compare_data_md_bound)
+    square Dh = 73 nm: 2D 1.03084 vs 1.03084 (micropolar_duct_2d (d), N=160); law 1.03302
+
+(3) Every data row of compare_data_md_bound.py (hydrophilic water), M1 prediction and bound, both normalisations
+    bound: A = 1.170 ; B(299 K) = 1.243 ; B(284 K) = 1.185
+    id    source         geometry   size[nm]  T[C]       electrolyte meas  | MD_A    meas/MD_A | MD_B299 meas/MD_B299 | MD_B284 | >bound A/B299
+    R001  Churaev_1970   tube(r)        53.0  ~20 (capti none (dist 1.407 | 1.0219     1.38     | 1.0281   1.37        | 1.0258  | Y/Y
+    R002  Churaev_1970   tube(r)        59.8  ~20 (capti none (dist 1.361 | 1.0195     1.33     | 1.0250   1.33        | 1.0230  | Y/Y
+    R003  Churaev_1970   tube(r)        41.2  ~20 (capti none (dist 1.339 | 1.0278     1.30     | 1.0357   1.29        | 1.0328  | Y/Y
+    R004  Churaev_1970   tube(r)       181.0  ~20 (capti none (dist 1.192 | 1.0066     1.18     | 1.0084   1.18        | 1.0078  | Y/n
+    R005  Churaev_1970   tube(r)       199.5  ~20 (capti none (dist 1.130 | 1.0060     1.12     | 1.0076   1.12        | 1.0071  | n/n
+    R006  Churaev_1970   tube(r)       225.6  ~20 (capti none (dist 1.159 | 1.0053     1.15     | 1.0067   1.15        | 1.0063  | n/n
+    R007  Churaev_1970   tube(r)       241.6  ~20 (capti none (dist 1.101 | 1.0049     1.10     | 1.0063   1.09        | 1.0059  | n/n
+    R008  Churaev_1970   tube(r)       255.1  ~20 (capti none (dist 1.125 | 1.0047     1.12     | 1.0060   1.12        | 1.0055  | n/n
+    R009  Churaev_1970   tube(r)       547.1  ~20 (capti none (dist 1.030 | 1.0022     1.03     | 1.0028   1.03        | 1.0026  | n/n
+    R010  Churaev_1970   tube(r)       739.9  ~20 (capti none (dist 1.013 | 1.0016     1.01     | 1.0021   1.01        | 1.0019  | n/n
+    R011  Churaev_1970   tube(r)       997.5  ~20 (capti none (dist 1.006 | 1.0012     1.00     | 1.0015   1.00        | 1.0014  | n/n
+    R015  Churaev_1970   tube(r)        48.0  24.3       none (dist 1.478 | 1.0241     1.44     | 1.0309   1.43        | 1.0284  | Y/Y
+    R016  Churaev_1970   tube(r)        48.0  31.9       none (dist 1.475 | 1.0241     1.44     | 1.0309   1.43        | 1.0284  | Y/Y
+    R017  Churaev_1970   tube(r)        48.0  40.0       none (dist 1.392 | 1.0241     1.36     | 1.0309   1.35        | 1.0284  | Y/Y
+    R018  Churaev_1970   tube(r)        48.0  46.4       none (dist 1.327 | 1.0241     1.30     | 1.0309   1.29        | 1.0284  | Y/Y
+    R019  Churaev_1970   tube(r)        48.0  53.9       none (dist 1.310 | 1.0241     1.28     | 1.0309   1.27        | 1.0284  | Y/Y
+    R020  Churaev_1970   tube(r)        48.0  60.1       none (dist 1.187 | 1.0241     1.16     | 1.0309   1.15        | 1.0284  | Y/n
+    R021  Churaev_1970   tube(r)        48.0  68.9       none (dist 1.020 | 1.0241     1.00     | 1.0309   0.99        | 1.0284  | n/n
+    R022  Churaev_1970   tube(r)        48.0  19.3       none (dist 1.414 | 1.0241     1.38     | 1.0309   1.37        | 1.0284  | Y/Y
+    R023  Churaev_1970   tube(r)        48.0  22.5       none (dist 1.382 | 1.0241     1.35     | 1.0309   1.34        | 1.0284  | Y/Y
+    R024  Churaev_1970   tube(r)        48.0  29.2       none (dist 1.416 | 1.0241     1.38     | 1.0309   1.37        | 1.0284  | Y/Y
+    R025  Churaev_1970   tube(r)        48.0  40.1       none (dist 1.444 | 1.0241     1.41     | 1.0309   1.40        | 1.0284  | Y/Y
+    R026  Churaev_1970   tube(r)       170.0  8.1        none (dist 1.137 | 1.0070     1.13     | 1.0089   1.13        | 1.0083  | n/n
+    R027  Churaev_1970   tube(r)       170.0  18.4       none (dist 1.191 | 1.0070     1.18     | 1.0089   1.18        | 1.0083  | Y/n
+    R028  Churaev_1970   tube(r)       170.0  19.4       none (dist 1.148 | 1.0070     1.14     | 1.0089   1.14        | 1.0083  | n/n
+    R029  Churaev_1970   tube(r)       170.0  21.4       none (dist 1.177 | 1.0070     1.17     | 1.0089   1.17        | 1.0083  | Y/n
+    R030  Churaev_1970   tube(r)       170.0  30.0       none (dist 1.232 | 1.0070     1.22     | 1.0089   1.22        | 1.0083  | Y/n
+    R031  Churaev_1970   tube(r)       170.0  40.6       none (dist 1.160 | 1.0070     1.15     | 1.0089   1.15        | 1.0083  | n/n
+    R032  Churaev_1970   tube(r)       170.0  51.4       none (dist 1.105 | 1.0070     1.10     | 1.0089   1.10        | 1.0083  | n/n
+    R033  Churaev_1970   tube(r)       170.0  66.2       none (dist 1.016 | 1.0070     1.01     | 1.0089   1.01        | 1.0083  | n/n
+    R034  Li_2012        square(Dh)    200.0  26.1 +- 0. none (wate 2.471 | 1.0118 2D  2.44     | 1.0151   2.43        | 1.0139  | Y/Y
+    R035  Li_2012        square(Dh)    393.0  26.1 +- 0. none (wate 1.763 | 1.0061 2D  1.75     | 1.0077   1.75        | 1.0072  | Y/Y
+    R036  Li_2012        square(Dh)    491.0  26.1 +- 0. none (wate 1.888 | 1.0049 2D  1.88     | 1.0062   1.88        | 1.0058  | Y/Y
+    R037  Li_2012        square(Dh)    838.0  26.1 +- 0. none (wate 1.120 | 1.0029law  1.12     | 1.0037   1.12        | 1.0034  | n/n
+    R038  Li_2012        square(Dh)   1112.0  26.1 +- 0. none (wate 0.855 | 1.0022law  0.85     | 1.0028   0.85        | 1.0026  | n/n
+    R039  Li_2012        square(Dh)   1530.0  26.1 +- 0. none (wate 0.976 | 1.0016law  0.97     | 1.0020   0.97        | 1.0019  | n/n
+    R040  Li_2012        plate(D)       25.0  26.1 +- 0. none (wate 1.117 | 1.0642     1.05     | 1.0840   1.03        | 1.0752  | n/n
+    R041  Li_2012        plate(D)       50.0  26.1 +- 0. none (wate 1.043 | 1.0343     1.01     | 1.0442   1.00        | 1.0404  | n/n
+    R042  Li_2012        plate(D)      100.0  26.1 +- 0. none (wate 0.970 | 1.0176     0.95     | 1.0226   0.95        | 1.0208  | n/n
+    R043  Li_2012        plate(D)      189.0  26.1 +- 0. none (wate 0.963 | 1.0094     0.95     | 1.0120   0.95        | 1.0112  | n/n
+    R044  Li_2012        plate(D)      415.0  26.1 +- 0. none (wate 0.938 | 1.0043     0.93     | 1.0055   0.93        | 1.0051  | n/n
+    R045  Haneveld_2008  slit(H)         5.0  22.7       none (DI w 2.500 | 1.1533     2.17     | 1.2151   2.06        | 1.1693  | Y/Y
+    R046  Haneveld_2008  slit(H)        10.5  22.2       none (DI w 1.320 | 1.1190     1.18     | 1.1617   1.14        | 1.1353  | Y/Y
+    R047  Haneveld_2008  slit(H)        22.4  21.6       none (DI w 1.114 | 1.0704     1.04     | 1.0924   1.02        | 1.0823  | n/n
+    R048  Haneveld_2008  slit(H)        46.0  20.8       none (DI w 1.020 | 1.0371     0.98     | 1.0479   0.97        | 1.0437  | n/n
+    R049  Tas_2004       slit(H)        52.6  21.5-22.0  none (demi 1.265 | 1.0327     1.22     | 1.0421   1.21        | 1.0386  | Y/Y
+    R050  Tas_2004       slit(H)        54.3  21.5-22.0  none (demi 1.240 | 1.0317     1.20     | 1.0409   1.19        | 1.0374  | Y/n
+    R051  Tas_2004       slit(H)        52.7  21.5-22.0  none (demi 1.205 | 1.0326     1.17     | 1.0420   1.16        | 1.0385  | Y/n
+    R052  Tas_2004       slit(H)        52.6  21.5-22.0  none (demi 1.190 | 1.0327     1.15     | 1.0421   1.14        | 1.0386  | Y/n
+    R053  Tas_2004       slit(H)       104.5  21.5-22.0  none (demi 1.137 | 1.0169     1.12     | 1.0216   1.11        | 1.0200  | n/n
+    R054  Tas_2004       slit(H)       102.4  21.5-22.0  none (demi 1.067 | 1.0172     1.05     | 1.0220   1.04        | 1.0204  | n/n
+    R055  Tas_2004       slit(H)       110.9  21.5-22.0  none (demi 1.099 | 1.0159     1.08     | 1.0204   1.08        | 1.0188  | n/n
+    R056  Tas_2004       slit(H)       111.2  21.5-22.0  none (demi 1.058 | 1.0159     1.04     | 1.0203   1.04        | 1.0188  | n/n
+    R057  Tas_2004       slit(H)       152.6  21.5-22.0  none (demi 1.076 | 1.0117     1.06     | 1.0149   1.06        | 1.0138  | n/n
+    R058  Tas_2004       slit(H)       154.9  21.5-22.0  none (demi 1.060 | 1.0115     1.05     | 1.0147   1.04        | 1.0136  | n/n
+    R059  Tas_2004       slit(H)       161.2  21.5-22.0  none (demi 1.086 | 1.0110     1.07     | 1.0141   1.07        | 1.0131  | n/n
+    R060  Tas_2004       slit(H)       152.7  21.5-22.0  none (demi 1.034 | 1.0117     1.02     | 1.0149   1.02        | 1.0138  | n/n
+    R061  Tas_2004       slit(H)        52.9  21.5-22.0  0.1 M NaCl 1.045 | 1.0325     1.01     | 1.0419   1.00        | 1.0384  | n/n
+    R062  Tas_2004       slit(H)        54.4  21.5-22.0  0.1 M NaCl 1.038 | 1.0317     1.01     | 1.0408   1.00        | 1.0373  | n/n
+    R063  Tas_2004       slit(H)        52.7  21.5-22.0  0.1 M NaCl 1.003 | 1.0326     0.97     | 1.0420   0.96        | 1.0385  | n/n
+    R064  Tas_2004       slit(H)       102.2  21.5-22.0  0.1 M NaCl 1.027 | 1.0173     1.01     | 1.0221   1.00        | 1.0204  | n/n
+    R065  Tas_2004       slit(H)       104.6  21.5-22.0  0.1 M NaCl 1.015 | 1.0169     1.00     | 1.0216   0.99        | 1.0199  | n/n
+    R066  Tas_2004       slit(H)       110.9  21.5-22.0  0.1 M NaCl 0.999 | 1.0159     0.98     | 1.0204   0.98        | 1.0188  | n/n
+    R067  Tas_2004       slit(H)       152.4  21.5-22.0  0.1 M NaCl 0.994 | 1.0117     0.98     | 1.0149   0.98        | 1.0138  | n/n
+    R068  Tas_2004       slit(H)       155.0  21.5-22.0  0.1 M NaCl 0.986 | 1.0115     0.97     | 1.0147   0.97        | 1.0136  | n/n
+    R069  Tas_2004       slit(H)       161.0  21.5-22.0  0.1 M NaCl 1.002 | 1.0111     0.99     | 1.0141   0.99        | 1.0131  | n/n
+    R070  Tas_2004       slit(H)        53.0  21.5-22.0  none (demi 1.240 | 1.0325     1.20     | 1.0418   1.19        | 1.0383  | Y/n
+    R071  Tas_2004       slit(H)       152.0  21.5-22.0  none (demi 1.070 | 1.0117     1.06     | 1.0149   1.05        | 1.0138  | n/n
+    R072  Kazoe_2022     square(Dh)    190.0  not stated none (pure 3.600 | 1.0124 2D  3.56     | 1.0158   3.54        | 1.0146  | Y/Y
+    R073  Kazoe_2022     square(Dh)    394.0  not stated none (pure 2.804 | 1.0061 2D  2.79     | 1.0077   2.78        | 1.0072  | Y/Y
+    R074  Kazoe_2022     square(Dh)    760.0  not stated none (pure 1.211 | 1.0032law  1.21     | 1.0040   1.21        | 1.0038  | Y/n
+    R075  Kazoe_2022     square(Dh)   1691.0  not stated none (pure 1.133 | 1.0014law  1.13     | 1.0018   1.13        | 1.0017  | n/n
+    R076  Kazoe_2022     square(Dh)    190.0  not stated 10 mM KCl  3.443 | 1.0124 2D  3.40     | 1.0158   3.39        | 1.0146  | Y/Y
+    R077  Kazoe_2022     plate(D)      234.0  not stated none (pure 1.312 | 1.0076     1.30     | 1.0097   1.30        | 1.0090  | Y/Y
+    R078  Kazoe_2022     plate(D)      417.0  not stated none (pure 0.897 | 1.0043     0.89     | 1.0055   0.89        | 1.0051  | n/n
+    R079  Kazoe_2022     plate(D)      745.0  not stated none (pure 1.099 | 1.0024     1.10     | 1.0031   1.10        | 1.0029  | n/n
+    R080  Kazoe_2023     square(Dh)     73.0  not stated none       4.736 | 1.0308 2D  4.59     | 1.0398   4.55        | 1.0363  | Y/Y
+    R081  Kazoe_2023     square(Dh)    119.0  not stated none       5.549 | 1.0195 2D  5.44     | 1.0249   5.41        | 1.0230  | Y/Y
+    R088  Cheng_2002     slit(H)        41.7  25 (room t none state 1.064 | 1.0406     1.02     | 1.0525   1.01        | 1.0479  | n/n
+    R089  Cheng_2002     slit(H)        51.7  25 (room t none state 1.045 | 1.0332     1.01     | 1.0428   1.00        | 1.0392  | n/n
+    R090  Cheng_2002     slit(H)        61.8  25 (room t none state 1.003 | 1.0280     0.98     | 1.0360   0.97        | 1.0331  | n/n
+    R091  Cheng_2002     slit(H)        79.9  25 (room t none state 1.162 | 1.0219     1.14     | 1.0281   1.13        | 1.0259  | n/n
+    R092  Cheng_2002     slit(H)        99.5  25 (room t none state 1.202 | 1.0177     1.18     | 1.0227   1.18        | 1.0209  | Y/n
+    R093  Cheng_2002     slit(H)       199.6  25 (room t none state 1.125 | 1.0089     1.12     | 1.0114   1.11        | 1.0106  | n/n
+    R094  Cheng_2002     slit(H)       357.0  25 (room t none state 1.140 | 1.0050     1.13     | 1.0064   1.13        | 1.0060  | n/n
+    R095  Cheng_2002     slit(H)       496.4  25 (room t none state 1.057 | 1.0036     1.05     | 1.0046   1.05        | 1.0043  | n/n
+    R096  Cheng_2002     slit(H)       626.9  25 (room t none state 1.026 | 1.0029     1.02     | 1.0037   1.02        | 1.0034  | n/n
+    R097  Cheng_2002     slit(H)       662.3  25 (room t none state 1.026 | 1.0027     1.02     | 1.0035   1.02        | 1.0032  | n/n
+    R098  Cheng_2002     slit(H)      2700.0  25 (room t none state 0.905 | 1.0007     0.90     | 1.0009   0.90        | 1.0008  | n/n
+
+(4) Headline comparisons, both normalisations
+    comparison                               measured        | A: MD       bound | B 299 K: MD  bound | B 284 K: MD  bound
+    Churaev tube r = 41-60 nm (~20 C, Fig. 4) 1.31-1.48 (incl. Fig. 5 r=48) | 1.019-1.028 1.170 | 1.025-1.036 1.243 | 1.023-1.033 1.185
+    Churaev tube r = 48 nm (Fig. 5)          1.31-1.48 at 19-46 C | 1.024-1.024 1.170 | 1.031-1.031 1.243 | 1.028-1.028 1.185
+    Churaev tube r = 170-255 nm              1.10-1.23       | 1.005-1.007 1.170 | 1.006-1.009 1.243 | 1.006-1.008 1.185
+    Kazoe 2022 plate D = 234 nm              1.31 +- 0.07    | 1.008-1.008 1.170 | 1.010-1.010 1.243 | 1.009-1.009 1.185
+    Haneveld slit H = 10.5 nm                1.32 +- 0.11    | 1.119-1.119 1.170 | 1.162-1.162 1.243 | 1.135-1.135 1.185
+    Tas slit H = 53 nm (DI water)            1.19-1.27       | 1.032-1.033 1.170 | 1.041-1.042 1.243 | 1.037-1.039 1.185
+    Li 2012 plate D = 25-415 nm              0.94-1.12       | 1.004-1.064 1.170 | 1.006-1.084 1.243 | 1.005-1.075 1.185
+    Square Dh = 73-491 nm (Kazoe, Li)        1.9-5.5         | 1.005-1.031 1.170 | 1.006-1.040 1.243 | 1.006-1.036 1.185
+
+    Square channel, measured / MD (2D, N = 160):
+    Kazoe2023 Dh=  73  meas 4.70 | A: MD 1.03084 ratio 4.56 | B299: MD 1.03975 ratio 4.52 | law A 1.03302, B299 1.04195
+    Kazoe2023 Dh= 119  meas 5.50 | A: MD 1.01946 ratio 5.40 | B299: MD 1.02495 ratio 5.37 | law A 1.02026, B299 1.02574
+    Kazoe2022 Dh= 190  meas 3.60 | A: MD 1.01239 ratio 3.56 | B299: MD 1.01583 ratio 3.54 | law A 1.01269, B299 1.01612
+    Li2012    Dh= 200  meas 2.50 | A: MD 1.01179 ratio 2.47 | B299: MD 1.01506 ratio 2.46 | law A 1.01205, B299 1.01531
+    Kazoe2022 Dh= 394  meas 2.80 | A: MD 1.00607 ratio 2.78 | B299: MD 1.00773 ratio 2.78 | law A 1.00612, B299 1.00777
+    Li2012    Dh= 491  meas 1.90 | A: MD 1.00488 ratio 1.89 | B299: MD 1.00622 ratio 1.89 | law A 1.00491, B299 1.00624
+    eta_r/eta0 needed to put 5.5 below the bound: >= 4.5 (independent of normalisation); A (exp. eta0, 298 K): eta_r/eta0 = 0.170
+    eta_r/eta0 needed to put 5.5 below the bound: >= 4.5 (independent of normalisation); B (MD-MD, 299 K): eta_r/eta0 = 0.243

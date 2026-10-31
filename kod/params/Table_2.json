@@ -1,0 +1,18 @@
+{
+ "label": "Table 2",
+ "script": "micropolar_duct_2d.py; check_tube_m3_bound.py",
+ "parameters": {
+  "square": "mu = gamma = 1, alpha + beta = 0, kappa/mu = 1 and 10, lambda a = 1, 10, 100",
+  "tube": "mu = 1, kappa/mu = 0.1-10, lambda R = 0.3-100, n = -1 to 3"
+ },
+ "domain": "square side a; tube radius R",
+ "mesh": "square: N = 40, 80, 160 per side; tube: N = 1000, 2000, 4000 radial intervals",
+ "tolerances": "Richardson extrapolation; sparse direct solves",
+ "initial_guess": "not applicable",
+ "software": {
+  "python": "3.12.10",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1"
+ },
+ "date": "2026-10-31"
+}

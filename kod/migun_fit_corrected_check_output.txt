@@ -1,0 +1,14 @@
+MD: kappa/mu = 0.410,  1/K = 2.07 nm,  l = sqrt(zeta/eta0) = 1.58 nm
+Slit check vs Hansen (5% @200 nm, 15% @100 nm, 50% @20 nm; height = 2h):
+  height   200 nm: 1-Q/Qn =   0.9 %
+  height   100 nm: 1-Q/Qn =   1.8 %
+  height    20 nm: 1-Q/Qn =   7.2 %
+Tube (quartz capillary radii), MD coefficients vs Migun fit / data:
+  r0   500 nm: eta_e/eta_n MD = 1.002
+  r0   300 nm: eta_e/eta_n MD = 1.004
+  r0   100 nm: eta_e/eta_n MD = 1.012
+  r0    50 nm: eta_e/eta_n MD = 1.023
+  r0    40 nm: eta_e/eta_n MD = 1.029
+kappa/mu = 5.250, eta_r/eta_n = 0.724, narrow-gap bound 1 + eta_r/eta_n = 1.724
+r0 = 300 nm: eta_e/eta_n = 1.080  (Migun curve 1.08)
+r0 = 40 nm: eta_e/eta_n = 1.485  (Migun curve 1.485)

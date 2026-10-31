@@ -1,0 +1,102 @@
+MD: kappa/mu = 0.410,  1/K = 2.07 nm,  l = sqrt(zeta/eta0) = 1.58 nm
+Slit check vs Hansen (5% @200 nm, 15% @100 nm, 50% @20 nm; height = 2h):
+  height   200 nm: 1-Q/Qn =   0.9 %
+  height   100 nm: 1-Q/Qn =   1.8 %
+  height    20 nm: 1-Q/Qn =   7.2 %
+Tube (quartz capillary radii), MD coefficients vs Migun fit / data:
+  r0   500 nm: eta_e/eta_n MD = 1.002
+  r0   300 nm: eta_e/eta_n MD = 1.004
+  r0   100 nm: eta_e/eta_n MD = 1.012
+  r0    50 nm: eta_e/eta_n MD = 1.023
+  r0    40 nm: eta_e/eta_n MD = 1.029
+bound: 1.17-1.24;  1/K = 2.07 nm
+id    source         geometry               sym   size_nm   meas    unc electrolyte      MD >bound
+R001  Churaev_1970   cylindrical capillary  r (r     53.0  1.407  0.015 none (distil  1.022    YES
+R002  Churaev_1970   cylindrical capillary  r (r     59.8  1.361  0.015 none (distil  1.020    YES
+R003  Churaev_1970   cylindrical capillary  r (r     41.2  1.339  0.015 none (distil  1.028    YES
+R004  Churaev_1970   cylindrical capillary  r (r    181.0  1.192  0.015 none (distil  1.007   edge
+R005  Churaev_1970   cylindrical capillary  r (r    199.5  1.130  0.015 none (distil  1.006     no
+R006  Churaev_1970   cylindrical capillary  r (r    225.6  1.159  0.015 none (distil  1.005     no
+R007  Churaev_1970   cylindrical capillary  r (r    241.6  1.101  0.015 none (distil  1.005     no
+R008  Churaev_1970   cylindrical capillary  r (r    255.1  1.125  0.015 none (distil  1.005     no
+R009  Churaev_1970   cylindrical capillary  r (r    547.1  1.030  0.015 none (distil  1.002     no
+R010  Churaev_1970   cylindrical capillary  r (r    739.9  1.013  0.015 none (distil  1.002     no
+R011  Churaev_1970   cylindrical capillary  r (r    997.5  1.006  0.015 none (distil  1.001     no
+R015  Churaev_1970   cylindrical capillary  r (r     48.0  1.478  0.015 none (distil  1.024    YES
+R016  Churaev_1970   cylindrical capillary  r (r     48.0  1.475  0.015 none (distil  1.024    YES
+R017  Churaev_1970   cylindrical capillary  r (r     48.0  1.392  0.015 none (distil  1.024    YES
+R018  Churaev_1970   cylindrical capillary  r (r     48.0  1.327  0.015 none (distil  1.024    YES
+R019  Churaev_1970   cylindrical capillary  r (r     48.0  1.310  0.015 none (distil  1.024    YES
+R020  Churaev_1970   cylindrical capillary  r (r     48.0  1.187  0.015 none (distil  1.024   edge
+R021  Churaev_1970   cylindrical capillary  r (r     48.0  1.020  0.015 none (distil  1.024     no
+R022  Churaev_1970   cylindrical capillary  r (r     48.0  1.414  0.015 none (distil  1.024    YES
+R023  Churaev_1970   cylindrical capillary  r (r     48.0  1.382  0.015 none (distil  1.024    YES
+R024  Churaev_1970   cylindrical capillary  r (r     48.0  1.416  0.015 none (distil  1.024    YES
+R025  Churaev_1970   cylindrical capillary  r (r     48.0  1.444  0.015 none (distil  1.024    YES
+R026  Churaev_1970   cylindrical capillary  r (r    170.0  1.137  0.015 none (distil  1.007     no
+R027  Churaev_1970   cylindrical capillary  r (r    170.0  1.191  0.015 none (distil  1.007   edge
+R028  Churaev_1970   cylindrical capillary  r (r    170.0  1.148  0.015 none (distil  1.007     no
+R029  Churaev_1970   cylindrical capillary  r (r    170.0  1.177  0.015 none (distil  1.007   edge
+R030  Churaev_1970   cylindrical capillary  r (r    170.0  1.232  0.015 none (distil  1.007   edge
+R031  Churaev_1970   cylindrical capillary  r (r    170.0  1.160  0.015 none (distil  1.007     no
+R032  Churaev_1970   cylindrical capillary  r (r    170.0  1.105  0.015 none (distil  1.007     no
+R033  Churaev_1970   cylindrical capillary  r (r    170.0  1.016  0.015 none (distil  1.007     no
+R034  Li_2012        square channel (w~d)   Dh (    200.0  2.471 0.2048 none (water     nan    YES
+R035  Li_2012        square channel (w~d)   Dh (    393.0  1.763 0.1712 none (water     nan    YES
+R036  Li_2012        square channel (w~d)   Dh (    491.0  1.888  0.144 none (water     nan    YES
+R037  Li_2012        square channel (w~d)   Dh (    838.0  1.120  0.072 none (water     nan     no
+R038  Li_2012        square channel (w~d)   Dh (   1112.0  0.855 0.0384 none (water     nan     no
+R039  Li_2012        square channel (w~d)   Dh (   1530.0  0.976 0.0336 none (water     nan     no
+R040  Li_2012        plate channel (w=20 um D (d     25.0  1.117  0.104 none (water   1.064     no
+R041  Li_2012        plate channel (w=20 um D (d     50.0  1.043 0.0368 none (water   1.034     no
+R042  Li_2012        plate channel (w=20 um D (d    100.0  0.970 0.0576 none (water   1.018     no
+R043  Li_2012        plate channel (w=20 um D (d    189.0  0.963  0.032 none (water   1.009     no
+R044  Li_2012        plate channel (w=20 um D (d    415.0  0.938 0.0384 none (water   1.004     no
+R045  Haneveld_2008  slit (rectangular, w=2 h0 (      5.0  2.500    0.4 none (DI wat  1.153    YES
+R046  Haneveld_2008  slit (rectangular, w=2 h0 (     10.5  1.320   0.11 none (DI wat  1.119    YES
+R047  Haneveld_2008  slit (rectangular, w=2 h0 (     22.4  1.114   0.05 none (DI wat  1.070     no
+R048  Haneveld_2008  slit (rectangular, w=2 h0 (     46.0  1.020   0.04 none (DI wat  1.037     no
+R049  Tas_2004       slit (rectangular, w=2 h (c     52.6  1.265   0.11 none (demine  1.033    YES
+R050  Tas_2004       slit (rectangular, w=2 h (c     54.3  1.240   0.11 none (demine  1.032   edge
+R051  Tas_2004       slit (rectangular, w=2 h (c     52.7  1.205   0.11 none (demine  1.033   edge
+R052  Tas_2004       slit (rectangular, w=2 h (c     52.6  1.190   0.11 none (demine  1.033   edge
+R053  Tas_2004       slit (rectangular, w=2 h (c    104.5  1.137   0.11 none (demine  1.017     no
+R054  Tas_2004       slit (rectangular, w=2 h (c    102.4  1.067   0.11 none (demine  1.017     no
+R055  Tas_2004       slit (rectangular, w=2 h (c    110.9  1.099   0.11 none (demine  1.016     no
+R056  Tas_2004       slit (rectangular, w=2 h (c    111.2  1.058   0.11 none (demine  1.016     no
+R057  Tas_2004       slit (rectangular, w=2 h (c    152.6  1.076   0.11 none (demine  1.012     no
+R058  Tas_2004       slit (rectangular, w=2 h (c    154.9  1.060   0.11 none (demine  1.011     no
+R059  Tas_2004       slit (rectangular, w=2 h (c    161.2  1.086   0.11 none (demine  1.011     no
+R060  Tas_2004       slit (rectangular, w=2 h (c    152.7  1.034   0.11 none (demine  1.012     no
+R061  Tas_2004       slit (rectangular, w=2 h (c     52.9  1.045   0.11 0.1 M NaCl    1.033     no
+R062  Tas_2004       slit (rectangular, w=2 h (c     54.4  1.038   0.11 0.1 M NaCl    1.032     no
+R063  Tas_2004       slit (rectangular, w=2 h (c     52.7  1.003   0.11 0.1 M NaCl    1.033     no
+R064  Tas_2004       slit (rectangular, w=2 h (c    102.2  1.027   0.11 0.1 M NaCl    1.017     no
+R065  Tas_2004       slit (rectangular, w=2 h (c    104.6  1.015   0.11 0.1 M NaCl    1.017     no
+R066  Tas_2004       slit (rectangular, w=2 h (c    110.9  0.999   0.11 0.1 M NaCl    1.016     no
+R067  Tas_2004       slit (rectangular, w=2 h (c    152.4  0.994   0.11 0.1 M NaCl    1.012     no
+R068  Tas_2004       slit (rectangular, w=2 h (c    155.0  0.986   0.11 0.1 M NaCl    1.011     no
+R069  Tas_2004       slit (rectangular, w=2 h (c    161.0  1.002   0.11 0.1 M NaCl    1.011     no
+R070  Tas_2004       slit (rectangular, w=2 h (c     53.0  1.240   0.11 none (demine  1.032   edge
+R071  Tas_2004       slit (rectangular, w=2 h (c    152.0  1.070   0.06 none (demine  1.012     no
+R072  Kazoe_2022     square channel (w/d~1) Dh (    190.0  3.600 0.6056 none (pure w    nan    YES
+R073  Kazoe_2022     square channel (w/d~1) Dh (    394.0  2.804 0.2131 none (pure w    nan    YES
+R074  Kazoe_2022     square channel (w/d~1) Dh (    760.0  1.211 0.1009 none (pure w    nan   edge
+R075  Kazoe_2022     square channel (w/d~1) Dh (   1691.0  1.133 0.02243 none (pure w    nan     no
+R076  Kazoe_2022     square channel (w/d~1) Dh (    190.0  3.443  0.572 10 mM KCl       nan    YES
+R077  Kazoe_2022     plate channel (w/d>20) D (d    234.0  1.312 0.06729 none (pure w  1.008    YES
+R078  Kazoe_2022     plate channel (w/d>20) D (d    417.0  0.897 0.1009 none (pure w  1.004     no
+R079  Kazoe_2022     plate channel (w/d>20) D (d    745.0  1.099 0.08972 none (pure w  1.002     no
+R080  Kazoe_2023     square channel (aspect Dh (     73.0  4.736 0.5228 none            nan    YES
+R081  Kazoe_2023     square channel (aspect Dh (    119.0  5.549  0.492 none            nan    YES
+R088  Cheng_2002     slit (rectangular, w=2 h (c     41.7  1.064 0.05657 none stated   1.041     no
+R089  Cheng_2002     slit (rectangular, w=2 h (c     51.7  1.045 0.05456 none stated   1.033     no
+R090  Cheng_2002     slit (rectangular, w=2 h (c     61.8  1.003 0.05029 none stated   1.028     no
+R091  Cheng_2002     slit (rectangular, w=2 h (c     79.9  1.162 0.06754 none stated   1.022     no
+R092  Cheng_2002     slit (rectangular, w=2 h (c     99.5  1.202 0.07225 none stated   1.018   edge
+R093  Cheng_2002     slit (rectangular, w=2 h (c    199.6  1.125 0.06328 none stated   1.009     no
+R094  Cheng_2002     slit (rectangular, w=2 h (c    357.0  1.140 0.06494 none stated   1.005     no
+R095  Cheng_2002     slit (rectangular, w=2 h (c    496.4  1.057 0.05589 none stated   1.004     no
+R096  Cheng_2002     slit (rectangular, w=2 h (c    626.9  1.026 0.05267 none stated   1.003     no
+R097  Cheng_2002     slit (rectangular, w=2 h (c    662.3  1.026 0.05267 none stated   1.003     no
+R098  Cheng_2002     slit (rectangular, w=2 h (c   2700.0  0.905 0.04092 none stated   1.001     no
