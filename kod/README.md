@@ -41,6 +41,10 @@ The table uses the paper numbers.
 - Joint change of the rotational and spin viscosities, ceilings and finite-difference checks: `tube_joint_eta_r_zeta.py`, `square_ceiling_fd_check.py`.
 - Wall power, passivity and energy-identity checks: `check_wall_power_sign_conventions.py`, `check_bc4_slip_order.py`, `check_tube_fourier_orthogonality.py`, `khanukaeva_n07_beta_power.py`.
 - Other digitization and literature checks: `bondarenko2024_fig12_digitize.py`, `wu2017_interfacial_viscosity_200nm.py`, `check_hansen2010_slit_discrepancy.py`, `check_khanukaeva2023_walls.py`.
+- Data preparation: `digitize_capillary_data.py` (figure readings and table conversions that build the data table), `data_table3_markdown.py` (prints the extended Table 3 from `data_table3_members.csv`).
+- Comparison of the data with the bound and with the BC1 predictions: `compare_data_md_bound.py` (size dependence), `temperature_comparison.py` and `check_temperature_envelope.py` (temperature dependence), `hansen2010_md_vs_deryagin.py` (MD coefficients against the quartz-capillary data as fitted by Migun 1981), `migun_fit_corrected_check.py` (reading of the fit of Migun 1981 and Kolpashchikov et al. 1983).
+- Model and wall-condition checks: `check_dissipation_unidirectional.py` (symbolic dissipation of unidirectional duct flow), `check_slit_wall_conditions.py` (slit closed forms for several wall conditions), `check_slit_asymptotics.py` (large-gap law and equivalent slip length of the slit), `check_tube_nonaxisymmetric_modes.py` (coefficient conditions of the tube bound), `check_hansen2010_mapping.py` (term-by-term mapping of Hansen et al. 2010 onto Eringen's model), `check_kazoe_resistance_formula.py` (Newtonian flow rate of the actual cross-sections against the square-duct formula used by Kazoe et al.).
+- Numbers and parameter files of the text: `paper_numbers.py` (derived numbers that no other script prints; output `paper_numbers_output.txt`), `params_tables.py` (parameter files of Tables 1 and 3).
 
 ## Running everything
 
