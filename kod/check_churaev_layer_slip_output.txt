@@ -1,0 +1,9 @@
+first order: b = -h0/2 = -4.00 nm
+r =  40.00 nm: eta/eta0 = 1.5625, exact b = -3.600 nm
+r =  41.25 nm: eta/eta0 = 1.5391, exact b = -3.612 nm
+r =  46.00 nm: eta/eta0 = 1.4654, exact b = -3.652 nm
+r =  50.00 nm: eta/eta0 = 1.4172, exact b = -3.680 nm
+r =  59.76 nm: eta/eta0 = 1.3330, exact b = -3.732 nm
+r =  60.00 nm: eta/eta0 = 1.3314, exact b = -3.733 nm
+micropolar |b| = 0.36 nm: first-order ratio 11.1; exact ratio 10.0-10.4
+micropolar |b| = 0.40 nm: first-order ratio 10.0; exact ratio 9.0-9.3

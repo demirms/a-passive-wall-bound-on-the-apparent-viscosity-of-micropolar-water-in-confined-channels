@@ -1,0 +1,26 @@
+sanity r = 40 nm, 284 K, target 1.31: ['23.9387', '2.0413', '3.2059']
+T=284 K R= 41.25 nm target 1.31: n =  19.8428 (pole 3.206), wall power / GQ = 2.106
+T=284 K R= 41.25 nm target 1.48: n =   7.7655 (pole 3.206), wall power / GQ = 4.665
+T=284 K R= 53.03 nm target 1.31: n =   9.0130 (pole 3.206), wall power / GQ = 2.711
+T=284 K R= 53.03 nm target 1.48: n =   5.8872 (pole 3.206), wall power / GQ = 5.946
+T=284 K R= 59.76 nm target 1.31: n =   7.4369 (pole 3.206), wall power / GQ = 3.057
+T=284 K R= 59.76 nm target 1.48: n =   5.3758 (pole 3.206), wall power / GQ = 6.678
+T=289 K R= 41.25 nm target 1.31: n =  14.5278 (pole 2.941), wall power / GQ = 1.992
+T=289 K R= 41.25 nm target 1.48: n =   6.6439 (pole 2.941), wall power / GQ = 4.422
+T=289 K R= 53.03 nm target 1.31: n =   7.5656 (pole 2.941), wall power / GQ = 2.573
+T=289 K R= 53.03 nm target 1.48: n =   5.1726 (pole 2.941), wall power / GQ = 5.652
+T=289 K R= 59.76 nm target 1.31: n =   6.3825 (pole 2.941), wall power / GQ = 2.905
+T=289 K R= 59.76 nm target 1.48: n =   4.7592 (pole 2.941), wall power / GQ = 6.355
+T=293 K R= 41.25 nm target 1.31: n =  12.7557 (pole 2.735), wall power / GQ = 1.849
+T=293 K R= 41.25 nm target 1.48: n =   6.0407 (pole 2.735), wall power / GQ = 4.120
+T=293 K R= 53.03 nm target 1.31: n =   6.8455 (pole 2.735), wall power / GQ = 2.397
+T=293 K R= 53.03 nm target 1.48: n =   4.7384 (pole 2.735), wall power / GQ = 5.277
+T=293 K R= 59.76 nm target 1.31: n =   5.8084 (pole 2.735), wall power / GQ = 2.709
+T=293 K R= 59.76 nm target 1.48: n =   4.3700 (pole 2.735), wall power / GQ = 5.939
+T=299 K R= 41.25 nm target 1.31: n =   8.6161 (pole 2.559), wall power / GQ = 1.895
+T=299 K R= 41.25 nm target 1.48: n =   5.0205 (pole 2.559), wall power / GQ = 4.215
+T=299 K R= 53.03 nm target 1.31: n =   5.5240 (pole 2.559), wall power / GQ = 2.460
+T=299 K R= 53.03 nm target 1.48: n =   4.1160 (pole 2.559), wall power / GQ = 5.411
+T=299 K R= 59.76 nm target 1.31: n =   4.8539 (pole 2.559), wall power / GQ = 2.783
+T=299 K R= 59.76 nm target 1.48: n =   3.8456 (pole 2.559), wall power / GQ = 6.095
+data radii 41.25-59.76 nm, 284-299 K: n = 3.85-19.84; wall power / GQ = 1.85-6.68

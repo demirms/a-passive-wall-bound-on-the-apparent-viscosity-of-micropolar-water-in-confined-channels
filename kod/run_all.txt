@@ -51,3 +51,8 @@ khanukaeva_n07_beta_power.py
 square_ceiling_fd_check.py  after: micropolar_duct_2d.py
 wu2017_interfacial_viscosity_200nm.py
 # Helper modules imported by the scripts above: paper_common.py, params_writer.py (writes params/*.json)
+# Checks added for the submitted version (uncertainty of the bound, BC2 constant at the data radii, temperature of the predictions, slip equivalent of Churaev's layer)
+bound_md_uncertainty.py
+check_tube_bc2_n_data_radii.py
+check_prediction_293_vs_299.py
+check_churaev_layer_slip.py

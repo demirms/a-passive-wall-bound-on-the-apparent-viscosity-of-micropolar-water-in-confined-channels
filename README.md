@@ -15,10 +15,10 @@ cd kod
 python run_all.py
 ```
 
-`run_all.py` runs the scripts listed in `kod/run_all.txt` in order. Python 3.12 with NumPy, SciPy, SymPy (with mpmath) and Matplotlib is required; the four scripts that read source PDFs also import PyMuPDF and Pillow at start-up, so these two packages must be installed even to reach the SKIPPED message. The exact versions are in `kod/README.md`. Set `OPENBLAS_NUM_THREADS=1` on small machines; the slowest script takes about 20 min. Figures are written to `sekil/` and the working data table to `01_arastirma/` next to `kod/` (both created if missing).
+`run_all.py` runs the scripts listed in `kod/run_all.txt` in order. Python 3.12 with NumPy, SciPy, SymPy (with mpmath) and Matplotlib is required; the four scripts that read source PDFs also import PyMuPDF and Pillow at start-up, so these two packages must be installed even to reach the SKIPPED message. The exact versions are in `kod/README.md`. Set `OPENBLAS_NUM_THREADS=1`; the slowest script takes about 20 min. Three computations on 320 x 320 grids (`check_duct_converged_differences.py`, `square_ceiling_fd_check.py`, and the finite-difference check in `tube_joint_eta_r_zeta.py`) need about 4-5 GB of RAM; on smaller machines they stop with a MemoryError and keep their saved outputs. On Windows, clone into a short path (e.g. `C:\src\`) or enable long paths. Figures are written to `sekil/` and the working data table to `01_arastirma/` next to `kod/` (both created if missing).
 
 Four scripts read figures or tables from copyrighted source papers, which are not distributed. Without those files they print `SKIPPED: source PDF required, not distributed` and keep their saved outputs, which are included.
 
 ## Licence and citation
 
-Please cite the paper when using the code or the data. The data table was compiled from the published measurements cited in the paper; the original sources should be cited for the measurements themselves.
+The code is released under the MIT License (see `LICENSE`). Please cite the paper when using the code or the data. The data table was compiled from the published measurements cited in the paper; the original sources should be cited for the measurements themselves.
